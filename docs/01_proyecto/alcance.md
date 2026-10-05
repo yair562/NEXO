@@ -4,7 +4,7 @@
 
 Este documento delimita el alcance de **NEXO V1**, una plataforma comunitaria para estudiantes del Tecnológico de Estudios Superiores de Huixquilucan (TESH).
 
-La V1 se define como un **MVP funcional** para desarrollarse y validarse en un periodo aproximado de dos meses. Por esta razón, el proyecto prioriza un núcleo reducido de comunicación e interacción estudiantil, evitando construir una plataforma académica o una red social compleja.
+La V1 se define como un **MVP funcional** que concentra un núcleo reducido de comunicación e interacción estudiantil. Su propósito es validar el concepto de una comunidad estudiantil integrada sin convertirse en una plataforma académica completa ni en una red social generalista.
 
 ## 2. Propósito del producto
 
@@ -132,13 +132,13 @@ La IA podrá utilizarse para:
 - Señalar publicaciones o mensajes para revisión.
 - Apoyar a la persona responsable de moderación.
 
-La IA no sustituirá la responsabilidad humana ni tomará decisiones académicas, disciplinarias o definitivas de forma autónoma. El modelo, proveedor, categorías, umbrales y flujo de revisión se definirán durante el diseño técnico.
+La IA no sustituirá la responsabilidad humana ni tomará decisiones académicas, disciplinarias o definitivas de forma autónoma. Los criterios de uso y el flujo de revisión se definirán en los requisitos y en la documentación técnica correspondiente.
 
 ### 5.7 Despliegue en red local
 
-La V1 se desplegará inicialmente en un entorno de red Wi-Fi o local. Los dispositivos participantes deberán comunicarse mediante conectividad IP con la infraestructura que proporcione el servicio NEXO.
+La V1 operará inicialmente dentro de un entorno de red Wi-Fi o local. Las condiciones específicas de despliegue y operación se documentarán en la arquitectura y en la documentación técnica correspondiente.
 
-Esta decisión corresponde al contexto de implementación de la V1 y no representa una limitación permanente del producto. El acceso por Internet o mediante infraestructura cloud podrá evaluarse en versiones posteriores.
+Esta condición corresponde al alcance operativo inicial y no representa una limitación permanente del producto. El acceso por Internet podrá evaluarse en versiones posteriores.
 
 ## 6. Flujo funcional mínimo
 
@@ -233,28 +233,25 @@ Quedan fuera:
 - Mensajes que desaparecen.
 - Funciones multimedia avanzadas.
 
-### 8.5 Infraestructura avanzada
+### 8.5 Capacidades de infraestructura avanzada
 
 Quedan fuera de la V1:
 
 - Infraestructura cloud de producción.
-- Arquitectura distribuida compleja.
-- Microservicios innecesarios para el MVP.
 - Alta disponibilidad empresarial.
 - Escalamiento masivo.
 - Despliegue multinacional.
 
 ## 9. Restricciones del alcance
 
-El alcance de la V1 estará condicionado por:
+La implementación y validación de la V1 estarán condicionadas por:
 
-1. **Tiempo disponible:** aproximadamente dos meses para documentación, desarrollo y validación.
-2. **Tamaño del equipo:** cuatro integrantes con responsabilidades distribuidas.
-3. **Complejidad técnica:** las capacidades deberán ser implementables y demostrables dentro del periodo disponible.
-4. **Infraestructura:** la primera versión utilizará una red Wi-Fi o local.
-5. **Validación:** el núcleo deberá poder probarse mediante escenarios funcionales concretos.
+1. **Equipo disponible:** cuatro integrantes con responsabilidades distribuidas.
+2. **Complejidad técnica:** la solución deberá mantener una complejidad razonable para un MVP y ser compatible con las capacidades definidas.
+3. **Infraestructura:** la primera versión utilizará una red Wi-Fi o local.
+4. **Validación:** el núcleo deberá poder probarse mediante escenarios funcionales concretos y criterios de aceptación verificables.
 
-Estas restricciones justifican mantener la V1 como un MVP reducido.
+El cronograma, las actividades y la asignación detallada de trabajo corresponden a la documentación de planificación del proyecto.
 
 ## 10. Criterios generales de éxito
 
