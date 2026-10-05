@@ -4,7 +4,7 @@
 
 Este documento delimita el alcance de **NEXO V1**, una plataforma comunitaria para estudiantes del Tecnológico de Estudios Superiores de Huixquilucan (TESH).
 
-La V1 se define como un **MVP funcional** que concentra un núcleo reducido de comunicación e interacción estudiantil. Su propósito es validar el concepto de una comunidad estudiantil integrada sin convertirse en una plataforma académica completa ni en una red social generalista.
+La V1 se define como un **MVP funcional** que concentra un núcleo de comunicación e interacción estudiantil mediante perfiles, publicaciones, grupos internos, mensajería privada, compartición de archivos y moderación asistida por inteligencia artificial. Su operación inicial se realizará dentro de una red Wi-Fi o local.
 
 ## 2. Propósito del producto
 
@@ -17,13 +17,13 @@ NEXO proporcionará un espacio digital común donde los estudiantes puedan:
 - Compartir archivos relacionados con sus actividades.
 - Participar en una comunidad con mecanismos básicos de moderación.
 
-NEXO no pretende sustituir las plataformas institucionales ni resolver todos los problemas académicos de los estudiantes. Su propósito inicial es ofrecer un punto de encuentro digital propio para la comunidad estudiantil.
+NEXO proporciona un punto de encuentro digital propio para la comunidad estudiantil, orientado a centralizar la identidad, la comunicación, la colaboración y el intercambio de información entre sus usuarios.
 
 ## 3. Problema que se busca atender
 
 Los estudiantes utilizan distintos medios para comunicarse, compartir información y organizar actividades. Esta dispersión dificulta contar con un espacio común orientado específicamente a la comunidad estudiantil.
 
-NEXO busca reducir esa fragmentación mediante un entorno controlado que concentre capacidades básicas de:
+NEXO atiende esta necesidad mediante un entorno común que integra:
 
 - Identidad estudiantil.
 - Publicación de contenido.
@@ -34,7 +34,7 @@ NEXO busca reducir esa fragmentación mediante un entorno controlado que concent
 
 ## 4. Objetivo de la V1
 
-Demostrar que una plataforma estudiantil puede proporcionar, dentro de un mismo entorno:
+La V1 proporciona, dentro de un mismo entorno:
 
 1. Perfiles básicos de usuario.
 2. Publicaciones.
@@ -59,7 +59,7 @@ El perfil podrá incluir:
 - Carrera, semestre o área, si se confirma en los requisitos.
 - Intereses que favorezcan la interacción comunitaria.
 
-La autenticación, los datos obligatorios, los permisos y el mecanismo de identificación se definirán en los requisitos. No se implementará información académica administrativa, como calificaciones o historial escolar.
+La autenticación, los datos obligatorios, los permisos y el mecanismo de identificación se definirán en los requisitos. El perfil se enfocará en la representación del usuario dentro de la comunidad y en la información necesaria para facilitar la interacción.
 
 ### 5.2 Publicaciones
 
@@ -72,8 +72,6 @@ La V1 contemplará como mínimo:
 - Visualizar el autor.
 - Visualizar el contenido.
 - Realizar interacciones básicas, si se priorizan en los requisitos.
-
-No se requiere un algoritmo avanzado de recomendación o clasificación personalizada.
 
 ### 5.3 Grupos internos
 
@@ -100,15 +98,13 @@ La V1 permitirá como mínimo:
 - Recibir mensajes.
 - Consultar el historial de una conversación.
 
-Quedan fuera de esta primera versión las llamadas de voz, videollamadas, mensajes efímeros, reacciones avanzadas y otras funciones multimedia complejas.
-
 ### 5.5 Compartición de archivos
 
 Los usuarios podrán compartir archivos dentro de los espacios permitidos por la V1:
 
 - Conversaciones privadas.
 - Grupos.
-- Publicaciones, únicamente si se prioriza durante la especificación.
+- Publicaciones, cuando esta asociación sea confirmada en los requisitos.
 
 Quedan pendientes de definición técnica:
 
@@ -119,7 +115,7 @@ Quedan pendientes de definición técnica:
 - Validación de archivos.
 - Controles de seguridad.
 
-La V1 no contempla un sistema avanzado de gestión documental.
+La gestión de archivos se limitará a las capacidades de compartición definidas para conversaciones, grupos y, cuando corresponda, publicaciones.
 
 ### 5.6 Moderación asistida por inteligencia artificial
 
@@ -132,13 +128,13 @@ La IA podrá utilizarse para:
 - Señalar publicaciones o mensajes para revisión.
 - Apoyar a la persona responsable de moderación.
 
-La IA no sustituirá la responsabilidad humana ni tomará decisiones académicas, disciplinarias o definitivas de forma autónoma. Los criterios de uso y el flujo de revisión se definirán en los requisitos y en la documentación técnica correspondiente.
+La moderación conservará una revisión humana para los casos señalados. Los criterios de uso y el flujo de revisión se definirán en los requisitos y en la documentación técnica correspondiente.
 
 ### 5.7 Despliegue en red local
 
 La V1 operará inicialmente dentro de un entorno de red Wi-Fi o local. Las condiciones específicas de despliegue y operación se documentarán en la arquitectura y en la documentación técnica correspondiente.
 
-Esta condición corresponde al alcance operativo inicial y no representa una limitación permanente del producto. El acceso por Internet podrá evaluarse en versiones posteriores.
+La evolución del producto podrá incorporar otros contextos de acceso en versiones posteriores.
 
 ## 6. Flujo funcional mínimo
 
@@ -181,7 +177,7 @@ El proyecto contempla desarrollar progresivamente:
 - Pruebas funcionales, de integración y aceptación.
 - Documentación técnica y de operación básica.
 
-La existencia de estos entregables no implica que se implementen capacidades fuera del núcleo definido en este documento.
+Estos entregables respaldan la definición, construcción, validación y operación del núcleo funcional establecido en este documento.
 
 ## 8. Fuera de alcance de la V1
 
@@ -213,7 +209,7 @@ Estas capacidades podrán evaluarse como evolución posterior, pero no forman pa
 
 ### 8.3 Red social generalista
 
-NEXO no se desarrollará como una red social pública de propósito general. Quedan fuera:
+La categoría de red social pública de propósito general queda fuera de la V1:
 
 - Entretenimiento como objetivo principal.
 - Publicidad.
@@ -298,7 +294,7 @@ Podrán considerarse para versiones posteriores, previa validación y aprobació
 - Analítica de comunidad.
 - Escalabilidad para una población estudiantil mayor.
 
-Estas capacidades no forman parte del compromiso de la V1.
+Estas capacidades se reservan para una evolución posterior del producto.
 
 ## 13. Control del alcance
 
