@@ -14,7 +14,18 @@ Este documento organiza y controla la ejecución de NEXO V1. Las actividades se 
 - El cronograma se actualiza conforme avance el proyecto.
 - Cada actividad conserva trazabilidad con la documentación correspondiente.
 
-## 3. Estado actual
+## 3. Información general de planificación
+
+| Elemento | Información |
+|---|---|
+| Inicio del proyecto | 05 de septiembre de 2026 |
+| Cierre objetivo | 16 de diciembre de 2026 |
+| Periodo de planificación | 05 de septiembre de 2026 – 16 de diciembre de 2026 |
+| Estado | En ejecución |
+
+El periodo general establece el marco temporal del proyecto. Las fechas particulares de inicio y finalización de cada actividad permanecen **Por definir** hasta que sean distribuidas y confirmadas por el equipo.
+
+## 4. Estado actual
 
 | Actividad | Estado |
 |---|---|
@@ -32,9 +43,9 @@ Este documento organiza y controla la ejecución de NEXO V1. Las actividades se 
 | Pruebas | Pendiente |
 | Validación del MVP | Pendiente |
 
-## 4. Cronograma maestro
+## 5. Cronograma maestro
 
-Los estados utilizados son: **Completado**, **En progreso** y **Pendiente**. No se incluyen fechas hasta que sean definidas por el equipo.
+Los estados utilizados son: **Completado**, **En progreso** y **Pendiente**. El cronograma se ejecuta dentro del periodo general del 05 de septiembre de 2026 al 16 de diciembre de 2026. Las fechas individuales de las actividades permanecen **Por definir**.
 
 | ID | Fase | Actividad | Responsable | Dependencia | Entregable | Referencia | Estado |
 |---|---|---|---|---|---|---|---|
@@ -107,7 +118,7 @@ Los estados utilizados son: **Completado**, **En progreso** y **Pendiente**. No 
 | F10-06 | Validación y cierre | Documentación básica de operación | Por asignar | F10-02, F10-03 | Documentación de operación | `docs/15_manuales/manual_usuario.md` | Pendiente |
 | F10-07 | Validación y cierre | Cierre de la versión V1 | Ale — Product Owner (PO) | F10-04, F10-05, F10-06 | V1 cerrada | `docs/11_gestion_proyecto/seguimiento/seguimiento.md` | Pendiente |
 
-## 5. Hitos
+## 6. Hitos
 
 | Hito | Descripción | Dependencia principal | Estado |
 |---|---|---|---|
@@ -123,13 +134,13 @@ Los estados utilizados son: **Completado**, **En progreso** y **Pendiente**. No 
 | H10 — Pruebas completadas | Pruebas ejecutadas y correcciones verificadas | F9-07 | Pendiente |
 | H11 — MVP validado | V1 revisada contra alcance y criterios de aceptación | F10-07 | Pendiente |
 
-## 6. Actualización del cronograma
+## 7. Actualización del cronograma
 
-El cronograma es un documento vivo. Los estados, responsables, dependencias y fechas se actualizarán conforme avance el proyecto. Las modificaciones deberán conservar la trazabilidad con el alcance, los requisitos y los entregables correspondientes.
+El cronograma es un documento vivo. Los estados, responsables, dependencias y fechas se actualizarán conforme avance el proyecto dentro del periodo comprendido entre el 05 de septiembre de 2026 y el 16 de diciembre de 2026. Las modificaciones deberán conservar la trazabilidad con el alcance, los requisitos y los entregables correspondientes.
 
-Cuando el equipo establezca fechas, la tabla podrá ampliarse con fecha de inicio, fecha de finalización y duración. Hasta entonces, no se registran fechas.
+Cuando el equipo establezca las fechas particulares, la tabla podrá ampliarse con fecha de inicio, fecha de finalización y duración para cada actividad. Hasta entonces, esas fechas permanecerán sin asignar.
 
-## 7. Control del cronograma
+## 8. Control del cronograma
 
 - Cada actividad debe mantener un estado actualizado.
 - Los cambios importantes deben quedar registrados.
