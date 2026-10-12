@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Requerimientos de NEXO V1
 
 | Campo | Valor |
@@ -235,3 +236,179 @@ Cualquier cambio en el alcance funcional debe:
 ## Cierre
 
 Este documento sirve como referencia general para la definición del sistema y como base formal para las especificaciones posteriores. Su contenido debe mantenerse consistente con el alcance aprobado de la V1 y con la evidencia que soporta la necesidad del producto.
+=======
+# NEXO — Plataforma Comunitaria Estudiantil
+
+**Documento:** Requerimientos del sistema
+
+**Estado:** Borrador  
+**Versión:** 1.0  
+**Fecha de creación:** 11 de octubre de 2026  
+**Última actualización:** 11 de octubre de 2026
+
+## 1. Propósito del documento
+
+Definir los requerimientos funcionales y no funcionales de NEXO V1, estableciendo las capacidades que deberá ofrecer el sistema y las condiciones necesarias para su implementación y validación.
+
+## 2. Fuentes de los requerimientos
+
+Los requerimientos se derivan de las siguientes fuentes:
+
+- Documento de alcance de NEXO V1.
+- Encuesta de necesidades estudiantiles.
+- Documento de hallazgos y necesidades.
+- Criterios generales de éxito del proyecto.
+- Restricciones técnicas y operativas del MVP.
+
+El alcance aprobado constituye la referencia principal para determinar las funcionalidades incluidas en la V1.
+
+## 3. Requerimientos funcionales
+
+Los requerimientos funcionales describen las acciones y capacidades que deberá proporcionar el sistema.
+
+### 3.1 Perfiles de usuario
+
+**RF-01. Gestión de perfiles**
+
+El sistema deberá permitir que cada usuario cuente con un perfil básico que lo represente dentro de la comunidad estudiantil.
+
+**RF-02. Información del perfil**
+
+El sistema deberá permitir visualizar la información básica definida para el perfil del usuario. Los datos obligatorios y opcionales deberán establecerse durante el análisis detallado.
+
+### 3.2 Publicaciones
+
+**RF-03. Creación de publicaciones**
+
+El sistema deberá permitir que los usuarios creen publicaciones dentro de la comunidad.
+
+**RF-04. Consulta de publicaciones**
+
+El sistema deberá permitir consultar las publicaciones disponibles y visualizar su contenido y autor.
+
+**RF-05. Interacciones básicas**
+
+El sistema podrá incorporar interacciones básicas en las publicaciones si el equipo las confirma como parte de la V1.
+
+### 3.3 Grupos internos
+
+**RF-06. Gestión de grupos**
+
+El sistema deberá permitir crear o gestionar grupos de acuerdo con los permisos definidos para la V1.
+
+**RF-07. Incorporación de integrantes**
+
+El sistema deberá permitir incorporar usuarios a los grupos y visualizar a sus integrantes.
+
+**RF-08. Comunicación grupal**
+
+El sistema deberá permitir publicar contenido o comunicarse dentro de los grupos.
+
+### 3.4 Mensajería privada
+
+**RF-09. Inicio de conversaciones**
+
+El sistema deberá permitir iniciar una conversación privada entre usuarios.
+
+**RF-10. Envío y recepción de mensajes**
+
+El sistema deberá permitir enviar y recibir mensajes dentro de una conversación privada.
+
+**RF-11. Historial de conversaciones**
+
+El sistema deberá permitir consultar el historial de mensajes de una conversación.
+
+### 3.5 Compartición de archivos
+
+**RF-12. Compartición de archivos**
+
+El sistema deberá permitir compartir archivos en los espacios autorizados de la V1, específicamente en conversaciones privadas y grupos.
+
+**RF-13. Validación de archivos**
+
+El sistema deberá aplicar las validaciones y restricciones de archivos que se definan para la V1, incluyendo formatos y tamaño máximo permitido.
+
+### 3.6 Moderación asistida por inteligencia artificial
+
+**RF-14. Detección de contenido potencialmente problemático**
+
+El sistema deberá incorporar un mecanismo de inteligencia artificial que permita identificar contenido potencialmente problemático.
+
+**RF-15. Señalamiento de contenido**
+
+El sistema deberá permitir señalar contenido identificado por el mecanismo de moderación para su revisión.
+
+**RF-16. Revisión humana**
+
+El sistema deberá contemplar la revisión humana de los casos señalados por la moderación asistida por IA.
+
+### 3.7 Operación en red local
+
+**RF-17. Funcionamiento en red local**
+
+El sistema deberá permitir la operación de la V1 dentro del entorno de red Wi-Fi o local establecido para el proyecto.
+
+## 4. Requerimientos no funcionales
+
+Los requerimientos no funcionales describen las condiciones de calidad, seguridad y operación que deberá cumplir el sistema.
+
+**RNF-01. Seguridad**
+
+La solución deberá contemplar controles de seguridad adecuados para los perfiles, las conversaciones, los grupos y los archivos compartidos. Los controles específicos deberán definirse durante el diseño técnico.
+
+**RNF-02. Privacidad**
+
+La solución deberá considerar la protección de la información de los usuarios y el acceso autorizado a las conversaciones y los archivos.
+
+**RNF-03. Operación**
+
+La implementación deberá ser compatible con la infraestructura de red local prevista para la V1.
+
+**RNF-04. Validación**
+
+Los requerimientos implementados deberán contar con escenarios de prueba y criterios de aceptación verificables.
+
+**RNF-05. Viabilidad técnica**
+
+La solución deberá mantener una complejidad compatible con los recursos y las capacidades del equipo de desarrollo.
+
+**Nota:** los requerimientos no funcionales anteriores son una base inicial. Los niveles de rendimiento, las medidas específicas de seguridad y las condiciones de disponibilidad deberán definirse antes de considerarlos requisitos verificables definitivos.
+
+## 5. Prioridades iniciales
+
+| Prioridad | Criterio |
+|---|---|
+| Alta | Capacidad comprometida en el núcleo funcional de la V1. |
+| Media | Elemento condicionado a una decisión del equipo o a la definición de permisos y reglas. |
+| Pendiente | Requerimiento que necesita mayor definición antes de asignar una prioridad definitiva. |
+
+Las capacidades principales —perfiles, publicaciones, grupos, mensajería privada, archivos, moderación asistida por IA y operación local— tendrán prioridad alta por estar contempladas expresamente en el alcance.
+
+Las interacciones básicas en publicaciones, los datos opcionales del perfil y las reglas detalladas de permisos deberán confirmarse antes de cerrar sus especificaciones.
+
+## 6. Decisiones pendientes
+
+Antes de aprobar los requerimientos, el equipo deberá definir:
+
+- Mecanismo de autenticación e identificación de usuarios.
+- Datos obligatorios y opcionales de los perfiles.
+- Permisos para crear, administrar y participar en grupos.
+- Reglas para modificar o eliminar publicaciones y mensajes.
+- Formatos, tamaño máximo, almacenamiento y eliminación de archivos.
+- Criterios de detección y flujo de revisión de la moderación con IA.
+- Controles de acceso y protección de datos.
+- Condiciones técnicas de operación en la red local.
+- Criterios de aceptación y casos de prueba para cada requerimiento.
+
+## 7. Trazabilidad
+
+Cada requerimiento deberá relacionarse con su fuente, prioridad, historia de usuario o caso de uso y criterio de aceptación correspondiente.
+
+La matriz de trazabilidad permitirá verificar que las necesidades del proyecto se encuentren atendidas sin incorporar funcionalidades fuera del alcance aprobado.
+
+## 8. Control de cambios
+
+Cualquier requerimiento que implique ampliar el alcance de NEXO V1 deberá evaluarse y aprobarse antes de incorporarse a la planificación o al desarrollo.
+
+Los requerimientos podrán refinarse durante el proyecto, conservando su identificación y trazabilidad con las necesidades, los objetivos y los criterios de aceptación.
+>>>>>>> 0cc91ef (Requerimientos)
