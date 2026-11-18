@@ -1,7 +1,10 @@
 # Auditoría de la base de datos: MySQL → PostgreSQL
 
-Fuente de verdad: [`nexo/database/nexo.sql`](../database/nexo.sql) (MySQL/MariaDB de XAMPP, motor InnoDB, `utf8mb4_unicode_ci`)
-y las consultas de la app PHP en `nexo/`. Resultado: [`migrations/`](../../migrations).
+Fuente de verdad: `nexo/database/nexo.sql` (MySQL/MariaDB de XAMPP, motor InnoDB, `utf8mb4_unicode_ci`)
+y las consultas de la app PHP en `nexo/`. Resultado: [`migrations/`](../migrations).
+
+> El esquema MySQL y la app PHP se retiraron el 18/11/2026; siguen en el historial de Git (commit `09433e7`).
+> Esta auditoría se conserva como registro de cómo se tradujo el esquema.
 
 ## 1. Inventario del esquema de origen
 

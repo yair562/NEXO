@@ -2,12 +2,12 @@
 
 Aquí van los scripts de esquema que ya no se aplican con `apply_migrations.ps1`. Esta carpeta no se lee al migrar.
 
-## Esquema MySQL de origen
+## Esquema MySQL de origen (retirado)
 
-El esquema MySQL original **no se movió aquí** porque sigue en uso: la app PHP funciona con MySQL cambiando
-`DB_MOTOR` a `mysql` en `nexo/config/config.local.php`, que es lo que necesita InfinityFree (no ofrece PostgreSQL).
+El esquema MySQL original (`nexo/database/nexo.sql`) se usaba con el prototipo PHP de los Sprints 1 y 2 para publicar
+en InfinityFree. El 18/11/2026 el equipo retiró el prototipo PHP porque el producto se construye con Flask y PostgreSQL,
+y el esquema MySQL se eliminó junto con él.
 
-- Archivo: [`nexo/database/nexo.sql`](../../nexo/database/nexo.sql)
-- Equivalencia con PostgreSQL: [`nexo/docs/auditoria_mysql_postgresql.md`](../../nexo/docs/auditoria_mysql_postgresql.md)
-
-Si el equipo decide dejar MySQL por completo, ese archivo se mueve aquí y se quita la rama `mysql` de `nexo/includes/db.php`.
+- Sigue disponible en el historial de Git: commit `09433e7`, archivo `BD/NEXO_BASE_DE_DATOS/nexo/database/nexo.sql`.
+- Para verlo: `git show 09433e7:BD/NEXO_BASE_DE_DATOS/nexo/database/nexo.sql`
+- Equivalencia de tipos MySQL → PostgreSQL: [`docs/auditoria_mysql_postgresql.md`](../../docs/auditoria_mysql_postgresql.md)

@@ -22,22 +22,3 @@ Requisitos: `.env`, `docker compose up -d` y las migraciones aplicadas a la base
 | `-IncluirReinicio` | `docker compose restart` (no borra volúmenes) y comprueba que datos, historial y API siguen |
 
 Los archivos SQL de `sql/` revierten todo lo que hacen (`BEGIN ... ROLLBACK`).
-
-## `app_e2e.ps1` — app PHP contra la base configurada
-
-```powershell
-powershell -ExecutionPolicy Bypass -File .\tests\app_e2e.ps1
-```
-
-Requisitos: Apache de XAMPP encendido con `pdo_pgsql` habilitado, `nexo/config/config.local.php` apuntando a PostgreSQL y
-los datos de prueba creados con `http://localhost/nexo/instalar.php`.
-
-Recorre los flujos del Sprint 1 y 2: inicio de sesión, publicación resguardada con código y adjunto, voto, guardado,
-respuesta, permisos, moderación, perfil, búsqueda sin mayúsculas ni acentos y recuperación de contraseña.
-Borra la publicación que crea. Sirve igual con `DB_MOTOR` en `mysql` para comprobar que MySQL sigue funcionando.
-
-| Código | Significado |
-|---|---|
-| `0` | Todo correcto |
-| `1` | Alguna comprobación falló |
-| `2` | La app no responde |

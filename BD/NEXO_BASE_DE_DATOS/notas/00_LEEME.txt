@@ -9,7 +9,7 @@ Repositorio: https://github.com/FlyJona/NEXO_BASE_DE_DATOS
 
 Esta carpeta explica, en orden, qué se hizo en el repositorio y por qué.
 Son notas para el equipo y el asesor; la documentación técnica completa
-está en los README (raíz, nexo/, migrations/, scripts/ y tests/).
+está en los README (BD/NEXO_BASE_DE_DATOS, migrations/, scripts/ y tests/).
 
 Archivos:
   01_sprint_1_y_2.txt          Diseño de la base de datos y la app PHP (MVP).
@@ -18,12 +18,12 @@ Archivos:
   04_migracion_postgresql.txt  Cambio de MySQL a PostgreSQL + PostgREST.
   05_limpieza_y_demo.txt       Revisión del repositorio y demostración final.
   06_pendientes.txt            Lo que falta y solo puede hacer el equipo.
+  07_retiro_app_php.txt        Retiro del prototipo PHP (18/11/2026).
 
 Notas dentro de cada carpeta (NOTAS.txt):
   formularios/NOTAS.txt           Qué contiene cada formulario de gestión.
   migrations/NOTAS.txt            Estructura en PostgreSQL (las 10 tablas).
-  nexo/database/NOTAS.txt         Estructura en MySQL (para InfinityFree).
-  nexo/docs/NOTAS.txt             Diagramas E-R y relacional, auditoría.
+  docs/NOTAS.txt                  Diagramas E-R y relacional, auditoría.
   docker/postgres/init/NOTAS.txt  Roles y permisos de PostgreSQL.
 
 Historial de commits:

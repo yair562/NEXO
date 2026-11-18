@@ -1,0 +1,57 @@
+07 - RETIRO DEL PROTOTIPO PHP (18/11/2026)
+==========================================
+
+Decisión
+--------
+El equipo construye NEXO con Flask (Python) + PostgreSQL + HTML/JS
+(docs/07_arquitectura/arquitectura_tecnologica.md en la raíz del
+repositorio). El prototipo PHP de los Sprints 1 y 2 ya no se usará, así
+que se retiró del repositorio en la rama "jona".
+
+Qué se borró
+------------
+- BD/NEXO_BASE_DE_DATOS/nexo/        La app PHP completa (páginas,
+                                     includes/, assets/, config/, uploads/,
+                                     instalar.php).
+- BD/NEXO_BASE_DE_DATOS/nexo/database/nexo.sql
+                                     El esquema MySQL; solo lo usaba el PHP
+                                     para publicar en InfinityFree.
+- nexo/ (raíz del repositorio)       El rediseño del login PHP que se
+                                     distribuía como parche manual. Sus
+                                     imágenes ya están en frontend/static/img/.
+- tests/app_e2e.ps1                  La prueba de extremo a extremo de la app PHP.
+
+Todo sigue disponible en el historial de Git (commit 09433e7).
+Ejemplo: git show 09433e7:BD/NEXO_BASE_DE_DATOS/nexo/database/nexo.sql
+
+Qué se conservó y movió
+-----------------------
+- Diagramas E-R y relacional, arquitectura y auditoría MySQL -> PostgreSQL:
+  de nexo/docs/ a docs/ (dentro de BD/NEXO_BASE_DE_DATOS).
+
+Qué se actualizó
+----------------
+- README.md de la base: sin la app PHP; ahora describe el servicio
+  "backend" (Flask) que ya estaba en compose.yaml.
+- scripts/new_env.ps1: ya no crea nexo/config/config.local.php y ahora
+  genera NEXO_FLASK_SECRET_KEY (antes quedaba el texto de plantilla
+  "cambia_esto...", que Flask usaba como clave de sesión).
+- scripts/check_connection.ps1: revisa también NEXO_FLASK_SECRET_KEY.
+- README de scripts/, tests/ y migrations/, compose.yaml (un comentario)
+  y estas notas.
+
+Qué NO se cambió
+----------------
+- Las migraciones V000 a V006: sus comentarios internos aún mencionan
+  rutas del PHP (nexo/docs/, nexo/instalar.php). Editar una migración
+  aplicada cambia su checksum y el script la rechazaría.
+- Los documentos de docs/07_arquitectura/ (raíz) todavía enlazan
+  nexo/login.php en su "Plan de migración del login PHP"; esos enlaces
+  quedan rotos. Le corresponde al autor de esos documentos actualizarlos.
+- Las notas 01 a 06 cuentan lo que se hizo en su momento y se dejan
+  como historia.
+
+Pendiente relacionado
+---------------------
+- Los diagramas no incluyen las tablas padron_estudiantes y activaciones
+  (V005).

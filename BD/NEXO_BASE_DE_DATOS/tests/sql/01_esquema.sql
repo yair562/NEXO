@@ -5,7 +5,7 @@ DECLARE
     faltantes text;
     n integer;
 BEGIN
-    -- 10 tablas de nexo/database/nexo.sql
+    -- 10 tablas de V001 (traducidas del esquema MySQL original)
     SELECT string_agg(t, ', ') INTO faltantes
     FROM unnest(ARRAY['usuarios', 'recuperaciones', 'perfiles', 'materias', 'usuario_materias', 'publicaciones',
                       'adjuntos', 'comentarios', 'votos', 'guardados']) AS t
