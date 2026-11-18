@@ -1,0 +1,6 @@
+PARCHE 1 — includes/encabezado.php
+Pega estas líneas justo DESPUÉS de la línea que carga assets/nexo.css:
+
+    <?php foreach ($estilosPagina ?? [] as $hoja): ?>
+        <link rel="stylesheet" href="<?= e(url($hoja)) ?>">
+    <?php endforeach; ?>

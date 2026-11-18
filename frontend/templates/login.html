@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Iniciar sesión | NEXO</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+<body>
+<svg class="login-simbolos" width="0" height="0" aria-hidden="true" focusable="false">
+    <symbol id="hexagono" viewBox="0 0 100 115">
+        <polygon points="50,5 95,30 95,85 50,110 5,85 5,30" />
+    </symbol>
+</svg>
+
+<div class="login" id="escena">
+    <div class="login-intro" id="login-intro" aria-hidden="true">
+        <div class="login-intro-escena">
+            <span class="login-intro-onda"></span>
+            <div class="login-intro-capa">
+                <img class="login-intro-mascota" src="{{ url_for('static', filename='img/mascota-tesh.png') }}"
+                     width="229" height="402" alt="">
+            </div>
+            <p class="login-intro-frase"><span>Conecta</span> <span>con</span> <span>tu</span> <span>comunidad</span></p>
+            <p class="login-intro-sub">Pregunta, responde y encuentra a estudiantes del TESH con tus mismos intereses.</p>
+        </div>
+        <p class="login-intro-saltar">Toca para saltar</p>
+    </div>
+
+    <div class="login-fondo" aria-hidden="true">
+        <div class="login-foto"></div>
+        <span class="hex-capa hex-capa--1"><svg class="hex"><use href="#hexagono" /></svg></span>
+        <span class="hex-capa hex-capa--2"><svg class="hex"><use href="#hexagono" /></svg></span>
+        <span class="hex-capa hex-capa--3"><svg class="hex"><use href="#hexagono" /></svg></span>
+        <span class="hex-capa hex-capa--4"><svg class="hex"><use href="#hexagono" /></svg></span>
+        <span class="hex-capa hex-capa--5"><svg class="hex"><use href="#hexagono" /></svg></span>
+        <span class="hex-capa hex-capa--6"><svg class="hex"><use href="#hexagono" /></svg></span>
+    </div>
+
+    <div class="login-contenido">
+        <section class="login-hero" aria-labelledby="login-lema">
+            <img class="login-logo" src="{{ url_for('static', filename='img/logo-nexo.png') }}"
+                 width="320" height="332" alt="NEXO, TESH Huixquilucan">
+            <h1 class="login-lema" id="login-lema">Conecta con tu comunidad</h1>
+            <p class="login-descripcion">Pregunta, responde y encuentra a estudiantes del TESH con tus mismos intereses.</p>
+            <p class="login-institucion">Tecnológico de Estudios Superiores de Huixquilucan</p>
+        </section>
+
+        <section class="login-tarjeta" aria-labelledby="login-titulo">
+            <h2 class="login-titulo" id="login-titulo">Iniciar sesión</h2>
+            <p class="login-subtitulo">Usa tu matrícula y contraseña.</p>
+
+            <form method="post" id="formulario-login" novalidate>
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                <div class="mb-3">
+                    <label class="form-label" for="matricula">Matrícula</label>
+                    <input class="form-control" id="matricula" name="matricula" type="text" required autofocus
+                           autocomplete="username" inputmode="numeric" pattern="[0-9]{1,20}"
+                           aria-describedby="matricula-error">
+                    <div class="invalid-feedback" id="matricula-error"></div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" for="contrasena">Contraseña</label>
+                    <div class="input-group has-validation">
+                        <input class="form-control" id="contrasena" name="contrasena" type="password" required
+                               autocomplete="current-password" aria-describedby="contrasena-error">
+                        <button class="btn login-ojo" type="button" id="alternar-contrasena"
+                                aria-label="Mostrar contraseña" aria-pressed="false" aria-controls="contrasena">
+                            Mostrar
+                        </button>
+                        <div class="invalid-feedback" id="contrasena-error"></div>
+                    </div>
+                </div>
+
+                <ol class="login-progreso" aria-hidden="true">
+                    <li class="login-pip" data-pip="correo"><svg class="hex"><use href="#hexagono" /></svg>Correo</li>
+                    <li class="login-pip" data-pip="contrasena"><svg class="hex"><use href="#hexagono" /></svg>Contraseña</li>
+                    <li class="login-pip" data-pip="listo"><svg class="hex"><use href="#hexagono" /></svg>Listo</li>
+                </ol>
+
+                <button class="login-enviar" type="submit" id="boton-entrar">
+                    <span class="login-enviar-texto">Entrar</span>
+                </button>
+            </form>
+
+            <div class="login-enlaces">
+                <a href="#" aria-disabled="true">Recuperación próximamente</a>
+                <a href="{{ url_for('activation_page') }}">Activar cuenta</a>
+            </div>
+        </section>
+    </div>
+</div>
+<script src="{{ url_for('static', filename='js/login.js') }}"></script>
+</body>
+</html>

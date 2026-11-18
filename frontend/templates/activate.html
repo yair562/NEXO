@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Activar cuenta | NEXO</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+<body>
+<main class="login" id="activacion">
+    <div class="login-contenido">
+        <section class="login-hero">
+            <img class="login-logo" src="{{ url_for('static', filename='img/logo-nexo.png') }}"
+                 width="320" height="332" alt="NEXO, TESH Huixquilucan">
+            <h1 class="login-lema">Activa tu cuenta</h1>
+            <p class="login-descripcion">Usa la matrícula del padrón institucional para comenzar.</p>
+        </section>
+        <section class="login-tarjeta" aria-labelledby="activacion-titulo">
+            <h2 class="login-titulo" id="activacion-titulo">Activación</h2>
+            <p class="login-subtitulo">El código se enviará al correo institucional asociado.</p>
+            <form id="formulario-activacion" novalidate>
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                <label class="form-label" for="activacion-matricula">Matrícula</label>
+                <input class="form-control" id="activacion-matricula" required inputmode="numeric"
+                       pattern="[0-9]{1,20}" autocomplete="username">
+                <label class="form-label" for="activacion-codigo">Código</label>
+                <input class="form-control" id="activacion-codigo" inputmode="numeric" maxlength="6"
+                       autocomplete="one-time-code">
+                <label class="form-label" for="activacion-contrasena">Nueva contraseña</label>
+                <input class="form-control" id="activacion-contrasena" type="password" minlength="10"
+                       autocomplete="new-password">
+                <p class="invalid-feedback" id="activacion-mensaje" role="alert"></p>
+                <button class="login-enviar" type="submit">Enviar código</button>
+            </form>
+            <div class="login-enlaces">
+                <a href="{{ url_for('login_page') }}">Volver al inicio</a>
+            </div>
+        </section>
+    </div>
+</main>
+<script src="{{ url_for('static', filename='js/activation.js') }}"></script>
+</body>
+</html>
