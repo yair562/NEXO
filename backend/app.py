@@ -7,6 +7,14 @@ from flask import Flask, jsonify, redirect, render_template, request, session, u
 from backend.config import PROJECT_ROOT, settings
 from backend.database import DatabaseConnectionError, get_connection
 from backend.auth import AuthError, authenticate, get_active_account, request_activation, set_password
+from backend.profiles import (
+    BIOGRAFIA_MAX,
+    CARRERA_MAX,
+    ProfileError,
+    get_profile,
+    list_subjects,
+    save_profile,
+)
 
 
 def create_app() -> Flask:
@@ -160,21 +168,67 @@ def create_app() -> Flask:
             "rol": session["rol"],
         }, 200
 
-    @app.get("/app")
-    def application_home():
+    def active_account() -> dict[str, Any] | None:
+        """Cuenta en sesión si sigue activa; si no, borra la sesión (conservando el token CSRF)."""
         account = get_active_account(session.get("user_id"))
-        if account is None:
-            # Sin sesión, o la cuenta se suspendió o desactivó después de iniciar sesión.
+        if account is None and "user_id" in session:
+            # La cuenta se suspendió o desactivó después de iniciar sesión.
             csrf = session.get("_csrf_token")
             session.clear()
             if csrf:
                 session["_csrf_token"] = csrf
+        return account
+
+    def session_required() -> tuple[dict[str, str], int]:
+        return {"status": "error", "message": "Sesión requerida."}, 401
+
+    @app.get("/app")
+    def application_home():
+        account = active_account()
+        if account is None:
             return redirect(url_for("login_page"))
         return render_template("app.html", cuenta=account)
+
+    @app.get("/perfil")
+    def profile_page():
+        account = active_account()
+        if account is None:
+            return redirect(url_for("login_page"))
+        materias_por_semestre: dict[int, list[dict[str, Any]]] = {}
+        for materia in list_subjects():
+            materias_por_semestre.setdefault(materia["semestre"], []).append(materia)
+        return render_template(
+            "perfil.html",
+            cuenta=account,
+            perfil=get_profile(account["id"]),
+            materias_por_semestre=materias_por_semestre,
+            limites={"carrera": CARRERA_MAX, "biografia": BIOGRAFIA_MAX},
+        )
+
+    @app.get("/api/perfil")
+    def profile_read():
+        account = active_account()
+        if account is None:
+            return session_required()
+        return {"status": "ok", "perfil": get_profile(account["id"])}, 200
+
+    @app.put("/api/perfil")
+    def profile_update():
+        account = active_account()
+        if account is None:
+            return session_required()
+        payload = request.get_json(silent=True)
+        if not isinstance(payload, dict):
+            payload = {}
+        return {"status": "ok", "perfil": save_profile(account["id"], payload)}, 200
 
     @app.errorhandler(AuthError)
     def handle_auth_error(error: AuthError):
         return {"status": "error", "code": error.code, "message": error.message}, error.status
+
+    @app.errorhandler(ProfileError)
+    def handle_profile_error(error: ProfileError):
+        return {"status": "error", "code": "invalid_field", "field": error.field, "message": error.message}, 400
 
     return app
 

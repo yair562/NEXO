@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% block titulo %}Mi perfil{% endblock %}
+{% block contenido %}
+    <section class="app-saludo" aria-labelledby="perfil-titulo">
+        <h1 id="perfil-titulo">Mi perfil</h1>
+        <p>Así te encontrarán tus compañeros con los mismos intereses.</p>
+    </section>
+
+    <form class="perfil" id="formulario-perfil" novalidate>
+        <section class="perfil-bloque" aria-labelledby="perfil-identidad">
+            <h2 id="perfil-identidad">Datos institucionales</h2>
+            <p class="perfil-ayuda">Vienen del padrón del TESH y no se pueden editar.</p>
+            <dl class="perfil-datos">
+                <div><dt>Nombre</dt><dd>{{ cuenta.nombre }}</dd></div>
+                <div><dt>Matrícula</dt><dd>{{ cuenta.matricula }}</dd></div>
+                <div><dt>Correo</dt><dd>{{ cuenta.correo }}</dd></div>
+            </dl>
+        </section>
+
+        <section class="perfil-bloque" aria-labelledby="perfil-academico">
+            <h2 id="perfil-academico">Datos académicos</h2>
+            <div class="perfil-fila">
+                <div class="perfil-campo perfil-campo--ancho">
+                    <label for="carrera">Carrera</label>
+                    <input id="carrera" name="carrera" maxlength="{{ limites.carrera }}"
+                           value="{{ perfil.carrera or '' }}" placeholder="Ingeniería en Sistemas Computacionales">
+                    <p class="perfil-error" data-error="carrera" hidden></p>
+                </div>
+                <div class="perfil-campo">
+                    <label for="semestre">Semestre</label>
+                    <select id="semestre" name="semestre">
+                        <option value="">Sin indicar</option>
+                        {% for numero in range(1, 13) %}
+                        <option value="{{ numero }}" {% if perfil.semestre == numero %}selected{% endif %}>{{ numero }}</option>
+                        {% endfor %}
+                    </select>
+                    <p class="perfil-error" data-error="semestre" hidden></p>
+                </div>
+            </div>
+            <div class="perfil-campo">
+                <label for="biografia">Sobre mí</label>
+                <textarea id="biografia" name="biografia" rows="3" maxlength="{{ limites.biografia }}">{{ perfil.biografia or '' }}</textarea>
+                <p class="perfil-error" data-error="biografia" hidden></p>
+            </div>
+            <div class="perfil-fila">
+                <div class="perfil-campo perfil-campo--ancho">
+                    <label for="habilidades">Habilidades</label>
+                    <input id="habilidades" name="habilidades" value="{{ perfil.habilidades or '' }}" placeholder="Java, diseño, cálculo">
+                    <p class="perfil-ayuda">Sepáralas con comas. Máximo 15.</p>
+                    <p class="perfil-error" data-error="habilidades" hidden></p>
+                </div>
+                <div class="perfil-campo perfil-campo--ancho">
+                    <label for="intereses">Intereses</label>
+                    <input id="intereses" name="intereses" value="{{ perfil.intereses or '' }}" placeholder="robótica, videojuegos, emprendimiento">
+                    <p class="perfil-ayuda">Sepáralos con comas. Máximo 15.</p>
+                    <p class="perfil-error" data-error="intereses" hidden></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="perfil-bloque" aria-labelledby="perfil-materias">
+            <h2 id="perfil-materias">Materias que cursas o cursaste</h2>
+            <p class="perfil-error" data-error="materias" hidden></p>
+            <div class="perfil-semestres">
+                {% for semestre, materias in materias_por_semestre.items() %}
+                <fieldset>
+                    <legend>Semestre {{ semestre }}</legend>
+                    {% for materia in materias %}
+                    <label class="perfil-materia">
+                        <input type="checkbox" name="materias" value="{{ materia.id }}" {% if materia.id in perfil.materias %}checked{% endif %}>
+                        {{ materia.nombre }}
+                    </label>
+                    {% endfor %}
+                </fieldset>
+                {% endfor %}
+            </div>
+        </section>
+
+        <div class="perfil-acciones">
+            <button class="perfil-guardar" type="submit" id="guardar-perfil">Guardar perfil</button>
+            <p class="perfil-estado" id="perfil-estado" role="status"></p>
+        </div>
+    </form>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/perfil.js') }}"></script>
+{% endblock %}
