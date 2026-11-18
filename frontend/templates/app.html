@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>Inicio | NEXO</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+</head>
+<body class="app">
+<header class="app-barra">
+    <a class="app-marca" href="{{ url_for('application_home') }}">
+        <img src="{{ url_for('static', filename='img/logo-nexo.png') }}" width="40" height="42" alt="">
+        <span>NEXO</span>
+    </a>
+    <div class="app-usuario">
+        <span class="app-usuario-nombre">{{ cuenta.nombre }}</span>
+        <span class="app-rol">{{ cuenta.rol | capitalize }}</span>
+        <button class="app-salir" type="button" id="cerrar-sesion">Cerrar sesión</button>
+    </div>
+</header>
+
+<main class="app-contenido">
+    <section class="app-saludo" aria-labelledby="app-titulo">
+        <h1 id="app-titulo">Hola, {{ cuenta.nombre.split()[0] }}</h1>
+        <p>Matrícula {{ cuenta.matricula }} · {{ cuenta.correo }}</p>
+        <p class="app-error" id="app-mensaje" role="alert" hidden></p>
+    </section>
+
+    <section aria-labelledby="app-secciones">
+        <h2 class="app-subtitulo" id="app-secciones">Tu comunidad</h2>
+        <ul class="app-tarjetas">
+            <li class="app-tarjeta" aria-disabled="true">
+                <h3>Mi perfil</h3>
+                <p>Carrera, semestre, materias, habilidades e intereses.</p>
+                <span class="app-pronto">Próximamente</span>
+            </li>
+            <li class="app-tarjeta" aria-disabled="true">
+                <h3>Publicaciones</h3>
+                <p>Dudas y contenidos de estudiantes del TESH.</p>
+                <span class="app-pronto">Próximamente</span>
+            </li>
+            <li class="app-tarjeta" aria-disabled="true">
+                <h3>Preguntas por materia</h3>
+                <p>Resuelve dudas con quienes cursan lo mismo que tú.</p>
+                <span class="app-pronto">Próximamente</span>
+            </li>
+            <li class="app-tarjeta" aria-disabled="true">
+                <h3>Buscar</h3>
+                <p>Encuentra estudiantes y respuestas que ya existen.</p>
+                <span class="app-pronto">Próximamente</span>
+            </li>
+            {% if cuenta.rol in ('moderador', 'administrador') %}
+            <li class="app-tarjeta" aria-disabled="true">
+                <h3>Moderación</h3>
+                <p>Revisa reportes y contenido de la comunidad.</p>
+                <span class="app-pronto">Próximamente</span>
+            </li>
+            {% endif %}
+        </ul>
+    </section>
+</main>
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

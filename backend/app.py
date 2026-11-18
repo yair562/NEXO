@@ -2,11 +2,11 @@ import secrets
 from datetime import timedelta
 from typing import Any, Callable
 
-from flask import Flask, jsonify, render_template, request, session
+from flask import Flask, jsonify, redirect, render_template, request, session, url_for
 
 from backend.config import PROJECT_ROOT, settings
 from backend.database import DatabaseConnectionError, get_connection
-from backend.auth import AuthError, authenticate, request_activation, set_password
+from backend.auth import AuthError, authenticate, get_active_account, request_activation, set_password
 
 
 def create_app() -> Flask:
@@ -79,6 +79,8 @@ def create_app() -> Flask:
 
     @app.get("/")
     def login_page():
+        if "user_id" in session:
+            return redirect(url_for("application_home"))
         return render_template("login.html")
 
     @app.get("/activate")
@@ -160,13 +162,15 @@ def create_app() -> Flask:
 
     @app.get("/app")
     def application_home():
-        if "user_id" not in session:
-            return {"status": "error", "message": "Sesión requerida."}, 401
-        return {
-            "status": "ok",
-            "message": "Sesión activa en NEXO.",
-            "matricula": session["matricula"],
-        }, 200
+        account = get_active_account(session.get("user_id"))
+        if account is None:
+            # Sin sesión, o la cuenta se suspendió o desactivó después de iniciar sesión.
+            csrf = session.get("_csrf_token")
+            session.clear()
+            if csrf:
+                session["_csrf_token"] = csrf
+            return redirect(url_for("login_page"))
+        return render_template("app.html", cuenta=account)
 
     @app.errorhandler(AuthError)
     def handle_auth_error(error: AuthError):

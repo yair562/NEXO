@@ -230,6 +230,24 @@ def set_password(
         raise AuthError("invalid_code", "El código no es válido.")
 
 
+def get_active_account(user_id: object, config: Settings = settings) -> dict[str, object] | None:
+    """Datos públicos de la cuenta en sesión, o None si ya no existe o dejó de estar activa."""
+    if not isinstance(user_id, int):
+        return None
+    with get_connection(config) as connection:
+        connection.row_factory = dict_row
+        with connection.cursor() as cursor:
+            cursor.execute(
+                """
+                SELECT id, matricula, nombre, correo, rol
+                FROM nexo.usuarios
+                WHERE id = %s AND estado = 'ACTIVE' AND activo = TRUE
+                """,
+                (user_id,),
+            )
+            return cursor.fetchone()
+
+
 def authenticate(
     matricula_value: str, password: str, config: Settings = settings
 ) -> dict[str, object]:
