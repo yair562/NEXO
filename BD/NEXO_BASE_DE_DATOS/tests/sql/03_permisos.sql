@@ -21,6 +21,17 @@ SELECT public.debe_fallar('DELETE FROM nexo.usuarios', 'app borra usuarios');
 SELECT public.debe_fallar('SELECT * FROM nexo_meta.schema_migrations', 'app lee el historial');
 SELECT public.debe_fallar('CREATE TABLE nexo.intrusa (id int)', 'app crea tablas');
 SELECT public.debe_fallar('DROP TABLE nexo.votos', 'app borra tablas');
+-- Identidad (V005): el backend Flask lee el padrón, crea cuentas pendientes y activaciones y las actualiza
+INSERT INTO nexo.padron_estudiantes (matricula, nombre, correo) VALUES ('20259999', 'Permiso', 'l20259999@huixquilucan.tecnm.mx');
+SELECT nombre FROM nexo.padron_estudiantes WHERE matricula = '20259999';
+UPDATE nexo.padron_estudiantes SET autorizado = FALSE WHERE matricula = '20259999';
+INSERT INTO nexo.usuarios (nombre, correo, matricula, estado) VALUES ('Pendiente', 'l20259999@prueba.test', '20259999', 'PENDING');
+INSERT INTO nexo.activaciones (usuario_id, codigo_hash, expira_en)
+SELECT id, repeat('b', 64), now() + interval '15 minutes' FROM nexo.usuarios WHERE matricula = '20259999';
+SELECT id FROM nexo.activaciones WHERE codigo_hash = repeat('b', 64) FOR UPDATE;
+UPDATE nexo.activaciones SET intentos = intentos + 1 WHERE codigo_hash = repeat('b', 64);
+SELECT public.debe_fallar('DELETE FROM nexo.padron_estudiantes', 'app borra el padrón');
+SELECT public.debe_fallar('DELETE FROM nexo.activaciones', 'app borra activaciones');
 RESET ROLE;
 
 -- web_anon: solo el catálogo

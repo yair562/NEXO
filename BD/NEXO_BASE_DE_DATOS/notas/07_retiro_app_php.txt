@@ -55,3 +55,21 @@ Pendiente relacionado
 ---------------------
 - Los diagramas no incluyen las tablas padron_estudiantes y activaciones
   (V005).
+
+Pruebas actualizadas para V005 y V006 (18/11/2026)
+--------------------------------------------------
+Las pruebas de tests/ seguían esperando el esquema hasta V004 (10 tablas,
+5 migraciones y un usuario "docente") y fallaban con las migraciones de
+Yair. Se actualizaron:
+- 01_esquema.sql: 12 tablas, 14 llaves foráneas, 7 migraciones, y las
+  columnas y restricciones nuevas de V005 y V006.
+- 02_restricciones.sql: roles de V006 (rechaza "docente"), matrícula,
+  estados de cuenta, padrón institucional y activaciones.
+- 03_permisos.sql: lo que el backend Flask hace con el padrón y las
+  activaciones, y que no pueda borrarlos.
+- run_tests.ps1: toma la lista de migraciones de la carpeta migrations/,
+  así no hay que editarlo al agregar V007.
+
+Resultado: 19 de 19 pruebas correctas, en una base de prueba aislada
+(proyecto Docker "nexo_jona", puertos 55432/3100/3101) para no tocar la
+base del repositorio anterior NEXO_Formularios.

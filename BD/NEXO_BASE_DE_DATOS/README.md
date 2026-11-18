@@ -176,6 +176,7 @@ Guarda las copias **fuera** del repositorio: contienen datos personales.
 | La API responde 404 en `/materias` | Las vistas se crearon después de arrancar PostgREST: `docker compose restart api` |
 | `/api/health/database` del backend responde 503 | El backend no se conecta: revisa `NEXO_APP_PASSWORD` y `docker compose logs backend` |
 | Puerto 5432 ocupado | Cambia `POSTGRES_HOST_PORT` en `.env` |
+| Ya tienes otro stack llamado `nexo` en tu PC (por ejemplo, de una copia anterior del proyecto) | Agrega `COMPOSE_PROJECT_NAME=otro_nombre` en `.env` y usa otros puertos; si no, Docker reutiliza el volumen y la base de esa copia |
 
 ## Limitaciones conocidas
 
