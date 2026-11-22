@@ -1,0 +1,90 @@
+flowchart TD
+    %% DIAGRAMA 02 — Flujo de colaboración: Comunidad, Grupos y Equipos
+    %% Actores: Usuario (ACTIVE), Coordinador de Grupo/Equipo, Sistema NEXO + IA, Moderador/Administrador
+
+    Usuario(["Usuario autenticado (rol ACTIVE)"]) --> Contexto{"¿Espacio de colaboración?"}
+
+    %% --- 1. COMUNIDAD ---
+    subgraph Comunidad["Comunidad (Publicaciones generales abiertas)"]
+        direction TB
+        C1["Consultar publicaciones visibles (ocultas solo para autor y moderadores)"]
+        C2["Crear publicación textual (en Comunidad o vinculada a un Grupo)"]
+        C2 --> C3["Sistema ejecuta análisis asistido por IA (RF-16)"]
+        C3 --> DecIA{"¿IA detecta contenido potencialmente problemático?"}
+        DecIA -- "No" --> C4["Publicación queda visible en Comunidad"]
+        DecIA -- "Sí" --> C5["Sistema marca/señala contenido para revisión humana SIN bloqueo automático (RNF-10)"]
+        C5 --> ModCola
+
+        C1 --> C6["Interactuar con publicación: comentar / reaccionar [Alcance V1: PENDIENTE DP-03]"]
+        C6 --> DecRep{"¿Usuario reporta contenido?"}
+        DecRep -- "Sí" --> C7["Registra reporte de usuario"]
+        C7 --> ModCola
+        DecRep -- "No" --> C1
+    end
+
+    %% --- 2. MODERACIÓN TRANSVERSAL ---
+    subgraph Moderacion["Moderación asistida por IA y revisión humana"]
+        direction TB
+        ModCola["Cola de contenido señalado (señal IA o reporte de usuario)"]
+        ModCola --> ModRev["Moderador / Administrador realiza revisión humana [Roles/criterios: PENDIENTE DP-06]"]
+        ModRev --> DecMod{"¿Contenido infringe normas?"}
+        DecMod -- "No" --> ModKeep["Desestimar señal / mantener o restaurar contenido visible"]
+        DecMod -- "Sí" --> ModAct["Aplicar acción [Catálogo: PENDIENTE DP-07]: ocultar, advertir o suspender"]
+        ModKeep --> ModLog["Registrar decisión y trazabilidad de revisión"]
+        ModAct --> ModLog
+    end
+
+    %% --- 3. GRUPOS (ESPACIOS) ---
+    subgraph Grupos["Grupos (Espacios temáticos o de proyecto con membresía)"]
+        direction TB
+        G1["Consultar grupos disponibles (públicos o propios)"]
+        G1 --> DecGrupo{"¿Acción en Grupos?"}
+
+        DecGrupo -- "Crear grupo" --> G2["Crear grupo [Permisos de creación: PENDIENTE DP-04]: nombre, propósito, visibilidad"]
+        G2 --> G3["Creador queda asignado como Coordinador del grupo"]
+
+        DecGrupo -- "Unirse / Solicitar ingreso" --> DecVis{"¿Grupo público o privado? [Reglas: PENDIENTE DP-04]"}
+        DecVis -- "Público" --> G4["Incorporación como Miembro del grupo"]
+        DecVis -- "Privado" --> G5["Envía solicitud / recibe invitación"]
+        G5 --> DecAprobG{"¿Coordinador aprueba ingreso?"}
+        DecAprobG -- "Sí" --> G4
+        DecAprobG -- "No" --> GRech["Solicitud rechazada"]
+
+        DecGrupo -- "Consultar actividad" --> DecMiembroG{"¿Es miembro autorizado?"}
+        DecMiembroG -- "No" --> GDen["Acceso restringido a actividad interna"]
+        DecMiembroG -- "Sí" --> G6["Consultar publicaciones/mensajes del grupo y archivos compartidos (Ver Diagrama 03)"]
+        G6 -. "Puede originar" .-> E1
+
+        DecGrupo -- "Administrar / Gestionar integrantes" --> DecCoordG{"¿Es Coordinador del grupo o Admin?"}
+        DecCoordG -- "No" --> GDen
+        DecCoordG -- "Sí" --> G7["Agregar, aceptar o retirar integrantes y administrar grupo"]
+    end
+
+    %% --- 4. EQUIPOS ---
+    subgraph Equipos["Equipos (Agrupaciones operativas de trabajo o estudio)"]
+        direction TB
+        E1["Consultar equipos (independientes o vinculados a un Grupo)"]
+        E1 --> DecEquipo{"¿Acción en Equipos?"}
+
+        DecEquipo -- "Crear equipo" --> E2["Crear equipo: objetivo, tipo (trabajo/estudio), cupo máximo y grupo opcional"]
+        E2 --> E3["Creador queda como Coordinador / responsable inicial"]
+
+        DecEquipo -- "Solicitar ingreso" --> DecCupo{"¿Equipo abierto y con cupo disponible?"}
+        DecCupo -- "No (cerrado o cupo lleno)" --> ENoCupo["Solicitud no permitida"]
+        DecCupo -- "Sí" --> E4["Registra solicitud (estado: pendiente)"]
+        E4 --> DecAprobE{"¿Coordinador del equipo acepta?"}
+        DecAprobE -- "No" --> ERech["Solicitud rechazada"]
+        DecAprobE -- "Sí" --> E5["Incorporado como Integrante (estado: aceptado)"]
+
+        DecEquipo -- "Gestionar participantes y responsables" --> DecCoordE{"¿Es Coordinador del equipo?"}
+        DecCoordE -- "No" --> EDen["Operación denegada"]
+        DecCoordE -- "Sí" --> E6["Asignar responsables (coordinadores) o retirar participantes"]
+
+        DecEquipo -- "Actividad colaborativa" --> DecIntE{"¿Es integrante aceptado?"}
+        DecIntE -- "No" --> EDen
+        DecIntE -- "Sí" --> E7["Consultar y desarrollar actividades colaborativas del equipo"]
+    end
+
+    Contexto -- "Comunidad" --> C1
+    Contexto -- "Grupos" --> G1
+    Contexto -- "Equipos" --> E1

@@ -1,0 +1,71 @@
+flowchart TD
+    %% DIAGRAMA 01 — Flujo general de NEXO (V1)
+    %% Actores: Usuario (Estudiante / Moderador / Administrador), Sistema NEXO (Flask + PostgreSQL), Correo Institucional (SMTP)
+
+    Inicio(["Acceso a NEXO en red local / navegador"]) --> DecCuenta{"¿Cuenta ya activada?"}
+
+    %% --- RAMA A: ACTIVACIÓN (Sin registro público abierto) ---
+    subgraph Activacion["Activación inicial mediante padrón institucional"]
+        direction TB
+        A1["Usuario ingresa a /activate e introduce matrícula"] --> A2["Sistema valida formato de matrícula y consulta padrón_estudiantes"]
+        A2 --> DecPadron{"¿Matrícula autorizada y cuenta inexistente o PENDING?"}
+        DecPadron -- "No" --> A3["Respuesta neutra sin confirmar pertenencia al padrón"]
+        A3 --> FinNoAuth(["Fin / Reintento"])
+        DecPadron -- "Sí" --> A4["Sistema genera código de 6 dígitos (hash, 15 min, máx. 5 intentos)"]
+        A4 --> DecSMTP{"¿Canal SMTP configurado o modo dev local?"}
+        DecSMTP -- "No" --> A5["Error 503: servicio de correo no disponible"]
+        DecSMTP -- "Sí" --> A6["Envía código al correo institucional L{MATRICULA}@huixquilucan.tecnm.mx"]
+        A6 --> A7["Usuario ingresa matrícula, código y nueva contraseña (>= 10 caracteres)"]
+        A7 --> DecCodigo{"¿Código válido, vigente, <= 5 intentos y contraseña válida?"}
+        DecCodigo -- "No" --> A8["Incrementa intentos / rechaza solicitud"]
+        A8 --> A7
+        DecCodigo -- "Sí" --> A9["Guarda hash de contraseña, marca código usado, estado = ACTIVE, rol = estudiante"]
+    end
+
+    DecCuenta -- "No (Primera vez)" --> A1
+    A9 --> L1
+
+    %% --- RAMA B: INICIO DE SESIÓN Y RECUPERACIÓN ---
+    subgraph Auth["Inicio de sesión y validación de credenciales"]
+        direction TB
+        L1["Usuario en pantalla de acceso (/)"] --> DecOlvido{"¿Olvidó su contraseña?"}
+        DecOlvido -- "Sí" --> LRec["Recuperación de acceso [PENDIENTE DE DEFINICIÓN: flujo y canal SMTP]"]
+        LRec --> L1
+        DecOlvido -- "No" --> L2["Ingresa matrícula y contraseña"]
+        L2 --> L3["Sistema consulta usuario por matrícula y verifica contraseña y estado"]
+        L3 --> DecLogin{"¿Credenciales válidas y estado = ACTIVE?"}
+        DecLogin -- "No (inválida, PENDING, SUSPENDED o INACTIVE)" --> L4["Rechazo 401: credenciales no válidas"]
+        L4 --> L1
+        DecLogin -- "Sí" --> L5["Flask crea sesión autenticada (user_id, matrícula, rol, CSRF)"]
+    end
+
+    DecCuenta -- "Sí" --> L1
+
+    %% --- RAMA C: IDENTIFICACIÓN, PERMISOS Y MÓDULOS ---
+    subgraph Modulos["Navegación principal y módulos de NEXO V1"]
+        direction TB
+        L5 --> M0["Identificación de rol global: estudiante / moderador / administrador"]
+        M0 --> MNav{"Selección de módulo en navegación"}
+
+        MNav --> MPerfil["Perfiles: consultar/editar propio perfil y ver otros [Campos/privacidad: PENDIENTE DP-02]"]
+        MNav --> MCom["Comunidad: consultar, crear e interactuar con publicaciones (Ver Diagrama 02)"]
+        MNav --> MGrupos["Grupos y Equipos: consultar, crear, unirse y colaborar (Ver Diagrama 02)"]
+        MNav --> MMsg["Mensajería Privada: iniciar conversación, enviar/recibir y ver historial"]
+        MNav --> MArch["Archivos Compartidos: compartir, consultar, descargar o eliminar (Ver Diagrama 03)"]
+
+        MNav --> DecMod{"¿Rol = moderador o administrador?"}
+        DecMod -- "No (estudiante)" --> MDen["Acceso denegado (403) / opción no visible"]
+        DecMod -- "Sí" --> MMod["Panel de Moderación: revisar contenido señalado por IA o reportado (Ver Diagrama 02)"]
+
+        MPerfil --> MNav
+        MCom --> MNav
+        MGrupos --> MNav
+        MMsg --> MNav
+        MArch --> MNav
+        MMod --> MNav
+        MDen --> MNav
+    end
+
+    %% --- RAMA D: CIERRE DE SESIÓN ---
+    MNav -- "Cerrar sesión" --> S1["POST /api/auth/logout: limpia sesión activa"]
+    S1 --> L1

@@ -1,0 +1,45 @@
+flowchart TD
+    %% DIAGRAMA 03 — Flujo de archivos compartidos
+    %% Actores: Usuario Emisor (ACTIVE), Usuario Receptor/Consultor (ACTIVE), Sistema NEXO (Flask + Almacenamiento + PostgreSQL)
+
+    Inicio(["Usuario autenticado (ACTIVE) interactúa con Archivos"]) --> Accion{"¿Operación solicitada?"}
+
+    %% --- RAMA 1: SUBIDA Y ASOCIACIÓN DE ARCHIVO ---
+    subgraph Subida["Selección, validación, carga y almacenamiento"]
+        direction TB
+        S1["Usuario selecciona archivo y contexto destino"] --> DecCtx{"¿Contexto permitido en V1?"}
+        DecCtx -- "Publicación en Comunidad" --> SNoAlc["PENDIENTE DE CONFIRMAR EN ALCANCE (RF-14 / alcance.md 5.5)"]
+        DecCtx -- "Conversación privada o Grupo" --> DecPermSub{"¿Usuario tiene permisos en el contexto destino?"}
+
+        DecPermSub -- "No" --> SDen["Acceso denegado (403): sin permisos en conversación/grupo"]
+        DecPermSub -- "Sí" --> S2["Sistema valida archivo [Formatos, MIME y tamaño máx.: PENDIENTE DP-05]"]
+        S2 --> DecVal{"¿Archivo cumple validaciones?"}
+        DecVal -- "No" --> SRech["Archivo rechazado: notifica motivo sin almacenar"]
+        DecVal -- "Sí" --> S3["Inicia carga (upload) al servidor Flask"]
+        S3 --> DecCarga{"¿Carga completada sin fallo de red/servidor?"}
+        DecCarga -- "No (carga falla)" --> SErrCarga["Error de carga: notifica fallo y permite reintentar"]
+        DecCarga -- "Sí" --> S4["Almacena archivo [Estrategia física y retención: PENDIENTE] y registra metadatos"]
+        S4 --> S5["Asocia archivo con mensaje privado o grupo correspondiente"]
+        S5 --> DecPers{"¿Persistencia exitosa?"}
+        DecPers -- "No" --> SRollback["Limpia archivo parcial y notifica error de almacenamiento"]
+        DecPers -- "Sí" --> SOK["Archivo compartido y disponible para usuarios autorizados"]
+    end
+
+    %% --- RAMA 2: CONSULTA, DESCARGA Y ELIMINACIÓN ---
+    subgraph Acceso["Control de permisos, consulta, descarga y eliminación"]
+        direction TB
+        A1["Usuario solicita consultar, descargar o eliminar archivo"] --> DecDisp{"¿Archivo existe y sigue disponible?"}
+        DecDisp -- "No (eliminado o no disponible)" --> ANoDisp["Error 404: archivo ya no está disponible"]
+        DecDisp -- "Sí" --> DecPermAcc{"¿Usuario autorizado en la conversación o grupo (RNF-02)?"}
+        DecPermAcc -- "No" --> ADen["Acceso denegado (403): usuario sin permisos"]
+        DecPermAcc -- "Sí" --> DecOp{"¿Acción específica?"}
+
+        DecOp -- "Consultar / Ver metadatos" --> ACons["Muestra nombre, tipo, tamaño y referencia del archivo"]
+        DecOp -- "Descargar" --> ADown["Sistema entrega archivo al usuario autorizado"]
+        DecOp -- "Eliminar" --> DecPermElim{"¿Permiso para eliminar (autor / coordinador / moderador)? [Regla: PENDIENTE]"}
+        DecPermElim -- "No" --> ADenElim["Operación denegada (403): sin permiso de eliminación"]
+        DecPermElim -- "Sí" --> AElim["Elimina archivo/referencia según política y confirma al usuario"]
+    end
+
+    Accion -- "Compartir archivo" --> S1
+    Accion -- "Consultar / Descargar / Eliminar" --> A1
