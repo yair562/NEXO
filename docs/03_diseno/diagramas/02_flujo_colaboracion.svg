@@ -1,0 +1,765 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="2060" height="3164" viewBox="0 0 2060 3164" role="img" aria-labelledby="svg-title svg-desc">
+  <title id="svg-title">NEXO V1 — Diagrama 02: Flujo de colaboración (Comunidad, Grupos y Equipos)</title>
+  <desc id="svg-desc">Interacción funcional entre Comunidad, Moderación asistida por IA y revisión humana, Grupos y Equipos en NEXO V1.</desc>
+  <defs>
+    <style type="text/css"><![CDATA[
+      text { font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; }
+    ]]></style>
+    <marker id="arrow-slate" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7.5" markerHeight="7.5" orient="auto-start-reverse">
+      <path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#475569"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7.5" markerHeight="7.5" orient="auto-start-reverse">
+      <path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#059669"/>
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7.5" markerHeight="7.5" orient="auto-start-reverse">
+      <path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#DC2626"/>
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7.5" markerHeight="7.5" orient="auto-start-reverse">
+      <path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#1D4ED8"/>
+    </marker>
+    <marker id="arrow-violet" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7.5" markerHeight="7.5" orient="auto-start-reverse">
+      <path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#7C3AED"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="2060" height="3164" fill="#FFFFFF"/>
+  <g id="layer-sections">
+    <g id="sec-Comunidad" class="section">
+      <rect x="96.0" y="356.0" width="1094.0" height="796.0" rx="14" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.6"/>
+      <path d="M 110.0 356.0 L 1176.0 356.0 Q 1190.0 356.0 1190.0 370.0 L 1190.0 400.0 L 96.0 400.0 L 96.0 370.0 Q 96.0 356.0 110.0 356.0 Z" fill="#EFF6FF"/>
+      <line x1="96.0" y1="400.0" x2="1190.0" y2="400.0" stroke="#CBD5E1" stroke-width="1.2"/>
+      <rect x="110.0" y="366.0" width="28" height="24" rx="6" fill="#1E3A5F"/>
+      <text x="124.0" y="382.0" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">1</text>
+      <text class="section-title" x="150.0" y="383.0" font-size="15.5" font-weight="700" fill="#0F294A">Comunidad (Publicaciones generales abiertas)</text>
+    </g>
+    <g id="sec-Moderacion" class="section">
+      <rect x="1246.0" y="356.0" width="718.0" height="796.0" rx="14" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.6"/>
+      <path d="M 1260.0 356.0 L 1950.0 356.0 Q 1964.0 356.0 1964.0 370.0 L 1964.0 400.0 L 1246.0 400.0 L 1246.0 370.0 Q 1246.0 356.0 1260.0 356.0 Z" fill="#EFF6FF"/>
+      <line x1="1246.0" y1="400.0" x2="1964.0" y2="400.0" stroke="#CBD5E1" stroke-width="1.2"/>
+      <rect x="1260.0" y="366.0" width="28" height="24" rx="6" fill="#1E3A5F"/>
+      <text x="1274.0" y="382.0" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">2</text>
+      <text class="section-title" x="1300.0" y="383.0" font-size="15.5" font-weight="700" fill="#0F294A">Moderación asistida por IA y revisión humana</text>
+    </g>
+    <g id="sec-Grupos" class="section">
+      <rect x="96.0" y="1208.0" width="1868.0" height="860.0" rx="14" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.6"/>
+      <path d="M 110.0 1208.0 L 1950.0 1208.0 Q 1964.0 1208.0 1964.0 1222.0 L 1964.0 1252.0 L 96.0 1252.0 L 96.0 1222.0 Q 96.0 1208.0 110.0 1208.0 Z" fill="#EFF6FF"/>
+      <line x1="96.0" y1="1252.0" x2="1964.0" y2="1252.0" stroke="#CBD5E1" stroke-width="1.2"/>
+      <rect x="110.0" y="1218.0" width="28" height="24" rx="6" fill="#1E3A5F"/>
+      <text x="124.0" y="1234.0" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">3</text>
+      <text class="section-title" x="150.0" y="1235.0" font-size="15.5" font-weight="700" fill="#0F294A">Grupos (Espacios temáticos o de proyecto con membresía)</text>
+    </g>
+    <g id="sec-Equipos" class="section">
+      <rect x="96.0" y="2138.0" width="1868.0" height="882.0" rx="14" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.6"/>
+      <path d="M 110.0 2138.0 L 1950.0 2138.0 Q 1964.0 2138.0 1964.0 2152.0 L 1964.0 2182.0 L 96.0 2182.0 L 96.0 2152.0 Q 96.0 2138.0 110.0 2138.0 Z" fill="#EFF6FF"/>
+      <line x1="96.0" y1="2182.0" x2="1964.0" y2="2182.0" stroke="#CBD5E1" stroke-width="1.2"/>
+      <rect x="110.0" y="2148.0" width="28" height="24" rx="6" fill="#1E3A5F"/>
+      <text x="124.0" y="2164.0" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">4</text>
+      <text class="section-title" x="150.0" y="2165.0" font-size="15.5" font-weight="700" fill="#0F294A">Equipos (Agrupaciones operativas de trabajo o estudio)</text>
+    </g>
+  </g>
+  <g id="layer-edges">
+    <path class="connector" data-pts="1030.0,172.0 1030.0,210.0" d="M 1030.0 172.0 L 1030.0 210.0" fill="none" stroke="#475569" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+    <path class="connector" data-pts="1030.0,310.0 1030.0,326.0 580.0,326.0 580.0,422.0 348.0,422.0 348.0,447.0" d="M 1030.0 310.0 L 1030.0 318.0 Q 1030.0 326.0 1022.0 326.0 L 590.0 326.0 Q 580.0 326.0 580.0 336.0 L 580.0 412.0 Q 580.0 422.0 570.0 422.0 L 358.0 422.0 Q 348.0 422.0 348.0 432.0 L 348.0 447.0" fill="none" stroke="#1D4ED8" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-blue)"/>
+    <path class="connector" data-pts="885.0,260.0 44.0,260.0 44.0,1296.0 810.0,1296.0" d="M 885.0 260.0 L 54.0 260.0 Q 44.0 260.0 44.0 270.0 L 44.0 1286.0 Q 44.0 1296.0 54.0 1296.0 L 810.0 1296.0" fill="none" stroke="#1D4ED8" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-blue)"/>
+    <path class="connector" data-pts="1175.0,260.0 2016.0,260.0 2016.0,2226.0 1260.0,2226.0" d="M 1175.0 260.0 L 2006.0 260.0 Q 2016.0 260.0 2016.0 270.0 L 2016.0 2216.0 Q 2016.0 2226.0 2006.0 2226.0 L 1260.0 2226.0" fill="none" stroke="#1D4ED8" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-blue)"/>
+    <path class="connector" data-pts="348.0,517.0 348.0,571.0" d="M 348.0 517.0 L 348.0 571.0" fill="none" stroke="#475569" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+    <path class="connector" data-pts="348.0,657.0 348.0,718.0" d="M 348.0 657.0 L 348.0 718.0" fill="none" stroke="#475569" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+    <path class="connector" data-pts="203.0,772.0 128.0,772.0 128.0,482.0 160.0,482.0" d="M 203.0 772.0 L 138.0 772.0 Q 128.0 772.0 128.0 762.0 L 128.0 492.0 Q 128.0 482.0 138.0 482.0 L 160.0 482.0" fill="none" stroke="#DC2626" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-red)"/>
+    <path class="connector" data-pts="348.0,826.0 348.0,919.0" d="M 348.0 826.0 L 348.0 919.0" fill="none" stroke="#059669" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-green)"/>
+    <path class="connector" data-pts="880.0,517.0 880.0,571.0" d="M 880.0 517.0 L 880.0 571.0" fill="none" stroke="#475569" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+    <path class="connector" data-pts="880.0,633.0 880.0,684.0" d="M 880.0 633.0 L 880.0 684.0" fill="none" stroke="#475569" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+    <path class="connector" data-pts="688.0,750.0 640.0,750.0 640.0,868.0 714.0,868.0 714.0,917.0" d="M 688.0 750.0 L 650.0 750.0 Q 640.0 750.0 640.0 760.0 L 640.0 858.0 Q 640.0 868.0 650.0 868.0 L 704.0 868.0 Q 714.0 868.0 714.0 878.0 L 714.0 917.0" fill="none" stroke="#DC2626" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-red)"/>
+    <path class="connector" data-pts="1072.0,750.0 1114.0,750.0 1114.0,868.0 1018.0,868.0 1018.0,900.0" d="M 1072.0 750.0 L 1104.0 750.0 Q 1114.0 750.0 1114.0 760.0 L 1114.0 858.0 Q 1114.0 868.0 1104.0 868.0 L 1028.0 868.0 Q 1018.0 868.0 1018.0 878.0 L 1018.0 900.0" fill="none" stroke="#059669" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-green)"/>
+    <path class="connector" data-pts="1152.0,954.0 1210.0,954.0 1210.0,470.0 1387.0,470.0" d="M 1152.0 954.0 L 1200.0 954.0 Q 1210.0 954.0 1210.0 944.0 L 1210.0 480.0 Q 1210.0 470.0 1220.0 470.0 L 1387.0 470.0" fill="none" stroke="#7C3AED" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-violet)"/>
+    <path class="connector" data-pts="348.0,981.0 348.0,1110.0 1224.0,1110.0 1224.0,494.0 1387.0,494.0" d="M 348.0 981.0 L 348.0 1100.0 Q 348.0 1110.0 358.0 1110.0 L 1214.0 1110.0 Q 1224.0 1110.0 1224.0 1100.0 L 1224.0 504.0 Q 1224.0 494.0 1234.0 494.0 L 1387.0 494.0" fill="none" stroke="#475569" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+    <path class="connector" data-pts="1605.0,516.0 1605.0,571.0" d="M 1605.0 516.0 L 1605.0 571.0" fill="none" stroke="#475569" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+    <path class="connector" data-pts="1605.0,657.0 1605.0,710.0" d="M 1605.0 657.0 L 1605.0 710.0" fill="none" stroke="#475569" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+    <path class="connector" data-pts="1448.0,764.0 1436.0,764.0 1436.0,891.0" d="M 1448.0 764.0 L 1442.0 764.0 Q 1436.0 764.0 1436.0 770.0 L 1436.0 891.0" fill="none" stroke="#DC2626" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-red)"/>
+    <path class="connector" data-pts="1762.0,764.0 1774.0,764.0 1774.0,884.0" d="M 1762.0 764.0 L 1768.0 764.0 Q 1774.0 764.0 1774.0 770.0 L 1774.0 884.0" fill="none" stroke="#059669" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-green)"/>
+    <path class="connector" data-pts="1436.0,973.0 1436.0,1022.0 1535.0,1022.0 1535.0,1046.0" d="M 1436.0 973.0 L 1436.0 1012.0 Q 1436.0 1022.0 1446.0 1022.0 L 1525.0 1022.0 Q 1535.0 1022.0 1535.0 1032.0 L 1535.0 1046.0" fill="none" stroke="#475569" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+    <path class="connector" data-pts="1774.0,980.0 1774.0,1022.0 1675.0,1022.0 1675.0,1046.0" d="M 1774.0 980.0 L 1774.0 1012.0 Q 1774.0 1022.0 1764.0 1022.0 L 1685.0 1022.0 Q 1675.0 1022.0 1675.0 1032.0 L 1675.0 1046.0" fill="none" stroke="#475569" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+    <path class="connector" data-pts="1030.0,1325.0 1030.0,1356.0" d="M 1030.0 1325.0 L 1030.0 1356.0" fill="none" stroke="#475569" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+    <path class="connector" data-pts="1030.0,1448.0 1030.0,1482.0" d="M 1030.0 1448.0 L 1030.0 1482.0" fill="none" stroke="#475569" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+    <path class="connector" data-pts="1030.0,1482.0 268.0,1482.0 268.0,1547.0" d="M 1030.0 1482.0 L 278.0 1482.0 Q 268.0 1482.0 268.0 1492.0 L 268.0 1547.0" fill="none" stroke="#1D4ED8" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-blue)"/>
+    <path class="connector" data-pts="1030.0,1482.0 726.0,1482.0 726.0,1545.0" d="M 1030.0 1482.0 L 736.0 1482.0 Q 726.0 1482.0 726.0 1492.0 L 726.0 1545.0" fill="none" stroke="#1D4ED8" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-blue)"/>
+    <path class="connector" data-pts="1030.0,1482.0 1296.0,1482.0 1296.0,1555.0" d="M 1030.0 1482.0 L 1286.0 1482.0 Q 1296.0 1482.0 1296.0 1492.0 L 1296.0 1555.0" fill="none" stroke="#1D4ED8" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-blue)"/>
+    <path class="connector" data-pts="1030.0,1482.0 1732.0,1482.0 1732.0,1557.0" d="M 1030.0 1482.0 L 1722.0 1482.0 Q 1732.0 1482.0 1732.0 1492.0 L 1732.0 1557.0" fill="none" stroke="#1D4ED8" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-blue)"/>
+    <path class="connector" data-pts="268.0,1649.0 268.0,1733.0" d="M 268.0 1649.0 L 268.0 1733.0" fill="none" stroke="#475569" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+    <path class="connector" data-pts="542.0,1612.0 500.0,1612.0 500.0,1939.0" d="M 542.0 1612.0 L 510.0 1612.0 Q 500.0 1612.0 500.0 1622.0 L 500.0 1939.0" fill="none" stroke="#059669" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-green)"/>
+    <path class="connector" data-pts="910.0,1612.0 956.0,1612.0 956.0,1696.0 890.0,1696.0 890.0,1716.0" d="M 910.0 1612.0 L 946.0 1612.0 Q 956.0 1612.0 956.0 1622.0 L 956.0 1686.0 Q 956.0 1696.0 946.0 1696.0 L 900.0 1696.0 Q 890.0 1696.0 890.0 1706.0 L 890.0 1716.0" fill="none" stroke="#1D4ED8" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-blue)"/>
+    <path class="connector" data-pts="890.0,1784.0 890.0,1831.0" d="M 890.0 1784.0 L 890.0 1831.0" fill="none" stroke="#475569" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+    <path class="connector" data-pts="755.0,1882.0 620.0,1882.0 620.0,1939.0" d="M 755.0 1882.0 L 630.0 1882.0 Q 620.0 1882.0 620.0 1892.0 L 620.0 1939.0" fill="none" stroke="#059669" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-green)"/>
+    <path class="connector" data-pts="890.0,1933.0 890.0,1979.0" d="M 890.0 1933.0 L 890.0 1979.0" fill="none" stroke="#DC2626" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-red)"/>
+    <path class="connector" data-pts="1139.0,1612.0 1104.0,1612.0 1104.0,1720.0 1218.0,1720.0 1218.0,1765.0" d="M 1139.0 1612.0 L 1114.0 1612.0 Q 1104.0 1612.0 1104.0 1622.0 L 1104.0 1710.0 Q 1104.0 1720.0 1114.0 1720.0 L 1208.0 1720.0 Q 1218.0 1720.0 1218.0 1730.0 L 1218.0 1765.0" fill="none" stroke="#059669" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-green)"/>
+    <path class="connector" data-pts="1453.0,1612.0 1484.0,1612.0 1484.0,1740.0 1484.0,1767.0" d="M 1453.0 1612.0 L 1474.0 1612.0 Q 1484.0 1612.0 1484.0 1622.0 L 1484.0 1730.0 Q 1484.0 1740.0 1484.0 1750.0 L 1484.0 1767.0" fill="none" stroke="#DC2626" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-red)"/>
+    <path class="connector" data-pts="1582.0,1612.0 1536.0,1612.0 1536.0,1740.0 1536.0,1767.0" d="M 1582.0 1612.0 L 1546.0 1612.0 Q 1536.0 1612.0 1536.0 1622.0 L 1536.0 1730.0 Q 1536.0 1740.0 1536.0 1750.0 L 1536.0 1767.0" fill="none" stroke="#DC2626" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-red)"/>
+    <path class="connector" data-pts="1882.0,1612.0 1916.0,1612.0 1916.0,1874.0 1774.0,1874.0 1774.0,1914.0" d="M 1882.0 1612.0 L 1906.0 1612.0 Q 1916.0 1612.0 1916.0 1622.0 L 1916.0 1864.0 Q 1916.0 1874.0 1906.0 1874.0 L 1784.0 1874.0 Q 1774.0 1874.0 1774.0 1884.0 L 1774.0 1914.0" fill="none" stroke="#059669" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-green)"/>
+    <path class="connector" data-pts="1774.0,2010.0 1774.0,2102.0 1030.0,2102.0 1030.0,2197.0" d="M 1774.0 2010.0 L 1774.0 2092.0 Q 1774.0 2102.0 1764.0 2102.0 L 1040.0 2102.0 Q 1030.0 2102.0 1030.0 2112.0 L 1030.0 2197.0" fill="none" stroke="#1D4ED8" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7,5" marker-end="url(#arrow-blue)"/>
+    <path class="connector" data-pts="1030.0,2255.0 1030.0,2286.0" d="M 1030.0 2255.0 L 1030.0 2286.0" fill="none" stroke="#475569" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+    <path class="connector" data-pts="1030.0,2378.0 1030.0,2412.0" d="M 1030.0 2378.0 L 1030.0 2412.0" fill="none" stroke="#475569" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+    <path class="connector" data-pts="1030.0,2412.0 268.0,2412.0 268.0,2479.0" d="M 1030.0 2412.0 L 278.0 2412.0 Q 268.0 2412.0 268.0 2422.0 L 268.0 2479.0" fill="none" stroke="#1D4ED8" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-blue)"/>
+    <path class="connector" data-pts="1030.0,2412.0 726.0,2412.0 726.0,2481.0" d="M 1030.0 2412.0 L 736.0 2412.0 Q 726.0 2412.0 726.0 2422.0 L 726.0 2481.0" fill="none" stroke="#1D4ED8" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-blue)"/>
+    <path class="connector" data-pts="1030.0,2412.0 1296.0,2412.0 1296.0,2486.0" d="M 1030.0 2412.0 L 1286.0 2412.0 Q 1296.0 2412.0 1296.0 2422.0 L 1296.0 2486.0" fill="none" stroke="#1D4ED8" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-blue)"/>
+    <path class="connector" data-pts="1030.0,2412.0 1732.0,2412.0 1732.0,2486.0" d="M 1030.0 2412.0 L 1722.0 2412.0 Q 1732.0 2412.0 1732.0 2422.0 L 1732.0 2486.0" fill="none" stroke="#1D4ED8" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-blue)"/>
+    <path class="connector" data-pts="268.0,2581.0 268.0,2664.0" d="M 268.0 2581.0 L 268.0 2664.0" fill="none" stroke="#475569" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+    <path class="connector" data-pts="554.0,2540.0 500.0,2540.0 500.0,2678.0 554.0,2678.0 554.0,2712.0" d="M 554.0 2540.0 L 510.0 2540.0 Q 500.0 2540.0 500.0 2550.0 L 500.0 2668.0 Q 500.0 2678.0 510.0 2678.0 L 544.0 2678.0 Q 554.0 2678.0 554.0 2688.0 L 554.0 2712.0" fill="none" stroke="#DC2626" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-red)"/>
+    <path class="connector" data-pts="898.0,2540.0 950.0,2540.0 950.0,2628.0 888.0,2628.0 888.0,2651.0" d="M 898.0 2540.0 L 940.0 2540.0 Q 950.0 2540.0 950.0 2550.0 L 950.0 2618.0 Q 950.0 2628.0 940.0 2628.0 L 898.0 2628.0 Q 888.0 2628.0 888.0 2638.0 L 888.0 2651.0" fill="none" stroke="#059669" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-green)"/>
+    <path class="connector" data-pts="888.0,2717.0 888.0,2765.0" d="M 888.0 2717.0 L 888.0 2765.0" fill="none" stroke="#475569" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+    <path class="connector" data-pts="750.0,2816.0 614.0,2816.0 614.0,2917.0" d="M 750.0 2816.0 L 624.0 2816.0 Q 614.0 2816.0 614.0 2826.0 L 614.0 2917.0" fill="none" stroke="#DC2626" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-red)"/>
+    <path class="connector" data-pts="888.0,2867.0 888.0,2914.0" d="M 888.0 2867.0 L 888.0 2914.0" fill="none" stroke="#059669" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-green)"/>
+    <path class="connector" data-pts="1146.0,2540.0 1104.0,2540.0 1104.0,2652.0 1218.0,2652.0 1218.0,2699.0" d="M 1146.0 2540.0 L 1114.0 2540.0 Q 1104.0 2540.0 1104.0 2550.0 L 1104.0 2642.0 Q 1104.0 2652.0 1114.0 2652.0 L 1208.0 2652.0 Q 1218.0 2652.0 1218.0 2662.0 L 1218.0 2699.0" fill="none" stroke="#059669" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-green)"/>
+    <path class="connector" data-pts="1446.0,2540.0 1468.0,2540.0 1468.0,2668.0 1468.0,2710.0" d="M 1446.0 2540.0 L 1458.0 2540.0 Q 1468.0 2540.0 1468.0 2550.0 L 1468.0 2658.0 Q 1468.0 2668.0 1468.0 2678.0 L 1468.0 2710.0" fill="none" stroke="#DC2626" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-red)"/>
+    <path class="connector" data-pts="1587.0,2540.0 1516.0,2540.0 1516.0,2668.0 1516.0,2710.0" d="M 1587.0 2540.0 L 1526.0 2540.0 Q 1516.0 2540.0 1516.0 2550.0 L 1516.0 2658.0 Q 1516.0 2668.0 1516.0 2678.0 L 1516.0 2710.0" fill="none" stroke="#DC2626" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-red)"/>
+    <path class="connector" data-pts="1877.0,2540.0 1916.0,2540.0 1916.0,2652.0 1778.0,2652.0 1778.0,2699.0" d="M 1877.0 2540.0 L 1906.0 2540.0 Q 1916.0 2540.0 1916.0 2550.0 L 1916.0 2642.0 Q 1916.0 2652.0 1906.0 2652.0 L 1788.0 2652.0 Q 1778.0 2652.0 1778.0 2662.0 L 1778.0 2699.0" fill="none" stroke="#059669" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-green)"/>
+  </g>
+  <g id="layer-nodes">
+    <g id="node-Usuario" class="node node-terminal" data-node="Usuario">
+      <rect x="862.0" y="127.0" width="340.0" height="48.0" rx="24.0" fill="#CBD5E1" opacity="0.65"/>
+      <rect x="860.0" y="124.0" width="340.0" height="48.0" rx="24.0" fill="#1E3A5F" stroke="#0F294A" stroke-width="2.0"/>
+      <text x="1030.0" y="152.9" text-anchor="middle" font-size="14.0" font-weight="600" fill="#FFFFFF">
+        <tspan x="1030.0" y="152.9">Usuario autenticado (rol ACTIVE)</tspan>
+      </text>
+    </g>
+    <g id="node-Contexto" class="node node-decision" data-node="Contexto">
+      <polygon points="1032.0,213.0 1177.0,263.0 1032.0,313.0 887.0,263.0" fill="#CBD5E1" opacity="0.55" stroke-linejoin="round"/>
+      <polygon points="1030.0,210.0 1175.0,260.0 1030.0,310.0 885.0,260.0" fill="#FFFBEB" stroke="#D97706" stroke-width="1.9" stroke-linejoin="round"/>
+      <text x="1030.0" y="255.7" text-anchor="middle" font-size="13.5" font-weight="600" fill="#1E293B">
+        <tspan x="1030.0" y="255.7">¿Espacio de</tspan>
+        <tspan x="1030.0" y="273.7">colaboración?</tspan>
+      </text>
+    </g>
+    <g id="node-C1" class="node node-process" data-node="C1">
+      <rect x="162.0" y="450.0" width="376.0" height="70.0" rx="10" fill="#CBD5E1" opacity="0.55"/>
+      <rect x="160.0" y="447.0" width="376.0" height="70.0" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.6"/>
+      <rect x="164.0" y="455.0" width="4" height="54.0" rx="2" fill="#2563EB" opacity="0.85"/>
+      <text x="350.5" y="477.7" text-anchor="middle" font-size="13.5" font-weight="500" fill="#0F172A">
+        <tspan x="350.5" y="477.7">Consultar publicaciones visibles</tspan>
+        <tspan x="350.5" y="495.7">(ocultas solo para autor y moderadores)</tspan>
+      </text>
+    </g>
+    <g id="node-C6" class="node node-process" data-node="C6">
+      <rect x="162.0" y="574.0" width="376.0" height="86.0" rx="10" fill="#CBD5E1" opacity="0.55"/>
+      <rect x="160.0" y="571.0" width="376.0" height="86.0" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.6"/>
+      <rect x="164.0" y="579.0" width="4" height="70.0" rx="2" fill="#2563EB" opacity="0.85"/>
+      <text x="350.5" y="600.7" text-anchor="middle" font-size="13.5" font-weight="500" fill="#0F172A">
+        <tspan x="350.5" y="600.7">Interactuar con publicación:</tspan>
+        <tspan x="350.5" y="618.7">comentar / reaccionar</tspan>
+        <tspan x="350.5" y="636.7" fill="#5B21B6" font-weight="600" font-size="12.7">[Alcance V1: PENDIENTE DP-03]</tspan>
+      </text>
+    </g>
+    <g id="node-DecRep" class="node node-decision" data-node="DecRep">
+      <polygon points="350.0,721.0 495.0,775.0 350.0,829.0 205.0,775.0" fill="#CBD5E1" opacity="0.55" stroke-linejoin="round"/>
+      <polygon points="348.0,718.0 493.0,772.0 348.0,826.0 203.0,772.0" fill="#FFFBEB" stroke="#D97706" stroke-width="1.9" stroke-linejoin="round"/>
+      <text x="348.0" y="767.7" text-anchor="middle" font-size="13.5" font-weight="600" fill="#1E293B">
+        <tspan x="348.0" y="767.7">¿Usuario reporta</tspan>
+        <tspan x="348.0" y="785.7">contenido?</tspan>
+      </text>
+    </g>
+    <g id="node-C7" class="node node-process" data-node="C7">
+      <rect x="192.0" y="922.0" width="316.0" height="62.0" rx="10" fill="#CBD5E1" opacity="0.55"/>
+      <rect x="190.0" y="919.0" width="316.0" height="62.0" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.6"/>
+      <rect x="194.0" y="927.0" width="4" height="46.0" rx="2" fill="#2563EB" opacity="0.85"/>
+      <text x="350.5" y="954.7" text-anchor="middle" font-size="13.5" font-weight="500" fill="#0F172A">
+        <tspan x="350.5" y="954.7">Registra reporte de usuario</tspan>
+      </text>
+    </g>
+    <g id="node-C2" class="node node-process" data-node="C2">
+      <rect x="687.0" y="450.0" width="390.0" height="70.0" rx="10" fill="#CBD5E1" opacity="0.55"/>
+      <rect x="685.0" y="447.0" width="390.0" height="70.0" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.6"/>
+      <rect x="689.0" y="455.0" width="4" height="54.0" rx="2" fill="#2563EB" opacity="0.85"/>
+      <text x="882.5" y="477.7" text-anchor="middle" font-size="13.5" font-weight="500" fill="#0F172A">
+        <tspan x="882.5" y="477.7">Crear publicación textual</tspan>
+        <tspan x="882.5" y="495.7">(en Comunidad o vinculada a un Grupo)</tspan>
+      </text>
+    </g>
+    <g id="node-C3" class="node node-process" data-node="C3">
+      <rect x="687.0" y="574.0" width="390.0" height="62.0" rx="10" fill="#CBD5E1" opacity="0.55"/>
+      <rect x="685.0" y="571.0" width="390.0" height="62.0" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.6"/>
+      <rect x="689.0" y="579.0" width="4" height="46.0" rx="2" fill="#2563EB" opacity="0.85"/>
+      <text x="882.5" y="597.7" text-anchor="middle" font-size="13.5" font-weight="500" fill="#0F172A">
+        <tspan x="882.5" y="597.7">Sistema ejecuta análisis asistido</tspan>
+        <tspan x="882.5" y="615.7">por IA (RF-16)</tspan>
+      </text>
+    </g>
+    <g id="node-DecIA" class="node node-decision" data-node="DecIA">
+      <polygon points="882.0,687.0 1074.0,753.0 882.0,819.0 690.0,753.0" fill="#CBD5E1" opacity="0.55" stroke-linejoin="round"/>
+      <polygon points="880.0,684.0 1072.0,750.0 880.0,816.0 688.0,750.0" fill="#FFFBEB" stroke="#D97706" stroke-width="1.9" stroke-linejoin="round"/>
+      <text x="880.0" y="736.7" text-anchor="middle" font-size="13.5" font-weight="600" fill="#1E293B">
+        <tspan x="880.0" y="736.7">¿IA detecta contenido</tspan>
+        <tspan x="880.0" y="754.7">potencialmente</tspan>
+        <tspan x="880.0" y="772.7">problemático?</tspan>
+      </text>
+    </g>
+    <g id="node-C4" class="node node-success" data-node="C4">
+      <rect x="594.0" y="920.0" width="244.0" height="74.0" rx="10" fill="#CBD5E1" opacity="0.55"/>
+      <rect x="592.0" y="917.0" width="244.0" height="74.0" rx="10" fill="#ECFDF5" stroke="#059669" stroke-width="1.75"/>
+      <rect x="596.0" y="925.0" width="4" height="58.0" rx="2" fill="#059669" opacity="0.85"/>
+      <text x="716.5" y="949.5" text-anchor="middle" font-size="13.0" font-weight="600" fill="#064E3B">
+        <tspan x="716.5" y="949.5">Publicación queda</tspan>
+        <tspan x="716.5" y="967.5">visible en Comunidad</tspan>
+      </text>
+    </g>
+    <g id="node-C5" class="node node-pending" data-node="C5">
+      <rect x="886.0" y="903.0" width="268.0" height="108.0" rx="10" fill="#CBD5E1" opacity="0.55"/>
+      <rect x="884.0" y="900.0" width="268.0" height="108.0" rx="10" fill="#F5F3FF" stroke="#7C3AED" stroke-width="1.75" stroke-dasharray="6,4"/>
+      <text x="1018.0" y="933.0" text-anchor="middle" font-size="12.8" font-weight="500" fill="#4C1D95">
+        <tspan x="1018.0" y="933.0">Sistema marca/señala</tspan>
+        <tspan x="1018.0" y="950.0">contenido para revisión</tspan>
+        <tspan x="1018.0" y="967.0">humana SIN bloqueo</tspan>
+        <tspan x="1018.0" y="984.0">automático (RNF-10)</tspan>
+      </text>
+    </g>
+    <g id="node-ModCola" class="node node-process" data-node="ModCola">
+      <rect x="1389.0" y="451.0" width="436.0" height="68.0" rx="10" fill="#CBD5E1" opacity="0.55"/>
+      <rect x="1387.0" y="448.0" width="436.0" height="68.0" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.6"/>
+      <rect x="1391.0" y="456.0" width="4" height="52.0" rx="2" fill="#2563EB" opacity="0.85"/>
+      <text x="1607.5" y="477.7" text-anchor="middle" font-size="13.5" font-weight="500" fill="#0F172A">
+        <tspan x="1607.5" y="477.7">Cola de contenido señalado</tspan>
+        <tspan x="1607.5" y="495.7">(señal IA o reporte de usuario)</tspan>
+      </text>
+    </g>
+    <g id="node-ModRev" class="node node-process" data-node="ModRev">
+      <rect x="1375.0" y="574.0" width="464.0" height="86.0" rx="10" fill="#CBD5E1" opacity="0.55"/>
+      <rect x="1373.0" y="571.0" width="464.0" height="86.0" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.6"/>
+      <rect x="1377.0" y="579.0" width="4" height="70.0" rx="2" fill="#2563EB" opacity="0.85"/>
+      <text x="1607.5" y="609.7" text-anchor="middle" font-size="13.5" font-weight="500" fill="#0F172A">
+        <tspan x="1607.5" y="609.7">Moderador / Administrador realiza revisión humana</tspan>
+        <tspan x="1607.5" y="627.7" fill="#5B21B6" font-weight="600" font-size="12.7">[Roles/criterios: PENDIENTE DP-06]</tspan>
+      </text>
+    </g>
+    <g id="node-DecMod" class="node node-decision" data-node="DecMod">
+      <polygon points="1607.0,713.0 1764.0,767.0 1607.0,821.0 1450.0,767.0" fill="#CBD5E1" opacity="0.55" stroke-linejoin="round"/>
+      <polygon points="1605.0,710.0 1762.0,764.0 1605.0,818.0 1448.0,764.0" fill="#FFFBEB" stroke="#D97706" stroke-width="1.9" stroke-linejoin="round"/>
+      <text x="1605.0" y="759.7" text-anchor="middle" font-size="13.5" font-weight="600" fill="#1E293B">
+        <tspan x="1605.0" y="759.7">¿Contenido infringe</tspan>
+        <tspan x="1605.0" y="777.7">normas?</tspan>
+      </text>
+    </g>
+    <g id="node-ModKeep" class="node node-success" data-node="ModKeep">
+      <rect x="1291.0" y="894.0" width="294.0" height="82.0" rx="10" fill="#CBD5E1" opacity="0.55"/>
+      <rect x="1289.0" y="891.0" width="294.0" height="82.0" rx="10" fill="#ECFDF5" stroke="#059669" stroke-width="1.75"/>
+      <rect x="1293.0" y="899.0" width="4" height="66.0" rx="2" fill="#059669" opacity="0.85"/>
+      <text x="1438.5" y="927.5" text-anchor="middle" font-size="13.0" font-weight="600" fill="#064E3B">
+        <tspan x="1438.5" y="927.5">Desestimar señal / mantener</tspan>
+        <tspan x="1438.5" y="945.5">o restaurar contenido visible</tspan>
+      </text>
+    </g>
+    <g id="node-ModAct" class="node node-error" data-node="ModAct">
+      <rect x="1626.0" y="887.0" width="300.0" height="96.0" rx="10" fill="#CBD5E1" opacity="0.55"/>
+      <rect x="1624.0" y="884.0" width="300.0" height="96.0" rx="10" fill="#FEF2F2" stroke="#DC2626" stroke-width="1.75"/>
+      <rect x="1628.0" y="892.0" width="4" height="80.0" rx="2" fill="#DC2626" opacity="0.85"/>
+      <text x="1776.5" y="919.5" text-anchor="middle" font-size="12.8" font-weight="600" fill="#7F1D1D">
+        <tspan x="1776.5" y="919.5">Aplicar acción</tspan>
+        <tspan x="1776.5" y="936.5" fill="#5B21B6" font-weight="600" font-size="12.0">[Catálogo: PENDIENTE DP-07]:</tspan>
+        <tspan x="1776.5" y="953.5">ocultar, advertir o suspender</tspan>
+      </text>
+    </g>
+    <g id="node-ModLog" class="node node-success" data-node="ModLog">
+      <rect x="1402.0" y="1049.0" width="410.0" height="60.0" rx="10" fill="#CBD5E1" opacity="0.55"/>
+      <rect x="1400.0" y="1046.0" width="410.0" height="60.0" rx="10" fill="#ECFDF5" stroke="#059669" stroke-width="1.75"/>
+      <rect x="1404.0" y="1054.0" width="4" height="44.0" rx="2" fill="#059669" opacity="0.85"/>
+      <text x="1607.5" y="1080.7" text-anchor="middle" font-size="13.5" font-weight="600" fill="#064E3B">
+        <tspan x="1607.5" y="1080.7">Registrar decisión y trazabilidad de revisión</tspan>
+      </text>
+    </g>
+    <g id="node-G1" class="node node-process" data-node="G1">
+      <rect x="812.0" y="1270.0" width="440.0" height="58.0" rx="10" fill="#CBD5E1" opacity="0.55"/>
+      <rect x="810.0" y="1267.0" width="440.0" height="58.0" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.6"/>
+      <rect x="814.0" y="1275.0" width="4" height="42.0" rx="2" fill="#2563EB" opacity="0.85"/>
+      <text x="1032.5" y="1300.7" text-anchor="middle" font-size="13.5" font-weight="500" fill="#0F172A">
+        <tspan x="1032.5" y="1300.7">Consultar grupos disponibles (públicos o propios)</tspan>
+      </text>
+    </g>
+    <g id="node-DecGrupo" class="node node-decision" data-node="DecGrupo">
+      <polygon points="1032.0,1359.0 1162.0,1405.0 1032.0,1451.0 902.0,1405.0" fill="#CBD5E1" opacity="0.55" stroke-linejoin="round"/>
+      <polygon points="1030.0,1356.0 1160.0,1402.0 1030.0,1448.0 900.0,1402.0" fill="#FFFBEB" stroke="#D97706" stroke-width="1.9" stroke-linejoin="round"/>
+      <text x="1030.0" y="1397.7" text-anchor="middle" font-size="13.5" font-weight="600" fill="#1E293B">
+        <tspan x="1030.0" y="1397.7">¿Acción en</tspan>
+        <tspan x="1030.0" y="1415.7">Grupos?</tspan>
+      </text>
+    </g>
+    <g id="node-G2" class="node node-process" data-node="G2">
+      <rect x="120.0" y="1550.0" width="300.0" height="102.0" rx="10" fill="#CBD5E1" opacity="0.55"/>
+      <rect x="118.0" y="1547.0" width="300.0" height="102.0" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.6"/>
+      <rect x="122.0" y="1555.0" width="4" height="86.0" rx="2" fill="#2563EB" opacity="0.85"/>
+      <text x="270.5" y="1577.0" text-anchor="middle" font-size="12.8" font-weight="500" fill="#0F172A">
+        <tspan x="270.5" y="1577.0">Crear grupo</tspan>
+        <tspan x="270.5" y="1594.0">[Permisos de creación:</tspan>
+        <tspan x="270.5" y="1611.0">PENDIENTE DP-04]: nombre,</tspan>
+        <tspan x="270.5" y="1628.0">propósito, visibilidad</tspan>
+      </text>
+    </g>
+    <g id="node-G3" class="node node-success" data-node="G3">
+      <rect x="120.0" y="1736.0" width="300.0" height="70.0" rx="10" fill="#CBD5E1" opacity="0.55"/>
+      <rect x="118.0" y="1733.0" width="300.0" height="70.0" rx="10" fill="#ECFDF5" stroke="#059669" stroke-width="1.75"/>
+      <rect x="122.0" y="1741.0" width="4" height="54.0" rx="2" fill="#059669" opacity="0.85"/>
+      <text x="270.5" y="1763.5" text-anchor="middle" font-size="13.0" font-weight="600" fill="#064E3B">
+        <tspan x="270.5" y="1763.5">Creador queda asignado como</tspan>
+        <tspan x="270.5" y="1781.5">Coordinador del grupo</tspan>
+      </text>
+    </g>
+    <g id="node-DecVis" class="node node-decision" data-node="DecVis">
+      <polygon points="728.0,1548.0 912.0,1615.0 728.0,1682.0 544.0,1615.0" fill="#CBD5E1" opacity="0.55" stroke-linejoin="round"/>
+      <polygon points="726.0,1545.0 910.0,1612.0 726.0,1679.0 542.0,1612.0" fill="#FFFBEB" stroke="#D97706" stroke-width="1.9" stroke-linejoin="round"/>
+      <text x="726.0" y="1607.8" text-anchor="middle" font-size="13.0" font-weight="600" fill="#1E293B">
+        <tspan x="726.0" y="1607.8">¿Grupo público o privado?</tspan>
+        <tspan x="726.0" y="1625.3" fill="#5B21B6" font-weight="600" font-size="12.2">[Reglas: PENDIENTE DP-04]</tspan>
+      </text>
+    </g>
+    <g id="node-G4" class="node node-success" data-node="G4">
+      <rect x="466.0" y="1942.0" width="240.0" height="70.0" rx="10" fill="#CBD5E1" opacity="0.55"/>
+      <rect x="464.0" y="1939.0" width="240.0" height="70.0" rx="10" fill="#ECFDF5" stroke="#059669" stroke-width="1.75"/>
+      <rect x="468.0" y="1947.0" width="4" height="54.0" rx="2" fill="#059669" opacity="0.85"/>
+      <text x="586.5" y="1969.5" text-anchor="middle" font-size="13.0" font-weight="600" fill="#064E3B">
+        <tspan x="586.5" y="1969.5">Incorporación como</tspan>
+        <tspan x="586.5" y="1987.5">Miembro del grupo</tspan>
+      </text>
+    </g>
+    <g id="node-G5" class="node node-process" data-node="G5">
+      <rect x="767.0" y="1719.0" width="250.0" height="68.0" rx="10" fill="#CBD5E1" opacity="0.55"/>
+      <rect x="765.0" y="1716.0" width="250.0" height="68.0" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.6"/>
+      <rect x="769.0" y="1724.0" width="4" height="52.0" rx="2" fill="#2563EB" opacity="0.85"/>
+      <text x="892.5" y="1745.5" text-anchor="middle" font-size="13.0" font-weight="500" fill="#0F172A">
+        <tspan x="892.5" y="1745.5">Envía solicitud /</tspan>
+        <tspan x="892.5" y="1763.5">recibe invitación</tspan>
+      </text>
+    </g>
+    <g id="node-DecAprobG" class="node node-decision" data-node="DecAprobG">
+      <polygon points="892.0,1834.0 1027.0,1885.0 892.0,1936.0 757.0,1885.0" fill="#CBD5E1" opacity="0.55" stroke-linejoin="round"/>
+      <polygon points="890.0,1831.0 1025.0,1882.0 890.0,1933.0 755.0,1882.0" fill="#FFFBEB" stroke="#D97706" stroke-width="1.9" stroke-linejoin="round"/>
+      <text x="890.0" y="1878.1" text-anchor="middle" font-size="12.8" font-weight="600" fill="#1E293B">
+        <tspan x="890.0" y="1878.1">¿Coordinador</tspan>
+        <tspan x="890.0" y="1894.9">aprueba ingreso?</tspan>
+      </text>
+    </g>
+    <g id="node-GRech" class="node node-error" data-node="GRech">
+      <rect x="787.0" y="1982.0" width="210.0" height="54.0" rx="10" fill="#CBD5E1" opacity="0.55"/>
+      <rect x="785.0" y="1979.0" width="210.0" height="54.0" rx="10" fill="#FEF2F2" stroke="#DC2626" stroke-width="1.75"/>
+      <rect x="789.0" y="1987.0" width="4" height="38.0" rx="2" fill="#DC2626" opacity="0.85"/>
+      <text x="892.5" y="2010.5" text-anchor="middle" font-size="13.0" font-weight="600" fill="#7F1D1D">
+        <tspan x="892.5" y="2010.5">Solicitud rechazada</tspan>
+      </text>
+    </g>
+    <g id="node-DecCoordG" class="node node-decision" data-node="DecCoordG">
+      <polygon points="1298.0,1558.0 1455.0,1615.0 1298.0,1672.0 1141.0,1615.0" fill="#CBD5E1" opacity="0.55" stroke-linejoin="round"/>
+      <polygon points="1296.0,1555.0 1453.0,1612.0 1296.0,1669.0 1139.0,1612.0" fill="#FFFBEB" stroke="#D97706" stroke-width="1.9" stroke-linejoin="round"/>
+      <text x="1296.0" y="1608.0" text-anchor="middle" font-size="13.0" font-weight="600" fill="#1E293B">
+        <tspan x="1296.0" y="1608.0">¿Es Coordinador</tspan>
+        <tspan x="1296.0" y="1625.2">del grupo o Admin?</tspan>
+      </text>
+    </g>
+    <g id="node-G7" class="node node-success" data-node="G7">
+      <rect x="1082.0" y="1768.0" width="276.0" height="86.0" rx="10" fill="#CBD5E1" opacity="0.55"/>
+      <rect x="1080.0" y="1765.0" width="276.0" height="86.0" rx="10" fill="#ECFDF5" stroke="#059669" stroke-width="1.75"/>
+      <rect x="1084.0" y="1773.0" width="4" height="70.0" rx="2" fill="#059669" opacity="0.85"/>
+      <text x="1220.5" y="1795.0" text-anchor="middle" font-size="13.0" font-weight="600" fill="#064E3B">
+        <tspan x="1220.5" y="1795.0">Agregar, aceptar o retirar</tspan>
+        <tspan x="1220.5" y="1812.5">integrantes y administrar</tspan>
+        <tspan x="1220.5" y="1830.0">grupo</tspan>
+      </text>
+    </g>
+    <g id="node-GDen" class="node node-error" data-node="GDen">
+      <rect x="1405.0" y="1770.0" width="214.0" height="82.0" rx="10" fill="#CBD5E1" opacity="0.55"/>
+      <rect x="1403.0" y="1767.0" width="214.0" height="82.0" rx="10" fill="#FEF2F2" stroke="#DC2626" stroke-width="1.75"/>
+      <rect x="1407.0" y="1775.0" width="4" height="66.0" rx="2" fill="#DC2626" opacity="0.85"/>
+      <text x="1512.5" y="1803.8" text-anchor="middle" font-size="13.0" font-weight="600" fill="#7F1D1D">
+        <tspan x="1512.5" y="1803.8">Acceso restringido</tspan>
+        <tspan x="1512.5" y="1821.3">a actividad interna</tspan>
+      </text>
+    </g>
+    <g id="node-DecMiembroG" class="node node-decision" data-node="DecMiembroG">
+      <polygon points="1734.0,1560.0 1884.0,1615.0 1734.0,1670.0 1584.0,1615.0" fill="#CBD5E1" opacity="0.55" stroke-linejoin="round"/>
+      <polygon points="1732.0,1557.0 1882.0,1612.0 1732.0,1667.0 1582.0,1612.0" fill="#FFFBEB" stroke="#D97706" stroke-width="1.9" stroke-linejoin="round"/>
+      <text x="1732.0" y="1608.0" text-anchor="middle" font-size="13.0" font-weight="600" fill="#1E293B">
+        <tspan x="1732.0" y="1608.0">¿Es miembro</tspan>
+        <tspan x="1732.0" y="1625.2">autorizado?</tspan>
+      </text>
+    </g>
+    <g id="node-G6" class="node node-module" data-node="G6">
+      <rect x="1617.0" y="1917.0" width="318.0" height="96.0" rx="10" fill="#CBD5E1" opacity="0.55"/>
+      <rect x="1615.0" y="1914.0" width="318.0" height="96.0" rx="10" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="1.75"/>
+      <rect x="1619.0" y="1922.0" width="4" height="80.0" rx="2" fill="#1D4ED8" opacity="0.85"/>
+      <text x="1776.5" y="1949.3" text-anchor="middle" font-size="12.8" font-weight="600" fill="#1E3A5F">
+        <tspan x="1776.5" y="1949.3">Consultar publicaciones/mensajes</tspan>
+        <tspan x="1776.5" y="1966.5">del grupo y archivos compartidos</tspan>
+        <tspan x="1776.5" y="1983.7">(Ver Diagrama 03)</tspan>
+      </text>
+    </g>
+    <g id="node-E1" class="node node-process" data-node="E1">
+      <rect x="802.0" y="2200.0" width="460.0" height="58.0" rx="10" fill="#CBD5E1" opacity="0.55"/>
+      <rect x="800.0" y="2197.0" width="460.0" height="58.0" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.6"/>
+      <rect x="804.0" y="2205.0" width="4" height="42.0" rx="2" fill="#2563EB" opacity="0.85"/>
+      <text x="1032.5" y="2230.7" text-anchor="middle" font-size="13.5" font-weight="500" fill="#0F172A">
+        <tspan x="1032.5" y="2230.7">Consultar equipos (independientes o vinculados a un Grupo)</tspan>
+      </text>
+    </g>
+    <g id="node-DecEquipo" class="node node-decision" data-node="DecEquipo">
+      <polygon points="1032.0,2289.0 1162.0,2335.0 1032.0,2381.0 902.0,2335.0" fill="#CBD5E1" opacity="0.55" stroke-linejoin="round"/>
+      <polygon points="1030.0,2286.0 1160.0,2332.0 1030.0,2378.0 900.0,2332.0" fill="#FFFBEB" stroke="#D97706" stroke-width="1.9" stroke-linejoin="round"/>
+      <text x="1030.0" y="2327.7" text-anchor="middle" font-size="13.5" font-weight="600" fill="#1E293B">
+        <tspan x="1030.0" y="2327.7">¿Acción en</tspan>
+        <tspan x="1030.0" y="2345.7">Equipos?</tspan>
+      </text>
+    </g>
+    <g id="node-E2" class="node node-process" data-node="E2">
+      <rect x="118.0" y="2482.0" width="304.0" height="102.0" rx="10" fill="#CBD5E1" opacity="0.55"/>
+      <rect x="116.0" y="2479.0" width="304.0" height="102.0" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.6"/>
+      <rect x="120.0" y="2487.0" width="4" height="86.0" rx="2" fill="#2563EB" opacity="0.85"/>
+      <text x="270.5" y="2509.0" text-anchor="middle" font-size="12.8" font-weight="500" fill="#0F172A">
+        <tspan x="270.5" y="2509.0">Crear equipo: objetivo,</tspan>
+        <tspan x="270.5" y="2526.0">tipo (trabajo/estudio),</tspan>
+        <tspan x="270.5" y="2543.0">cupo máximo y grupo</tspan>
+        <tspan x="270.5" y="2560.0">opcional</tspan>
+      </text>
+    </g>
+    <g id="node-E3" class="node node-success" data-node="E3">
+      <rect x="118.0" y="2667.0" width="304.0" height="72.0" rx="10" fill="#CBD5E1" opacity="0.55"/>
+      <rect x="116.0" y="2664.0" width="304.0" height="72.0" rx="10" fill="#ECFDF5" stroke="#059669" stroke-width="1.75"/>
+      <rect x="120.0" y="2672.0" width="4" height="56.0" rx="2" fill="#059669" opacity="0.85"/>
+      <text x="270.5" y="2695.5" text-anchor="middle" font-size="12.8" font-weight="600" fill="#064E3B">
+        <tspan x="270.5" y="2695.5">Creador queda como</tspan>
+        <tspan x="270.5" y="2713.5">Coordinador / responsable inicial</tspan>
+      </text>
+    </g>
+    <g id="node-DecCupo" class="node node-decision" data-node="DecCupo">
+      <polygon points="728.0,2484.0 900.0,2543.0 728.0,2602.0 556.0,2543.0" fill="#CBD5E1" opacity="0.55" stroke-linejoin="round"/>
+      <polygon points="726.0,2481.0 898.0,2540.0 726.0,2599.0 554.0,2540.0" fill="#FFFBEB" stroke="#D97706" stroke-width="1.9" stroke-linejoin="round"/>
+      <text x="726.0" y="2536.0" text-anchor="middle" font-size="13.0" font-weight="600" fill="#1E293B">
+        <tspan x="726.0" y="2536.0">¿Equipo abierto y con</tspan>
+        <tspan x="726.0" y="2553.2">cupo disponible?</tspan>
+      </text>
+    </g>
+    <g id="node-ENoCupo" class="node node-error" data-node="ENoCupo">
+      <rect x="449.0" y="2715.0" width="214.0" height="60.0" rx="10" fill="#CBD5E1" opacity="0.55"/>
+      <rect x="447.0" y="2712.0" width="214.0" height="60.0" rx="10" fill="#FEF2F2" stroke="#DC2626" stroke-width="1.75"/>
+      <rect x="451.0" y="2720.0" width="4" height="44.0" rx="2" fill="#DC2626" opacity="0.85"/>
+      <text x="556.5" y="2746.6" text-anchor="middle" font-size="13.0" font-weight="600" fill="#7F1D1D">
+        <tspan x="556.5" y="2746.6">Solicitud no permitida</tspan>
+      </text>
+    </g>
+    <g id="node-E4" class="node node-process" data-node="E4">
+      <rect x="762.0" y="2654.0" width="256.0" height="66.0" rx="10" fill="#CBD5E1" opacity="0.55"/>
+      <rect x="760.0" y="2651.0" width="256.0" height="66.0" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.6"/>
+      <rect x="764.0" y="2659.0" width="4" height="50.0" rx="2" fill="#2563EB" opacity="0.85"/>
+      <text x="890.5" y="2679.6" text-anchor="middle" font-size="13.0" font-weight="500" fill="#0F172A">
+        <tspan x="890.5" y="2679.6">Registra solicitud</tspan>
+        <tspan x="890.5" y="2697.6">(estado: pendiente)</tspan>
+      </text>
+    </g>
+    <g id="node-DecAprobE" class="node node-decision" data-node="DecAprobE">
+      <polygon points="890.0,2768.0 1028.0,2819.0 890.0,2870.0 752.0,2819.0" fill="#CBD5E1" opacity="0.55" stroke-linejoin="round"/>
+      <polygon points="888.0,2765.0 1026.0,2816.0 888.0,2867.0 750.0,2816.0" fill="#FFFBEB" stroke="#D97706" stroke-width="1.9" stroke-linejoin="round"/>
+      <text x="888.0" y="2812.1" text-anchor="middle" font-size="12.8" font-weight="600" fill="#1E293B">
+        <tspan x="888.0" y="2812.1">¿Coordinador del</tspan>
+        <tspan x="888.0" y="2828.9">equipo acepta?</tspan>
+      </text>
+    </g>
+    <g id="node-ERech" class="node node-error" data-node="ERech">
+      <rect x="511.0" y="2920.0" width="210.0" height="54.0" rx="10" fill="#CBD5E1" opacity="0.55"/>
+      <rect x="509.0" y="2917.0" width="210.0" height="54.0" rx="10" fill="#FEF2F2" stroke="#DC2626" stroke-width="1.75"/>
+      <rect x="513.0" y="2925.0" width="4" height="38.0" rx="2" fill="#DC2626" opacity="0.85"/>
+      <text x="616.5" y="2948.6" text-anchor="middle" font-size="13.0" font-weight="600" fill="#7F1D1D">
+        <tspan x="616.5" y="2948.6">Solicitud rechazada</tspan>
+      </text>
+    </g>
+    <g id="node-E5" class="node node-success" data-node="E5">
+      <rect x="747.0" y="2917.0" width="286.0" height="68.0" rx="10" fill="#CBD5E1" opacity="0.55"/>
+      <rect x="745.0" y="2914.0" width="286.0" height="68.0" rx="10" fill="#ECFDF5" stroke="#059669" stroke-width="1.75"/>
+      <rect x="749.0" y="2922.0" width="4" height="52.0" rx="2" fill="#059669" opacity="0.85"/>
+      <text x="890.5" y="2943.5" text-anchor="middle" font-size="12.8" font-weight="600" fill="#064E3B">
+        <tspan x="890.5" y="2943.5">Incorporado como Integrante</tspan>
+        <tspan x="890.5" y="2961.5">(estado: aceptado)</tspan>
+      </text>
+    </g>
+    <g id="node-DecCoordE" class="node node-decision" data-node="DecCoordE">
+      <polygon points="1298.0,2489.0 1448.0,2543.0 1298.0,2597.0 1148.0,2543.0" fill="#CBD5E1" opacity="0.55" stroke-linejoin="round"/>
+      <polygon points="1296.0,2486.0 1446.0,2540.0 1296.0,2594.0 1146.0,2540.0" fill="#FFFBEB" stroke="#D97706" stroke-width="1.9" stroke-linejoin="round"/>
+      <text x="1296.0" y="2536.0" text-anchor="middle" font-size="13.0" font-weight="600" fill="#1E293B">
+        <tspan x="1296.0" y="2536.0">¿Es Coordinador</tspan>
+        <tspan x="1296.0" y="2553.2">del equipo?</tspan>
+      </text>
+    </g>
+    <g id="node-E6" class="node node-success" data-node="E6">
+      <rect x="1082.0" y="2702.0" width="276.0" height="86.0" rx="10" fill="#CBD5E1" opacity="0.55"/>
+      <rect x="1080.0" y="2699.0" width="276.0" height="86.0" rx="10" fill="#ECFDF5" stroke="#059669" stroke-width="1.75"/>
+      <rect x="1084.0" y="2707.0" width="4" height="70.0" rx="2" fill="#059669" opacity="0.85"/>
+      <text x="1220.5" y="2729.1" text-anchor="middle" font-size="13.0" font-weight="600" fill="#064E3B">
+        <tspan x="1220.5" y="2729.1">Asignar responsables</tspan>
+        <tspan x="1220.5" y="2746.6">(coordinadores) o retirar</tspan>
+        <tspan x="1220.5" y="2764.1">participantes</tspan>
+      </text>
+    </g>
+    <g id="node-EDen" class="node node-error" data-node="EDen">
+      <rect x="1391.0" y="2713.0" width="206.0" height="64.0" rx="10" fill="#CBD5E1" opacity="0.55"/>
+      <rect x="1389.0" y="2710.0" width="206.0" height="64.0" rx="10" fill="#FEF2F2" stroke="#DC2626" stroke-width="1.75"/>
+      <rect x="1393.0" y="2718.0" width="4" height="48.0" rx="2" fill="#DC2626" opacity="0.85"/>
+      <text x="1494.5" y="2746.6" text-anchor="middle" font-size="13.0" font-weight="600" fill="#7F1D1D">
+        <tspan x="1494.5" y="2746.6">Operación denegada</tspan>
+      </text>
+    </g>
+    <g id="node-DecIntE" class="node node-decision" data-node="DecIntE">
+      <polygon points="1734.0,2489.0 1879.0,2543.0 1734.0,2597.0 1589.0,2543.0" fill="#CBD5E1" opacity="0.55" stroke-linejoin="round"/>
+      <polygon points="1732.0,2486.0 1877.0,2540.0 1732.0,2594.0 1587.0,2540.0" fill="#FFFBEB" stroke="#D97706" stroke-width="1.9" stroke-linejoin="round"/>
+      <text x="1732.0" y="2536.0" text-anchor="middle" font-size="13.0" font-weight="600" fill="#1E293B">
+        <tspan x="1732.0" y="2536.0">¿Es integrante</tspan>
+        <tspan x="1732.0" y="2553.2">aceptado?</tspan>
+      </text>
+    </g>
+    <g id="node-E7" class="node node-success" data-node="E7">
+      <rect x="1627.0" y="2702.0" width="306.0" height="86.0" rx="10" fill="#CBD5E1" opacity="0.55"/>
+      <rect x="1625.0" y="2699.0" width="306.0" height="86.0" rx="10" fill="#ECFDF5" stroke="#059669" stroke-width="1.75"/>
+      <rect x="1629.0" y="2707.0" width="4" height="70.0" rx="2" fill="#059669" opacity="0.85"/>
+      <text x="1780.5" y="2729.1" text-anchor="middle" font-size="13.0" font-weight="600" fill="#064E3B">
+        <tspan x="1780.5" y="2729.1">Consultar y desarrollar</tspan>
+        <tspan x="1780.5" y="2746.6">actividades colaborativas</tspan>
+        <tspan x="1780.5" y="2764.1">del equipo</tspan>
+      </text>
+    </g>
+  </g>
+  <g id="layer-edge_labels">
+    <g class="edge-label">
+      <rect x="757.5" y="314.5" width="84.9" height="23.0" rx="6" fill="#EFF6FF" stroke="#60A5FA" stroke-width="1.15"/>
+      <text x="800.0" y="330.2" text-anchor="middle" font-size="12.0" font-weight="600" fill="#1D4ED8">
+        <tspan x="800.0" y="330.2">Comunidad</tspan>
+      </text>
+    </g>
+    <g class="edge-label">
+      <rect x="467.7" y="248.5" width="64.6" height="23.0" rx="6" fill="#EFF6FF" stroke="#60A5FA" stroke-width="1.15"/>
+      <text x="500.0" y="264.2" text-anchor="middle" font-size="12.0" font-weight="600" fill="#1D4ED8">
+        <tspan x="500.0" y="264.2">Grupos</tspan>
+      </text>
+    </g>
+    <g class="edge-label">
+      <rect x="1526.6" y="248.5" width="66.8" height="23.0" rx="6" fill="#EFF6FF" stroke="#60A5FA" stroke-width="1.15"/>
+      <text x="1560.0" y="264.2" text-anchor="middle" font-size="12.0" font-weight="600" fill="#1D4ED8">
+        <tspan x="1560.0" y="264.2">Equipos</tspan>
+      </text>
+    </g>
+    <g class="edge-label">
+      <rect x="111.0" y="616.5" width="34.0" height="23.0" rx="6" fill="#FEF2F2" stroke="#F87171" stroke-width="1.15"/>
+      <text x="128.0" y="632.2" text-anchor="middle" font-size="12.0" font-weight="600" fill="#B91C1C">
+        <tspan x="128.0" y="632.2">No</tspan>
+      </text>
+    </g>
+    <g class="edge-label">
+      <rect x="331.0" y="856.5" width="34.0" height="23.0" rx="6" fill="#ECFDF5" stroke="#10B981" stroke-width="1.15"/>
+      <text x="348.0" y="872.2" text-anchor="middle" font-size="12.0" font-weight="600" fill="#047857">
+        <tspan x="348.0" y="872.2">Sí</tspan>
+      </text>
+    </g>
+    <g class="edge-label">
+      <rect x="623.0" y="832.5" width="34.0" height="23.0" rx="6" fill="#FEF2F2" stroke="#F87171" stroke-width="1.15"/>
+      <text x="640.0" y="848.2" text-anchor="middle" font-size="12.0" font-weight="600" fill="#B91C1C">
+        <tspan x="640.0" y="848.2">No</tspan>
+      </text>
+    </g>
+    <g class="edge-label">
+      <rect x="1097.0" y="832.5" width="34.0" height="23.0" rx="6" fill="#ECFDF5" stroke="#10B981" stroke-width="1.15"/>
+      <text x="1114.0" y="848.2" text-anchor="middle" font-size="12.0" font-weight="600" fill="#047857">
+        <tspan x="1114.0" y="848.2">Sí</tspan>
+      </text>
+    </g>
+    <g class="edge-label">
+      <rect x="1419.0" y="830.5" width="34.0" height="23.0" rx="6" fill="#FEF2F2" stroke="#F87171" stroke-width="1.15"/>
+      <text x="1436.0" y="846.2" text-anchor="middle" font-size="12.0" font-weight="600" fill="#B91C1C">
+        <tspan x="1436.0" y="846.2">No</tspan>
+      </text>
+    </g>
+    <g class="edge-label">
+      <rect x="1757.0" y="830.5" width="34.0" height="23.0" rx="6" fill="#ECFDF5" stroke="#10B981" stroke-width="1.15"/>
+      <text x="1774.0" y="846.2" text-anchor="middle" font-size="12.0" font-weight="600" fill="#047857">
+        <tspan x="1774.0" y="846.2">Sí</tspan>
+      </text>
+    </g>
+    <g class="edge-label">
+      <rect x="220.3" y="1498.5" width="95.3" height="23.0" rx="6" fill="#EFF6FF" stroke="#60A5FA" stroke-width="1.15"/>
+      <text x="268.0" y="1514.2" text-anchor="middle" font-size="12.0" font-weight="600" fill="#1D4ED8">
+        <tspan x="268.0" y="1514.2">Crear grupo</tspan>
+      </text>
+    </g>
+    <g class="edge-label">
+      <rect x="634.3" y="1498.5" width="183.4" height="23.0" rx="6" fill="#EFF6FF" stroke="#60A5FA" stroke-width="1.15"/>
+      <text x="726.0" y="1514.2" text-anchor="middle" font-size="12.0" font-weight="600" fill="#1D4ED8">
+        <tspan x="726.0" y="1514.2">Unirse / Solicitar ingreso</tspan>
+      </text>
+    </g>
+    <g class="edge-label">
+      <rect x="1167.9" y="1498.5" width="256.1" height="23.0" rx="6" fill="#EFF6FF" stroke="#60A5FA" stroke-width="1.15"/>
+      <text x="1296.0" y="1514.2" text-anchor="middle" font-size="12.0" font-weight="600" fill="#1D4ED8">
+        <tspan x="1296.0" y="1514.2">Administrar / Gestionar integrantes</tspan>
+      </text>
+    </g>
+    <g class="edge-label">
+      <rect x="1659.7" y="1498.5" width="144.7" height="23.0" rx="6" fill="#EFF6FF" stroke="#60A5FA" stroke-width="1.15"/>
+      <text x="1732.0" y="1514.2" text-anchor="middle" font-size="12.0" font-weight="600" fill="#1D4ED8">
+        <tspan x="1732.0" y="1514.2">Consultar actividad</tspan>
+      </text>
+    </g>
+    <g class="edge-label">
+      <rect x="467.8" y="1750.5" width="64.3" height="23.0" rx="6" fill="#ECFDF5" stroke="#10B981" stroke-width="1.15"/>
+      <text x="500.0" y="1766.2" text-anchor="middle" font-size="12.0" font-weight="600" fill="#047857">
+        <tspan x="500.0" y="1766.2">Público</tspan>
+      </text>
+    </g>
+    <g class="edge-label">
+      <rect x="928.6" y="1644.5" width="66.8" height="23.0" rx="6" fill="#EFF6FF" stroke="#60A5FA" stroke-width="1.15"/>
+      <text x="962.0" y="1660.2" text-anchor="middle" font-size="12.0" font-weight="600" fill="#1D4ED8">
+        <tspan x="962.0" y="1660.2">Privado</tspan>
+      </text>
+    </g>
+    <g class="edge-label">
+      <rect x="669.0" y="1870.5" width="34.0" height="23.0" rx="6" fill="#ECFDF5" stroke="#10B981" stroke-width="1.15"/>
+      <text x="686.0" y="1886.2" text-anchor="middle" font-size="12.0" font-weight="600" fill="#047857">
+        <tspan x="686.0" y="1886.2">Sí</tspan>
+      </text>
+    </g>
+    <g class="edge-label">
+      <rect x="873.0" y="1944.5" width="34.0" height="23.0" rx="6" fill="#FEF2F2" stroke="#F87171" stroke-width="1.15"/>
+      <text x="890.0" y="1960.2" text-anchor="middle" font-size="12.0" font-weight="600" fill="#B91C1C">
+        <tspan x="890.0" y="1960.2">No</tspan>
+      </text>
+    </g>
+    <g class="edge-label">
+      <rect x="1087.0" y="1684.5" width="34.0" height="23.0" rx="6" fill="#ECFDF5" stroke="#10B981" stroke-width="1.15"/>
+      <text x="1104.0" y="1700.2" text-anchor="middle" font-size="12.0" font-weight="600" fill="#047857">
+        <tspan x="1104.0" y="1700.2">Sí</tspan>
+      </text>
+    </g>
+    <g class="edge-label">
+      <rect x="1459.0" y="1690.5" width="34.0" height="23.0" rx="6" fill="#FEF2F2" stroke="#F87171" stroke-width="1.15"/>
+      <text x="1476.0" y="1706.2" text-anchor="middle" font-size="12.0" font-weight="600" fill="#B91C1C">
+        <tspan x="1476.0" y="1706.2">No</tspan>
+      </text>
+    </g>
+    <g class="edge-label">
+      <rect x="1527.0" y="1690.5" width="34.0" height="23.0" rx="6" fill="#FEF2F2" stroke="#F87171" stroke-width="1.15"/>
+      <text x="1544.0" y="1706.2" text-anchor="middle" font-size="12.0" font-weight="600" fill="#B91C1C">
+        <tspan x="1544.0" y="1706.2">No</tspan>
+      </text>
+    </g>
+    <g class="edge-label">
+      <rect x="1839.0" y="1862.5" width="34.0" height="23.0" rx="6" fill="#ECFDF5" stroke="#10B981" stroke-width="1.15"/>
+      <text x="1856.0" y="1878.2" text-anchor="middle" font-size="12.0" font-weight="600" fill="#047857">
+        <tspan x="1856.0" y="1878.2">Sí</tspan>
+      </text>
+    </g>
+    <g class="edge-label">
+      <rect x="1354.2" y="2090.5" width="111.6" height="23.0" rx="6" fill="#EFF6FF" stroke="#60A5FA" stroke-width="1.15"/>
+      <text x="1410.0" y="2106.2" text-anchor="middle" font-size="12.0" font-weight="600" fill="#1D4ED8">
+        <tspan x="1410.0" y="2106.2">Puede originar</tspan>
+      </text>
+    </g>
+    <g class="edge-label">
+      <rect x="218.0" y="2428.5" width="99.9" height="23.0" rx="6" fill="#EFF6FF" stroke="#60A5FA" stroke-width="1.15"/>
+      <text x="268.0" y="2444.2" text-anchor="middle" font-size="12.0" font-weight="600" fill="#1D4ED8">
+        <tspan x="268.0" y="2444.2">Crear equipo</tspan>
+      </text>
+    </g>
+    <g class="edge-label">
+      <rect x="662.0" y="2428.5" width="127.9" height="23.0" rx="6" fill="#EFF6FF" stroke="#60A5FA" stroke-width="1.15"/>
+      <text x="726.0" y="2444.2" text-anchor="middle" font-size="12.0" font-weight="600" fill="#1D4ED8">
+        <tspan x="726.0" y="2444.2">Solicitar ingreso</tspan>
+      </text>
+    </g>
+    <g class="edge-label">
+      <rect x="1158.7" y="2428.5" width="274.7" height="23.0" rx="6" fill="#EFF6FF" stroke="#60A5FA" stroke-width="1.15"/>
+      <text x="1296.0" y="2444.2" text-anchor="middle" font-size="12.0" font-weight="600" fill="#1D4ED8">
+        <tspan x="1296.0" y="2444.2">Gestionar participantes y responsables</tspan>
+      </text>
+    </g>
+    <g class="edge-label">
+      <rect x="1650.2" y="2428.5" width="163.5" height="23.0" rx="6" fill="#EFF6FF" stroke="#60A5FA" stroke-width="1.15"/>
+      <text x="1732.0" y="2444.2" text-anchor="middle" font-size="12.0" font-weight="600" fill="#1D4ED8">
+        <tspan x="1732.0" y="2444.2">Actividad colaborativa</tspan>
+      </text>
+    </g>
+    <g class="edge-label">
+      <rect x="451.1" y="2623.0" width="97.9" height="38.0" rx="6" fill="#FEF2F2" stroke="#F87171" stroke-width="1.15"/>
+      <text x="500.0" y="2638.7" text-anchor="middle" font-size="12.0" font-weight="600" fill="#B91C1C">
+        <tspan x="500.0" y="2638.7">No (cerrado</tspan>
+        <tspan x="500.0" y="2653.7">o cupo lleno)</tspan>
+      </text>
+    </g>
+    <g class="edge-label">
+      <rect x="933.0" y="2582.5" width="34.0" height="23.0" rx="6" fill="#ECFDF5" stroke="#10B981" stroke-width="1.15"/>
+      <text x="950.0" y="2598.2" text-anchor="middle" font-size="12.0" font-weight="600" fill="#047857">
+        <tspan x="950.0" y="2598.2">Sí</tspan>
+      </text>
+    </g>
+    <g class="edge-label">
+      <rect x="597.0" y="2864.5" width="34.0" height="23.0" rx="6" fill="#FEF2F2" stroke="#F87171" stroke-width="1.15"/>
+      <text x="614.0" y="2880.2" text-anchor="middle" font-size="12.0" font-weight="600" fill="#B91C1C">
+        <tspan x="614.0" y="2880.2">No</tspan>
+      </text>
+    </g>
+    <g class="edge-label">
+      <rect x="871.0" y="2878.5" width="34.0" height="23.0" rx="6" fill="#ECFDF5" stroke="#10B981" stroke-width="1.15"/>
+      <text x="888.0" y="2894.2" text-anchor="middle" font-size="12.0" font-weight="600" fill="#047857">
+        <tspan x="888.0" y="2894.2">Sí</tspan>
+      </text>
+    </g>
+    <g class="edge-label">
+      <rect x="1087.0" y="2612.5" width="34.0" height="23.0" rx="6" fill="#ECFDF5" stroke="#10B981" stroke-width="1.15"/>
+      <text x="1104.0" y="2628.2" text-anchor="middle" font-size="12.0" font-weight="600" fill="#047857">
+        <tspan x="1104.0" y="2628.2">Sí</tspan>
+      </text>
+    </g>
+    <g class="edge-label">
+      <rect x="1443.0" y="2612.5" width="34.0" height="23.0" rx="6" fill="#FEF2F2" stroke="#F87171" stroke-width="1.15"/>
+      <text x="1460.0" y="2628.2" text-anchor="middle" font-size="12.0" font-weight="600" fill="#B91C1C">
+        <tspan x="1460.0" y="2628.2">No</tspan>
+      </text>
+    </g>
+    <g class="edge-label">
+      <rect x="1507.0" y="2612.5" width="34.0" height="23.0" rx="6" fill="#FEF2F2" stroke="#F87171" stroke-width="1.15"/>
+      <text x="1524.0" y="2628.2" text-anchor="middle" font-size="12.0" font-weight="600" fill="#B91C1C">
+        <tspan x="1524.0" y="2628.2">No</tspan>
+      </text>
+    </g>
+    <g class="edge-label">
+      <rect x="1839.0" y="2640.5" width="34.0" height="23.0" rx="6" fill="#ECFDF5" stroke="#10B981" stroke-width="1.15"/>
+      <text x="1856.0" y="2656.2" text-anchor="middle" font-size="12.0" font-weight="600" fill="#047857">
+        <tspan x="1856.0" y="2656.2">Sí</tspan>
+      </text>
+    </g>
+  </g>
+  <g id="layer-chrome">
+    <rect x="0" y="0" width="2060" height="6" fill="#1E3A5F"/>
+    <rect x="0" y="6" width="2060" height="96" fill="#FFFFFF"/>
+    <line x1="36" y1="102" x2="2024" y2="102" stroke="#E2E8F0" stroke-width="1.5"/>
+    <g class="header-badge"><rect x="40" y="20" width="189" height="24" rx="12" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/><text x="134.5" y="36" text-anchor="middle" font-size="11.5" font-weight="700" letter-spacing="0.6" fill="#1D4ED8">NEXO V1 · DIAGRAMA 02</text></g>
+    <text x="245" y="40" font-size="23" font-weight="700" fill="#0F294A">Flujo de colaboración: Comunidad, Grupos y Equipos</text>
+    <text x="40" y="76" font-size="13.5" font-weight="400" fill="#475569">Actores: Usuario (ACTIVE) · Coordinador de Grupo/Equipo · Sistema NEXO + IA · Moderador / Administrador</text>
+    <text x="2020" y="38" text-anchor="end" font-size="12.5" font-weight="600" fill="#64748B">Documentación Técnica · Arquitectura Funcional</text>
+    <g class="legend">
+      <rect x="96.0" y="3054.0" width="1868.0" height="74" rx="12" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.3"/>
+      <text x="114.0" y="3078.0" font-size="12" font-weight="700" letter-spacing="0.6" fill="#1E3A5F">LEYENDA VISUAL</text>
+      <rect x="250.0" y="3065.0" width="26" height="18" rx="9" fill="#1E3A5F" stroke="#0F294A" stroke-width="1.4"/>
+      <text x="284.0" y="3078.5" font-size="12.5" font-weight="500" fill="#334155">Inicio / Fin</text>
+      <rect x="492.0" y="3065.0" width="26" height="18" rx="4" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.4"/>
+      <text x="526.0" y="3078.5" font-size="12.5" font-weight="500" fill="#334155">Proceso / Acción</text>
+      <rect x="734.0" y="3065.0" width="26" height="18" rx="4" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="1.4"/>
+      <text x="768.0" y="3078.5" font-size="12.5" font-weight="500" fill="#334155">Módulo / Referencia</text>
+      <polygon points="989.0,3064.0 1002.0,3074.0 989.0,3084.0 976.0,3074.0" fill="#FFFBEB" stroke="#D97706" stroke-width="1.5"/>
+      <text x="1010.0" y="3078.5" font-size="12.5" font-weight="500" fill="#334155">Decisión</text>
+      <rect x="1218.0" y="3065.0" width="26" height="18" rx="4" fill="#ECFDF5" stroke="#059669" stroke-width="1.4"/>
+      <text x="1252.0" y="3078.5" font-size="12.5" font-weight="500" fill="#334155">Resultado / Éxito</text>
+      <rect x="1460.0" y="3065.0" width="26" height="18" rx="4" fill="#FEF2F2" stroke="#DC2626" stroke-width="1.4"/>
+      <text x="1494.0" y="3078.5" font-size="12.5" font-weight="500" fill="#334155">Error / Rechazo</text>
+      <rect x="1702.0" y="3065.0" width="26" height="18" rx="4" fill="#F5F3FF" stroke="#7C3AED" stroke-width="1.4" stroke-dasharray="4,2"/>
+      <text x="1736.0" y="3078.5" font-size="12.5" font-weight="500" fill="#334155">Pendiente de definición</text>
+      <line x1="112.0" y1="3092.0" x2="1948.0" y2="3092.0" stroke="#E2E8F0" stroke-width="1"/>
+      <text x="114.0" y="3113.0" font-size="12" font-weight="700" letter-spacing="0.6" fill="#1E3A5F">CONECTORES</text>
+      <line x1="250.0" y1="3109.0" x2="284.0" y2="3109.0" stroke="#475569" stroke-width="2" marker-end="url(#arrow-slate)"/>
+      <text x="294.0" y="3113.5" font-size="12.5" font-weight="500" fill="#334155">Flujo secuencial / acción</text>
+      <line x1="588.8" y1="3109.0" x2="622.8" y2="3109.0" stroke="#059669" stroke-width="2" marker-end="url(#arrow-green)"/>
+      <text x="632.8" y="3113.5" font-size="12.5" font-weight="500" fill="#334155">Rama afirmativa (Sí)</text>
+      <line x1="927.6" y1="3109.0" x2="961.6" y2="3109.0" stroke="#DC2626" stroke-width="2" marker-end="url(#arrow-red)"/>
+      <text x="971.6" y="3113.5" font-size="12.5" font-weight="500" fill="#334155">Rama negativa / rechazo (No)</text>
+      <line x1="1266.4" y1="3109.0" x2="1300.4" y2="3109.0" stroke="#2563EB" stroke-width="2" marker-end="url(#arrow-blue)"/>
+      <text x="1310.4" y="3113.5" font-size="12.5" font-weight="500" fill="#334155">Retorno / transición entre fases</text>
+      <line x1="1605.2" y1="3109.0" x2="1639.2" y2="3109.0" stroke="#1D4ED8" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrow-blue)"/>
+      <text x="1649.2" y="3113.5" font-size="12.5" font-weight="500" fill="#334155">Relación opcional (punteada)</text>
+    </g>
+  </g>
+</svg>

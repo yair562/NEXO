@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="2040" height="2190" viewBox="0 0 2040 2190" role="img" aria-labelledby="svg-title svg-desc">
+  <title id="svg-title">NEXO V1 — Diagrama 03: Flujo de archivos compartidos</title>
+  <desc id="svg-desc">Ciclo de vida de archivos compartidos en NEXO V1: selección, validación, carga, persistencia, control de permisos, consulta, descarga y eliminación.</desc>
+  <defs>
+    <style type="text/css"><![CDATA[
+      text { font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; }
+    ]]></style>
+    <marker id="arrow-slate" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7.5" markerHeight="7.5" orient="auto-start-reverse">
+      <path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#475569"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7.5" markerHeight="7.5" orient="auto-start-reverse">
+      <path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#059669"/>
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7.5" markerHeight="7.5" orient="auto-start-reverse">
+      <path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#DC2626"/>
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7.5" markerHeight="7.5" orient="auto-start-reverse">
+      <path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#1D4ED8"/>
+    </marker>
+    <marker id="arrow-violet" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7.5" markerHeight="7.5" orient="auto-start-reverse">
+      <path d="M 1 1.5 L 9 5 L 1 8.5 z" fill="#7C3AED"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="2040" height="2190" fill="#FFFFFF"/>
+  <g id="layer-sections">
+    <g id="sec-Subida" class="section">
+      <rect x="40.0" y="354.0" width="960.0" height="1696.0" rx="14" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.6"/>
+      <path d="M 54.0 354.0 L 986.0 354.0 Q 1000.0 354.0 1000.0 368.0 L 1000.0 398.0 L 40.0 398.0 L 40.0 368.0 Q 40.0 354.0 54.0 354.0 Z" fill="#EFF6FF"/>
+      <line x1="40.0" y1="398.0" x2="1000.0" y2="398.0" stroke="#CBD5E1" stroke-width="1.2"/>
+      <rect x="54.0" y="364.0" width="28" height="24" rx="6" fill="#1E3A5F"/>
+      <text x="68.0" y="380.0" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">1</text>
+      <text class="section-title" x="94.0" y="381.0" font-size="15.5" font-weight="700" fill="#0F294A">Selección, validación, carga y almacenamiento</text>
+    </g>
+    <g id="sec-Acceso" class="section">
+      <rect x="1040.0" y="354.0" width="960.0" height="1696.0" rx="14" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.6"/>
+      <path d="M 1054.0 354.0 L 1986.0 354.0 Q 2000.0 354.0 2000.0 368.0 L 2000.0 398.0 L 1040.0 398.0 L 1040.0 368.0 Q 1040.0 354.0 1054.0 354.0 Z" fill="#EFF6FF"/>
+      <line x1="1040.0" y1="398.0" x2="2000.0" y2="398.0" stroke="#CBD5E1" stroke-width="1.2"/>
+      <rect x="1054.0" y="364.0" width="28" height="24" rx="6" fill="#1E3A5F"/>
+      <text x="1068.0" y="380.0" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">2</text>
+      <text class="section-title" x="1094.0" y="381.0" font-size="15.5" font-weight="700" fill="#0F294A">Control de permisos, consulta, descarga y eliminación</text>
+    </g>
+  </g>
+  <g id="layer-edges">
+    <path class="connector" data-pts="1020.0,172.0 1020.0,212.0" d="M 1020.0 172.0 L 1020.0 212.0" fill="none" stroke="#475569" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+    <path class="connector" data-pts="885.0,260.0 540.0,260.0 540.0,418.0 282.0,418.0 282.0,441.0" d="M 885.0 260.0 L 550.0 260.0 Q 540.0 260.0 540.0 270.0 L 540.0 408.0 Q 540.0 418.0 530.0 418.0 L 292.0 418.0 Q 282.0 418.0 282.0 428.0 L 282.0 441.0" fill="none" stroke="#1D4ED8" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-blue)"/>
+    <path class="connector" data-pts="1155.0,260.0 1600.0,260.0 1600.0,418.0 1278.0,418.0 1278.0,439.0" d="M 1155.0 260.0 L 1590.0 260.0 Q 1600.0 260.0 1600.0 270.0 L 1600.0 408.0 Q 1600.0 418.0 1590.0 418.0 L 1288.0 418.0 Q 1278.0 418.0 1278.0 428.0 L 1278.0 439.0" fill="none" stroke="#1D4ED8" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-blue)"/>
+    <path class="connector" data-pts="282.0,503.0 282.0,538.0" d="M 282.0 503.0 L 282.0 538.0" fill="none" stroke="#475569" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+    <path class="connector" data-pts="435.0,592.0 624.0,592.0" d="M 435.0 592.0 L 624.0 592.0" fill="none" stroke="#7C3AED" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-violet)"/>
+    <path class="connector" data-pts="282.0,646.0 282.0,703.0" d="M 282.0 646.0 L 282.0 703.0" fill="none" stroke="#1D4ED8" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-blue)"/>
+    <path class="connector" data-pts="462.0,766.0 624.0,766.0" d="M 462.0 766.0 L 624.0 766.0" fill="none" stroke="#DC2626" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-red)"/>
+    <path class="connector" data-pts="282.0,829.0 282.0,887.0" d="M 282.0 829.0 L 282.0 887.0" fill="none" stroke="#059669" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-green)"/>
+    <path class="connector" data-pts="282.0,965.0 282.0,1010.0" d="M 282.0 965.0 L 282.0 1010.0" fill="none" stroke="#475569" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+    <path class="connector" data-pts="442.0,1064.0 624.0,1064.0" d="M 442.0 1064.0 L 624.0 1064.0" fill="none" stroke="#DC2626" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-red)"/>
+    <path class="connector" data-pts="282.0,1118.0 282.0,1182.0" d="M 282.0 1118.0 L 282.0 1182.0" fill="none" stroke="#059669" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-green)"/>
+    <path class="connector" data-pts="282.0,1242.0 282.0,1282.0" d="M 282.0 1242.0 L 282.0 1282.0" fill="none" stroke="#475569" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+    <path class="connector" data-pts="467.0,1344.0 624.0,1344.0" d="M 467.0 1344.0 L 624.0 1344.0" fill="none" stroke="#DC2626" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-red)"/>
+    <path class="connector" data-pts="282.0,1406.0 282.0,1465.0" d="M 282.0 1406.0 L 282.0 1465.0" fill="none" stroke="#059669" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-green)"/>
+    <path class="connector" data-pts="282.0,1547.0 282.0,1591.0" d="M 282.0 1547.0 L 282.0 1591.0" fill="none" stroke="#475569" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+    <path class="connector" data-pts="282.0,1657.0 282.0,1700.0" d="M 282.0 1657.0 L 282.0 1700.0" fill="none" stroke="#475569" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+    <path class="connector" data-pts="427.0,1752.0 624.0,1752.0" d="M 427.0 1752.0 L 624.0 1752.0" fill="none" stroke="#DC2626" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-red)"/>
+    <path class="connector" data-pts="282.0,1804.0 282.0,1887.0" d="M 282.0 1804.0 L 282.0 1887.0" fill="none" stroke="#059669" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-green)"/>
+    <path class="connector" data-pts="1278.0,505.0 1278.0,565.0" d="M 1278.0 505.0 L 1278.0 565.0" fill="none" stroke="#475569" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-slate)"/>
+    <path class="connector" data-pts="1450.0,622.0 1644.0,622.0" d="M 1450.0 622.0 L 1644.0 622.0" fill="none" stroke="#DC2626" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-red)"/>
+    <path class="connector" data-pts="1278.0,679.0 1278.0,756.0" d="M 1278.0 679.0 L 1278.0 756.0" fill="none" stroke="#059669" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-green)"/>
+    <path class="connector" data-pts="1471.0,822.0 1644.0,822.0" d="M 1471.0 822.0 L 1644.0 822.0" fill="none" stroke="#DC2626" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-red)"/>
+    <path class="connector" data-pts="1278.0,888.0 1278.0,944.0 1480.0,944.0 1480.0,990.0" d="M 1278.0 888.0 L 1278.0 934.0 Q 1278.0 944.0 1288.0 944.0 L 1470.0 944.0 Q 1480.0 944.0 1480.0 954.0 L 1480.0 990.0" fill="none" stroke="#059669" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-green)"/>
+    <path class="connector" data-pts="1350.0,1038.0 1192.0,1038.0 1192.0,1233.0" d="M 1350.0 1038.0 L 1202.0 1038.0 Q 1192.0 1038.0 1192.0 1048.0 L 1192.0 1233.0" fill="none" stroke="#1D4ED8" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-blue)"/>
+    <path class="connector" data-pts="1480.0,1086.0 1480.0,1233.0" d="M 1480.0 1086.0 L 1480.0 1233.0" fill="none" stroke="#1D4ED8" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-blue)"/>
+    <path class="connector" data-pts="1610.0,1038.0 1788.0,1038.0 1788.0,1418.0 1630.0,1418.0 1630.0,1474.0" d="M 1610.0 1038.0 L 1778.0 1038.0 Q 1788.0 1038.0 1788.0 1048.0 L 1788.0 1408.0 Q 1788.0 1418.0 1778.0 1418.0 L 1640.0 1418.0 Q 1630.0 1418.0 1630.0 1428.0 L 1630.0 1474.0" fill="none" stroke="#1D4ED8" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-blue)"/>
+    <path class="connector" data-pts="1413.0,1554.0 1346.0,1554.0 1346.0,1714.0 1412.0,1714.0 1412.0,1787.0" d="M 1413.0 1554.0 L 1356.0 1554.0 Q 1346.0 1554.0 1346.0 1564.0 L 1346.0 1704.0 Q 1346.0 1714.0 1356.0 1714.0 L 1402.0 1714.0 Q 1412.0 1714.0 1412.0 1724.0 L 1412.0 1787.0" fill="none" stroke="#DC2626" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-red)"/>
+    <path class="connector" data-pts="1847.0,1554.0 1902.0,1554.0 1902.0,1714.0 1788.0,1714.0 1788.0,1783.0" d="M 1847.0 1554.0 L 1892.0 1554.0 Q 1902.0 1554.0 1902.0 1564.0 L 1902.0 1704.0 Q 1902.0 1714.0 1892.0 1714.0 L 1798.0 1714.0 Q 1788.0 1714.0 1788.0 1724.0 L 1788.0 1783.0" fill="none" stroke="#059669" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-green)"/>
+  </g>
+  <g id="layer-nodes">
+    <g id="node-Inicio" class="node node-terminal" data-node="Inicio">
+      <rect x="807.0" y="127.0" width="430.0" height="48.0" rx="24.0" fill="#CBD5E1" opacity="0.65"/>
+      <rect x="805.0" y="124.0" width="430.0" height="48.0" rx="24.0" fill="#1E3A5F" stroke="#0F294A" stroke-width="2.0"/>
+      <text x="1020.0" y="152.9" text-anchor="middle" font-size="14.0" font-weight="600" fill="#FFFFFF">
+        <tspan x="1020.0" y="152.9">Usuario autenticado (ACTIVE) interactúa con Archivos</tspan>
+      </text>
+    </g>
+    <g id="node-Accion" class="node node-decision" data-node="Accion">
+      <polygon points="1022.0,215.0 1157.0,263.0 1022.0,311.0 887.0,263.0" fill="#CBD5E1" opacity="0.55" stroke-linejoin="round"/>
+      <polygon points="1020.0,212.0 1155.0,260.0 1020.0,308.0 885.0,260.0" fill="#FFFBEB" stroke="#D97706" stroke-width="1.9" stroke-linejoin="round"/>
+      <text x="1020.0" y="255.7" text-anchor="middle" font-size="13.5" font-weight="600" fill="#1E293B">
+        <tspan x="1020.0" y="255.7">¿Operación</tspan>
+        <tspan x="1020.0" y="273.7">solicitada?</tspan>
+      </text>
+    </g>
+    <g id="node-S1" class="node node-process" data-node="S1">
+      <rect x="104.0" y="444.0" width="360.0" height="62.0" rx="10" fill="#CBD5E1" opacity="0.55"/>
+      <rect x="102.0" y="441.0" width="360.0" height="62.0" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.6"/>
+      <rect x="106.0" y="449.0" width="4" height="46.0" rx="2" fill="#2563EB" opacity="0.85"/>
+      <text x="284.5" y="467.7" text-anchor="middle" font-size="13.5" font-weight="500" fill="#0F172A">
+        <tspan x="284.5" y="467.7">Usuario selecciona archivo</tspan>
+        <tspan x="284.5" y="485.7">y contexto destino</tspan>
+      </text>
+    </g>
+    <g id="node-DecCtx" class="node node-decision" data-node="DecCtx">
+      <polygon points="284.0,541.0 437.0,595.0 284.0,649.0 131.0,595.0" fill="#CBD5E1" opacity="0.55" stroke-linejoin="round"/>
+      <polygon points="282.0,538.0 435.0,592.0 282.0,646.0 129.0,592.0" fill="#FFFBEB" stroke="#D97706" stroke-width="1.9" stroke-linejoin="round"/>
+      <text x="282.0" y="587.7" text-anchor="middle" font-size="13.5" font-weight="600" fill="#1E293B">
+        <tspan x="282.0" y="587.7">¿Contexto permitido</tspan>
+        <tspan x="282.0" y="605.7">en V1?</tspan>
+      </text>
+    </g>
+    <g id="node-SNoAlc" class="node node-pending" data-node="SNoAlc">
+      <rect x="626.0" y="554.0" width="344.0" height="82.0" rx="10" fill="#CBD5E1" opacity="0.55"/>
+      <rect x="624.0" y="551.0" width="344.0" height="82.0" rx="10" fill="#F5F3FF" stroke="#7C3AED" stroke-width="1.75" stroke-dasharray="6,4"/>
+      <text x="796.0" y="579.3" text-anchor="middle" font-size="12.8" font-weight="500" fill="#4C1D95">
+        <tspan x="796.0" y="579.3">PENDIENTE DE CONFIRMAR</tspan>
+        <tspan x="796.0" y="596.5">EN ALCANCE</tspan>
+        <tspan x="796.0" y="613.7">(RF-14 / alcance.md 5.5)</tspan>
+      </text>
+    </g>
+    <g id="node-DecPermSub" class="node node-decision" data-node="DecPermSub">
+      <polygon points="284.0,706.0 464.0,769.0 284.0,832.0 104.0,769.0" fill="#CBD5E1" opacity="0.55" stroke-linejoin="round"/>
+      <polygon points="282.0,703.0 462.0,766.0 282.0,829.0 102.0,766.0" fill="#FFFBEB" stroke="#D97706" stroke-width="1.9" stroke-linejoin="round"/>
+      <text x="282.0" y="761.7" text-anchor="middle" font-size="13.5" font-weight="600" fill="#1E293B">
+        <tspan x="282.0" y="761.7">¿Usuario tiene permisos</tspan>
+        <tspan x="282.0" y="779.7">en el contexto destino?</tspan>
+      </text>
+    </g>
+    <g id="node-SDen" class="node node-error" data-node="SDen">
+      <rect x="626.0" y="735.0" width="344.0" height="68.0" rx="10" fill="#CBD5E1" opacity="0.55"/>
+      <rect x="624.0" y="732.0" width="344.0" height="68.0" rx="10" fill="#FEF2F2" stroke="#DC2626" stroke-width="1.75"/>
+      <rect x="628.0" y="740.0" width="4" height="52.0" rx="2" fill="#DC2626" opacity="0.85"/>
+      <text x="798.5" y="761.5" text-anchor="middle" font-size="13.0" font-weight="600" fill="#7F1D1D">
+        <tspan x="798.5" y="761.5">Acceso denegado (403):</tspan>
+        <tspan x="798.5" y="779.5">sin permisos en conversación/grupo</tspan>
+      </text>
+    </g>
+    <g id="node-S2" class="node node-process" data-node="S2">
+      <rect x="82.0" y="890.0" width="404.0" height="78.0" rx="10" fill="#CBD5E1" opacity="0.55"/>
+      <rect x="80.0" y="887.0" width="404.0" height="78.0" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.6"/>
+      <rect x="84.0" y="895.0" width="4" height="62.0" rx="2" fill="#2563EB" opacity="0.85"/>
+      <text x="284.5" y="913.0" text-anchor="middle" font-size="13.0" font-weight="500" fill="#0F172A">
+        <tspan x="284.5" y="913.0">Sistema valida archivo</tspan>
+        <tspan x="284.5" y="930.5">[Formatos, MIME y tamaño máx.:</tspan>
+        <tspan x="284.5" y="948.0" fill="#5B21B6" font-weight="600" font-size="12.2">PENDIENTE DP-05]</tspan>
+      </text>
+    </g>
+    <g id="node-DecVal" class="node node-decision" data-node="DecVal">
+      <polygon points="284.0,1013.0 444.0,1067.0 284.0,1121.0 124.0,1067.0" fill="#CBD5E1" opacity="0.55" stroke-linejoin="round"/>
+      <polygon points="282.0,1010.0 442.0,1064.0 282.0,1118.0 122.0,1064.0" fill="#FFFBEB" stroke="#D97706" stroke-width="1.9" stroke-linejoin="round"/>
+      <text x="282.0" y="1059.7" text-anchor="middle" font-size="13.5" font-weight="600" fill="#1E293B">
+        <tspan x="282.0" y="1059.7">¿Archivo cumple</tspan>
+        <tspan x="282.0" y="1077.7">validaciones?</tspan>
+      </text>
+    </g>
+    <g id="node-SRech" class="node node-error" data-node="SRech">
+      <rect x="626.0" y="1033.0" width="344.0" height="68.0" rx="10" fill="#CBD5E1" opacity="0.55"/>
+      <rect x="624.0" y="1030.0" width="344.0" height="68.0" rx="10" fill="#FEF2F2" stroke="#DC2626" stroke-width="1.75"/>
+      <rect x="628.0" y="1038.0" width="4" height="52.0" rx="2" fill="#DC2626" opacity="0.85"/>
+      <text x="798.5" y="1059.5" text-anchor="middle" font-size="13.0" font-weight="600" fill="#7F1D1D">
+        <tspan x="798.5" y="1059.5">Archivo rechazado:</tspan>
+        <tspan x="798.5" y="1077.5">notifica motivo sin almacenar</tspan>
+      </text>
+    </g>
+    <g id="node-S3" class="node node-process" data-node="S3">
+      <rect x="104.0" y="1185.0" width="360.0" height="60.0" rx="10" fill="#CBD5E1" opacity="0.55"/>
+      <rect x="102.0" y="1182.0" width="360.0" height="60.0" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.6"/>
+      <rect x="106.0" y="1190.0" width="4" height="44.0" rx="2" fill="#2563EB" opacity="0.85"/>
+      <text x="284.5" y="1216.7" text-anchor="middle" font-size="13.5" font-weight="500" fill="#0F172A">
+        <tspan x="284.5" y="1216.7">Inicia carga (upload) al servidor Flask</tspan>
+      </text>
+    </g>
+    <g id="node-DecCarga" class="node node-decision" data-node="DecCarga">
+      <polygon points="284.0,1285.0 469.0,1347.0 284.0,1409.0 99.0,1347.0" fill="#CBD5E1" opacity="0.55" stroke-linejoin="round"/>
+      <polygon points="282.0,1282.0 467.0,1344.0 282.0,1406.0 97.0,1344.0" fill="#FFFBEB" stroke="#D97706" stroke-width="1.9" stroke-linejoin="round"/>
+      <text x="282.0" y="1339.7" text-anchor="middle" font-size="13.5" font-weight="600" fill="#1E293B">
+        <tspan x="282.0" y="1339.7">¿Carga completada sin</tspan>
+        <tspan x="282.0" y="1357.7">fallo de red/servidor?</tspan>
+      </text>
+    </g>
+    <g id="node-SErrCarga" class="node node-error" data-node="SErrCarga">
+      <rect x="626.0" y="1311.0" width="344.0" height="72.0" rx="10" fill="#CBD5E1" opacity="0.55"/>
+      <rect x="624.0" y="1308.0" width="344.0" height="72.0" rx="10" fill="#FEF2F2" stroke="#DC2626" stroke-width="1.75"/>
+      <rect x="628.0" y="1316.0" width="4" height="56.0" rx="2" fill="#DC2626" opacity="0.85"/>
+      <text x="798.5" y="1339.5" text-anchor="middle" font-size="13.0" font-weight="600" fill="#7F1D1D">
+        <tspan x="798.5" y="1339.5">Error de carga: notifica fallo</tspan>
+        <tspan x="798.5" y="1357.5">y permite reintentar</tspan>
+      </text>
+    </g>
+    <g id="node-S4" class="node node-process" data-node="S4">
+      <rect x="78.0" y="1468.0" width="412.0" height="82.0" rx="10" fill="#CBD5E1" opacity="0.55"/>
+      <rect x="76.0" y="1465.0" width="412.0" height="82.0" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.6"/>
+      <rect x="80.0" y="1473.0" width="4" height="66.0" rx="2" fill="#2563EB" opacity="0.85"/>
+      <text x="284.5" y="1493.0" text-anchor="middle" font-size="13.0" font-weight="500" fill="#0F172A">
+        <tspan x="284.5" y="1493.0">Almacena archivo</tspan>
+        <tspan x="284.5" y="1510.5">[Estrategia física y retención:</tspan>
+        <tspan x="284.5" y="1528.0">PENDIENTE] y registra metadatos</tspan>
+      </text>
+    </g>
+    <g id="node-S5" class="node node-process" data-node="S5">
+      <rect x="78.0" y="1594.0" width="412.0" height="66.0" rx="10" fill="#CBD5E1" opacity="0.55"/>
+      <rect x="76.0" y="1591.0" width="412.0" height="66.0" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.6"/>
+      <rect x="80.0" y="1599.0" width="4" height="50.0" rx="2" fill="#2563EB" opacity="0.85"/>
+      <text x="284.5" y="1619.7" text-anchor="middle" font-size="13.5" font-weight="500" fill="#0F172A">
+        <tspan x="284.5" y="1619.7">Asocia archivo con mensaje privado</tspan>
+        <tspan x="284.5" y="1637.7">o grupo correspondiente</tspan>
+      </text>
+    </g>
+    <g id="node-DecPers" class="node node-decision" data-node="DecPers">
+      <polygon points="284.0,1703.0 429.0,1755.0 284.0,1807.0 139.0,1755.0" fill="#CBD5E1" opacity="0.55" stroke-linejoin="round"/>
+      <polygon points="282.0,1700.0 427.0,1752.0 282.0,1804.0 137.0,1752.0" fill="#FFFBEB" stroke="#D97706" stroke-width="1.9" stroke-linejoin="round"/>
+      <text x="282.0" y="1747.7" text-anchor="middle" font-size="13.5" font-weight="600" fill="#1E293B">
+        <tspan x="282.0" y="1747.7">¿Persistencia</tspan>
+        <tspan x="282.0" y="1765.7">exitosa?</tspan>
+      </text>
+    </g>
+    <g id="node-SRollback" class="node node-error" data-node="SRollback">
+      <rect x="626.0" y="1719.0" width="344.0" height="72.0" rx="10" fill="#CBD5E1" opacity="0.55"/>
+      <rect x="624.0" y="1716.0" width="344.0" height="72.0" rx="10" fill="#FEF2F2" stroke="#DC2626" stroke-width="1.75"/>
+      <rect x="628.0" y="1724.0" width="4" height="56.0" rx="2" fill="#DC2626" opacity="0.85"/>
+      <text x="798.5" y="1747.5" text-anchor="middle" font-size="13.0" font-weight="600" fill="#7F1D1D">
+        <tspan x="798.5" y="1747.5">Limpia archivo parcial y notifica</tspan>
+        <tspan x="798.5" y="1765.5">error de almacenamiento</tspan>
+      </text>
+    </g>
+    <g id="node-SOK" class="node node-success" data-node="SOK">
+      <rect x="78.0" y="1890.0" width="412.0" height="70.0" rx="10" fill="#CBD5E1" opacity="0.55"/>
+      <rect x="76.0" y="1887.0" width="412.0" height="70.0" rx="10" fill="#ECFDF5" stroke="#059669" stroke-width="1.75"/>
+      <rect x="80.0" y="1895.0" width="4" height="54.0" rx="2" fill="#059669" opacity="0.85"/>
+      <text x="284.5" y="1917.7" text-anchor="middle" font-size="13.5" font-weight="600" fill="#064E3B">
+        <tspan x="284.5" y="1917.7">Archivo compartido y disponible</tspan>
+        <tspan x="284.5" y="1935.7">para usuarios autorizados</tspan>
+      </text>
+    </g>
+    <g id="node-A1" class="node node-process" data-node="A1">
+      <rect x="1085.0" y="442.0" width="390.0" height="66.0" rx="10" fill="#CBD5E1" opacity="0.55"/>
+      <rect x="1083.0" y="439.0" width="390.0" height="66.0" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.6"/>
+      <rect x="1087.0" y="447.0" width="4" height="50.0" rx="2" fill="#2563EB" opacity="0.85"/>
+      <text x="1280.5" y="467.7" text-anchor="middle" font-size="13.5" font-weight="500" fill="#0F172A">
+        <tspan x="1280.5" y="467.7">Usuario solicita consultar,</tspan>
+        <tspan x="1280.5" y="485.7">descargar o eliminar archivo</tspan>
+      </text>
+    </g>
+    <g id="node-DecDisp" class="node node-decision" data-node="DecDisp">
+      <polygon points="1280.0,568.0 1452.0,625.0 1280.0,682.0 1108.0,625.0" fill="#CBD5E1" opacity="0.55" stroke-linejoin="round"/>
+      <polygon points="1278.0,565.0 1450.0,622.0 1278.0,679.0 1106.0,622.0" fill="#FFFBEB" stroke="#D97706" stroke-width="1.9" stroke-linejoin="round"/>
+      <text x="1278.0" y="617.7" text-anchor="middle" font-size="13.5" font-weight="600" fill="#1E293B">
+        <tspan x="1278.0" y="617.7">¿Archivo existe y</tspan>
+        <tspan x="1278.0" y="635.7">sigue disponible?</tspan>
+      </text>
+    </g>
+    <g id="node-ANoDisp" class="node node-error" data-node="ANoDisp">
+      <rect x="1646.0" y="591.0" width="324.0" height="68.0" rx="10" fill="#CBD5E1" opacity="0.55"/>
+      <rect x="1644.0" y="588.0" width="324.0" height="68.0" rx="10" fill="#FEF2F2" stroke="#DC2626" stroke-width="1.75"/>
+      <rect x="1648.0" y="596.0" width="4" height="52.0" rx="2" fill="#DC2626" opacity="0.85"/>
+      <text x="1808.5" y="617.5" text-anchor="middle" font-size="13.0" font-weight="600" fill="#7F1D1D">
+        <tspan x="1808.5" y="617.5">Error 404: archivo ya no</tspan>
+        <tspan x="1808.5" y="635.5">está disponible</tspan>
+      </text>
+    </g>
+    <g id="node-DecPermAcc" class="node node-decision" data-node="DecPermAcc">
+      <polygon points="1280.0,759.0 1473.0,825.0 1280.0,891.0 1087.0,825.0" fill="#CBD5E1" opacity="0.55" stroke-linejoin="round"/>
+      <polygon points="1278.0,756.0 1471.0,822.0 1278.0,888.0 1085.0,822.0" fill="#FFFBEB" stroke="#D97706" stroke-width="1.9" stroke-linejoin="round"/>
+      <text x="1278.0" y="808.7" text-anchor="middle" font-size="13.5" font-weight="600" fill="#1E293B">
+        <tspan x="1278.0" y="808.7">¿Usuario autorizado en la</tspan>
+        <tspan x="1278.0" y="826.7">conversación o grupo</tspan>
+        <tspan x="1278.0" y="844.7">(RNF-02)?</tspan>
+      </text>
+    </g>
+    <g id="node-ADen" class="node node-error" data-node="ADen">
+      <rect x="1646.0" y="791.0" width="324.0" height="68.0" rx="10" fill="#CBD5E1" opacity="0.55"/>
+      <rect x="1644.0" y="788.0" width="324.0" height="68.0" rx="10" fill="#FEF2F2" stroke="#DC2626" stroke-width="1.75"/>
+      <rect x="1648.0" y="796.0" width="4" height="52.0" rx="2" fill="#DC2626" opacity="0.85"/>
+      <text x="1808.5" y="817.5" text-anchor="middle" font-size="13.0" font-weight="600" fill="#7F1D1D">
+        <tspan x="1808.5" y="817.5">Acceso denegado (403):</tspan>
+        <tspan x="1808.5" y="835.5">usuario sin permisos</tspan>
+      </text>
+    </g>
+    <g id="node-DecOp" class="node node-decision" data-node="DecOp">
+      <polygon points="1482.0,993.0 1612.0,1041.0 1482.0,1089.0 1352.0,1041.0" fill="#CBD5E1" opacity="0.55" stroke-linejoin="round"/>
+      <polygon points="1480.0,990.0 1610.0,1038.0 1480.0,1086.0 1350.0,1038.0" fill="#FFFBEB" stroke="#D97706" stroke-width="1.9" stroke-linejoin="round"/>
+      <text x="1480.0" y="1033.7" text-anchor="middle" font-size="13.5" font-weight="600" fill="#1E293B">
+        <tspan x="1480.0" y="1033.7">¿Acción</tspan>
+        <tspan x="1480.0" y="1051.7">específica?</tspan>
+      </text>
+    </g>
+    <g id="node-ACons" class="node node-success" data-node="ACons">
+      <rect x="1066.0" y="1236.0" width="256.0" height="86.0" rx="10" fill="#CBD5E1" opacity="0.55"/>
+      <rect x="1064.0" y="1233.0" width="256.0" height="86.0" rx="10" fill="#ECFDF5" stroke="#059669" stroke-width="1.75"/>
+      <rect x="1068.0" y="1241.0" width="4" height="70.0" rx="2" fill="#059669" opacity="0.85"/>
+      <text x="1194.5" y="1263.0" text-anchor="middle" font-size="13.0" font-weight="600" fill="#064E3B">
+        <tspan x="1194.5" y="1263.0">Muestra nombre, tipo,</tspan>
+        <tspan x="1194.5" y="1280.5">tamaño y referencia</tspan>
+        <tspan x="1194.5" y="1298.0">del archivo</tspan>
+      </text>
+    </g>
+    <g id="node-ADown" class="node node-success" data-node="ADown">
+      <rect x="1359.0" y="1236.0" width="246.0" height="86.0" rx="10" fill="#CBD5E1" opacity="0.55"/>
+      <rect x="1357.0" y="1233.0" width="246.0" height="86.0" rx="10" fill="#ECFDF5" stroke="#059669" stroke-width="1.75"/>
+      <rect x="1361.0" y="1241.0" width="4" height="70.0" rx="2" fill="#059669" opacity="0.85"/>
+      <text x="1482.5" y="1271.8" text-anchor="middle" font-size="13.0" font-weight="600" fill="#064E3B">
+        <tspan x="1482.5" y="1271.8">Sistema entrega archivo</tspan>
+        <tspan x="1482.5" y="1289.3">al usuario autorizado</tspan>
+      </text>
+    </g>
+    <g id="node-DecPermElim" class="node node-decision" data-node="DecPermElim">
+      <polygon points="1632.0,1477.0 1849.0,1557.0 1632.0,1637.0 1415.0,1557.0" fill="#CBD5E1" opacity="0.55" stroke-linejoin="round"/>
+      <polygon points="1630.0,1474.0 1847.0,1554.0 1630.0,1634.0 1413.0,1554.0" fill="#FFFBEB" stroke="#D97706" stroke-width="1.9" stroke-linejoin="round"/>
+      <text x="1630.0" y="1532.7" text-anchor="middle" font-size="12.8" font-weight="600" fill="#1E293B">
+        <tspan x="1630.0" y="1532.7">¿Permiso para eliminar</tspan>
+        <tspan x="1630.0" y="1549.9">(autor / coordinador /</tspan>
+        <tspan x="1630.0" y="1567.1">moderador)?</tspan>
+        <tspan x="1630.0" y="1584.3" fill="#5B21B6" font-weight="600" font-size="12.0">[Regla: PENDIENTE]</tspan>
+      </text>
+    </g>
+    <g id="node-ADenElim" class="node node-error" data-node="ADenElim">
+      <rect x="1258.0" y="1790.0" width="312.0" height="74.0" rx="10" fill="#CBD5E1" opacity="0.55"/>
+      <rect x="1256.0" y="1787.0" width="312.0" height="74.0" rx="10" fill="#FEF2F2" stroke="#DC2626" stroke-width="1.75"/>
+      <rect x="1260.0" y="1795.0" width="4" height="58.0" rx="2" fill="#DC2626" opacity="0.85"/>
+      <text x="1414.5" y="1819.5" text-anchor="middle" font-size="13.0" font-weight="600" fill="#7F1D1D">
+        <tspan x="1414.5" y="1819.5">Operación denegada (403):</tspan>
+        <tspan x="1414.5" y="1837.5">sin permiso de eliminación</tspan>
+      </text>
+    </g>
+    <g id="node-AElim" class="node node-success" data-node="AElim">
+      <rect x="1632.0" y="1786.0" width="316.0" height="82.0" rx="10" fill="#CBD5E1" opacity="0.55"/>
+      <rect x="1630.0" y="1783.0" width="316.0" height="82.0" rx="10" fill="#ECFDF5" stroke="#059669" stroke-width="1.75"/>
+      <rect x="1634.0" y="1791.0" width="4" height="66.0" rx="2" fill="#059669" opacity="0.85"/>
+      <text x="1790.5" y="1819.8" text-anchor="middle" font-size="13.0" font-weight="600" fill="#064E3B">
+        <tspan x="1790.5" y="1819.8">Elimina archivo/referencia según</tspan>
+        <tspan x="1790.5" y="1837.3">política y confirma al usuario</tspan>
+      </text>
+    </g>
+  </g>
+  <g id="layer-edge_labels">
+    <g class="edge-label">
+      <rect x="637.6" y="248.5" width="136.8" height="23.0" rx="6" fill="#EFF6FF" stroke="#60A5FA" stroke-width="1.15"/>
+      <text x="706.0" y="264.2" text-anchor="middle" font-size="12.0" font-weight="600" fill="#1D4ED8">
+        <tspan x="706.0" y="264.2">Compartir archivo</tspan>
+      </text>
+    </g>
+    <g class="edge-label">
+      <rect x="1264.4" y="248.5" width="231.2" height="23.0" rx="6" fill="#EFF6FF" stroke="#60A5FA" stroke-width="1.15"/>
+      <text x="1380.0" y="264.2" text-anchor="middle" font-size="12.0" font-weight="600" fill="#1D4ED8">
+        <tspan x="1380.0" y="264.2">Consultar / Descargar / Eliminar</tspan>
+      </text>
+    </g>
+    <g class="edge-label">
+      <rect x="478.1" y="573.0" width="103.7" height="38.0" rx="6" fill="#F5F3FF" stroke="#A78BFA" stroke-width="1.15"/>
+      <text x="530.0" y="588.7" text-anchor="middle" font-size="12.0" font-weight="600" fill="#5B21B6">
+        <tspan x="530.0" y="588.7">Publicación</tspan>
+        <tspan x="530.0" y="603.7">en Comunidad</tspan>
+      </text>
+    </g>
+    <g class="edge-label">
+      <rect x="177.0" y="660.5" width="210.1" height="23.0" rx="6" fill="#EFF6FF" stroke="#60A5FA" stroke-width="1.15"/>
+      <text x="282.0" y="676.2" text-anchor="middle" font-size="12.0" font-weight="600" fill="#1D4ED8">
+        <tspan x="282.0" y="676.2">Conversación privada o Grupo</tspan>
+      </text>
+    </g>
+    <g class="edge-label">
+      <rect x="525.0" y="754.5" width="34.0" height="23.0" rx="6" fill="#FEF2F2" stroke="#F87171" stroke-width="1.15"/>
+      <text x="542.0" y="770.2" text-anchor="middle" font-size="12.0" font-weight="600" fill="#B91C1C">
+        <tspan x="542.0" y="770.2">No</tspan>
+      </text>
+    </g>
+    <g class="edge-label">
+      <rect x="265.0" y="846.5" width="34.0" height="23.0" rx="6" fill="#ECFDF5" stroke="#10B981" stroke-width="1.15"/>
+      <text x="282.0" y="862.2" text-anchor="middle" font-size="12.0" font-weight="600" fill="#047857">
+        <tspan x="282.0" y="862.2">Sí</tspan>
+      </text>
+    </g>
+    <g class="edge-label">
+      <rect x="515.0" y="1052.5" width="34.0" height="23.0" rx="6" fill="#FEF2F2" stroke="#F87171" stroke-width="1.15"/>
+      <text x="532.0" y="1068.2" text-anchor="middle" font-size="12.0" font-weight="600" fill="#B91C1C">
+        <tspan x="532.0" y="1068.2">No</tspan>
+      </text>
+    </g>
+    <g class="edge-label">
+      <rect x="265.0" y="1136.5" width="34.0" height="23.0" rx="6" fill="#ECFDF5" stroke="#10B981" stroke-width="1.15"/>
+      <text x="282.0" y="1152.2" text-anchor="middle" font-size="12.0" font-weight="600" fill="#047857">
+        <tspan x="282.0" y="1152.2">Sí</tspan>
+      </text>
+    </g>
+    <g class="edge-label">
+      <rect x="495.1" y="1325.0" width="97.9" height="38.0" rx="6" fill="#FEF2F2" stroke="#F87171" stroke-width="1.15"/>
+      <text x="544.0" y="1340.7" text-anchor="middle" font-size="12.0" font-weight="600" fill="#B91C1C">
+        <tspan x="544.0" y="1340.7">No</tspan>
+        <tspan x="544.0" y="1355.7">(carga falla)</tspan>
+      </text>
+    </g>
+    <g class="edge-label">
+      <rect x="265.0" y="1422.5" width="34.0" height="23.0" rx="6" fill="#ECFDF5" stroke="#10B981" stroke-width="1.15"/>
+      <text x="282.0" y="1438.2" text-anchor="middle" font-size="12.0" font-weight="600" fill="#047857">
+        <tspan x="282.0" y="1438.2">Sí</tspan>
+      </text>
+    </g>
+    <g class="edge-label">
+      <rect x="509.0" y="1740.5" width="34.0" height="23.0" rx="6" fill="#FEF2F2" stroke="#F87171" stroke-width="1.15"/>
+      <text x="526.0" y="1756.2" text-anchor="middle" font-size="12.0" font-weight="600" fill="#B91C1C">
+        <tspan x="526.0" y="1756.2">No</tspan>
+      </text>
+    </g>
+    <g class="edge-label">
+      <rect x="265.0" y="1832.5" width="34.0" height="23.0" rx="6" fill="#ECFDF5" stroke="#10B981" stroke-width="1.15"/>
+      <text x="282.0" y="1848.2" text-anchor="middle" font-size="12.0" font-weight="600" fill="#047857">
+        <tspan x="282.0" y="1848.2">Sí</tspan>
+      </text>
+    </g>
+    <g class="edge-label">
+      <rect x="1487.6" y="603.0" width="116.7" height="38.0" rx="6" fill="#FEF2F2" stroke="#F87171" stroke-width="1.15"/>
+      <text x="1546.0" y="618.7" text-anchor="middle" font-size="12.0" font-weight="600" fill="#B91C1C">
+        <tspan x="1546.0" y="618.7">No (eliminado</tspan>
+        <tspan x="1546.0" y="633.7">o no disponible)</tspan>
+      </text>
+    </g>
+    <g class="edge-label">
+      <rect x="1261.0" y="706.5" width="34.0" height="23.0" rx="6" fill="#ECFDF5" stroke="#10B981" stroke-width="1.15"/>
+      <text x="1278.0" y="722.2" text-anchor="middle" font-size="12.0" font-weight="600" fill="#047857">
+        <tspan x="1278.0" y="722.2">Sí</tspan>
+      </text>
+    </g>
+    <g class="edge-label">
+      <rect x="1539.0" y="810.5" width="34.0" height="23.0" rx="6" fill="#FEF2F2" stroke="#F87171" stroke-width="1.15"/>
+      <text x="1556.0" y="826.2" text-anchor="middle" font-size="12.0" font-weight="600" fill="#B91C1C">
+        <tspan x="1556.0" y="826.2">No</tspan>
+      </text>
+    </g>
+    <g class="edge-label">
+      <rect x="1363.0" y="932.5" width="34.0" height="23.0" rx="6" fill="#ECFDF5" stroke="#10B981" stroke-width="1.15"/>
+      <text x="1380.0" y="948.2" text-anchor="middle" font-size="12.0" font-weight="600" fill="#047857">
+        <tspan x="1380.0" y="948.2">Sí</tspan>
+      </text>
+    </g>
+    <g class="edge-label">
+      <rect x="1135.3" y="1117.0" width="113.4" height="38.0" rx="6" fill="#EFF6FF" stroke="#60A5FA" stroke-width="1.15"/>
+      <text x="1192.0" y="1132.7" text-anchor="middle" font-size="12.0" font-weight="600" fill="#1D4ED8">
+        <tspan x="1192.0" y="1132.7">Consultar /</tspan>
+        <tspan x="1192.0" y="1147.7">Ver metadatos</tspan>
+      </text>
+    </g>
+    <g class="edge-label">
+      <rect x="1437.0" y="1148.5" width="85.9" height="23.0" rx="6" fill="#EFF6FF" stroke="#60A5FA" stroke-width="1.15"/>
+      <text x="1480.0" y="1164.2" text-anchor="middle" font-size="12.0" font-weight="600" fill="#1D4ED8">
+        <tspan x="1480.0" y="1164.2">Descargar</tspan>
+      </text>
+    </g>
+    <g class="edge-label">
+      <rect x="1751.7" y="1198.5" width="72.7" height="23.0" rx="6" fill="#EFF6FF" stroke="#60A5FA" stroke-width="1.15"/>
+      <text x="1788.0" y="1214.2" text-anchor="middle" font-size="12.0" font-weight="600" fill="#1D4ED8">
+        <tspan x="1788.0" y="1214.2">Eliminar</tspan>
+      </text>
+    </g>
+    <g class="edge-label">
+      <rect x="1329.0" y="1644.5" width="34.0" height="23.0" rx="6" fill="#FEF2F2" stroke="#F87171" stroke-width="1.15"/>
+      <text x="1346.0" y="1660.2" text-anchor="middle" font-size="12.0" font-weight="600" fill="#B91C1C">
+        <tspan x="1346.0" y="1660.2">No</tspan>
+      </text>
+    </g>
+    <g class="edge-label">
+      <rect x="1885.0" y="1644.5" width="34.0" height="23.0" rx="6" fill="#ECFDF5" stroke="#10B981" stroke-width="1.15"/>
+      <text x="1902.0" y="1660.2" text-anchor="middle" font-size="12.0" font-weight="600" fill="#047857">
+        <tspan x="1902.0" y="1660.2">Sí</tspan>
+      </text>
+    </g>
+  </g>
+  <g id="layer-chrome">
+    <rect x="0" y="0" width="2040" height="6" fill="#1E3A5F"/>
+    <rect x="0" y="6" width="2040" height="96" fill="#FFFFFF"/>
+    <line x1="36" y1="102" x2="2004" y2="102" stroke="#E2E8F0" stroke-width="1.5"/>
+    <g class="header-badge"><rect x="40" y="20" width="189" height="24" rx="12" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/><text x="134.5" y="36" text-anchor="middle" font-size="11.5" font-weight="700" letter-spacing="0.6" fill="#1D4ED8">NEXO V1 · DIAGRAMA 03</text></g>
+    <text x="245" y="40" font-size="23" font-weight="700" fill="#0F294A">Flujo de archivos compartidos (NEXO V1)</text>
+    <text x="40" y="76" font-size="13.5" font-weight="400" fill="#475569">Actores: Usuario Emisor (ACTIVE) · Usuario Receptor/Consultor (ACTIVE) · Sistema NEXO (Flask + Almacenamiento + PostgreSQL)</text>
+    <text x="2000" y="38" text-anchor="end" font-size="12.5" font-weight="600" fill="#64748B">Documentación Técnica · Arquitectura Funcional</text>
+    <g class="legend">
+      <rect x="40.0" y="2086.0" width="1960.0" height="74" rx="12" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.3"/>
+      <text x="58.0" y="2110.0" font-size="12" font-weight="700" letter-spacing="0.6" fill="#1E3A5F">LEYENDA VISUAL</text>
+      <rect x="194.0" y="2097.0" width="26" height="18" rx="9" fill="#1E3A5F" stroke="#0F294A" stroke-width="1.4"/>
+      <text x="228.0" y="2110.5" font-size="12.5" font-weight="500" fill="#334155">Inicio / Fin</text>
+      <rect x="491.7" y="2097.0" width="26" height="18" rx="4" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.4"/>
+      <text x="525.7" y="2110.5" font-size="12.5" font-weight="500" fill="#334155">Proceso / Acción</text>
+      <polygon points="802.3,2096.0 815.3,2106.0 802.3,2116.0 789.3,2106.0" fill="#FFFBEB" stroke="#D97706" stroke-width="1.5"/>
+      <text x="823.3" y="2110.5" font-size="12.5" font-weight="500" fill="#334155">Decisión</text>
+      <rect x="1087.0" y="2097.0" width="26" height="18" rx="4" fill="#ECFDF5" stroke="#059669" stroke-width="1.4"/>
+      <text x="1121.0" y="2110.5" font-size="12.5" font-weight="500" fill="#334155">Resultado / Éxito</text>
+      <rect x="1384.7" y="2097.0" width="26" height="18" rx="4" fill="#FEF2F2" stroke="#DC2626" stroke-width="1.4"/>
+      <text x="1418.7" y="2110.5" font-size="12.5" font-weight="500" fill="#334155">Error / Rechazo</text>
+      <rect x="1682.3" y="2097.0" width="26" height="18" rx="4" fill="#F5F3FF" stroke="#7C3AED" stroke-width="1.4" stroke-dasharray="4,2"/>
+      <text x="1716.3" y="2110.5" font-size="12.5" font-weight="500" fill="#334155">Pendiente de definición</text>
+      <line x1="56.0" y1="2124.0" x2="1984.0" y2="2124.0" stroke="#E2E8F0" stroke-width="1"/>
+      <text x="58.0" y="2145.0" font-size="12" font-weight="700" letter-spacing="0.6" fill="#1E3A5F">CONECTORES</text>
+      <line x1="194.0" y1="2141.0" x2="228.0" y2="2141.0" stroke="#475569" stroke-width="2" marker-end="url(#arrow-slate)"/>
+      <text x="238.0" y="2145.5" font-size="12.5" font-weight="500" fill="#334155">Flujo secuencial / acción</text>
+      <line x1="640.5" y1="2141.0" x2="674.5" y2="2141.0" stroke="#059669" stroke-width="2" marker-end="url(#arrow-green)"/>
+      <text x="684.5" y="2145.5" font-size="12.5" font-weight="500" fill="#334155">Rama afirmativa (Sí)</text>
+      <line x1="1087.0" y1="2141.0" x2="1121.0" y2="2141.0" stroke="#DC2626" stroke-width="2" marker-end="url(#arrow-red)"/>
+      <text x="1131.0" y="2145.5" font-size="12.5" font-weight="500" fill="#334155">Rama negativa / rechazo (No)</text>
+      <line x1="1533.5" y1="2141.0" x2="1567.5" y2="2141.0" stroke="#2563EB" stroke-width="2" marker-end="url(#arrow-blue)"/>
+      <text x="1577.5" y="2145.5" font-size="12.5" font-weight="500" fill="#334155">Retorno / transición entre fases</text>
+    </g>
+  </g>
+</svg>
