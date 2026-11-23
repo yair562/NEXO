@@ -11,8 +11,8 @@ Ninguno muestra contraseñas, borra datos ni elimina volúmenes de Docker.
 
 ## `new_env.ps1`
 
-Crea `.env` (a partir de `.env.example`) con contraseñas aleatorias de 32 caracteres y un secreto JWT de 48, y crea
-`nexo/config/config.local.php` para que la app PHP use PostgreSQL con el rol `nexo_app`. **Nunca sobrescribe** archivos existentes.
+Crea `.env` (a partir de `.env.example`) con contraseñas aleatorias de 32 caracteres, un secreto JWT de 48 y la clave
+de sesión del backend Flask (`NEXO_FLASK_SECRET_KEY`, 48). **Nunca sobrescribe** un `.env` existente.
 
 | Parámetros | Requisitos | Salida |
 |---|---|---|
@@ -45,7 +45,7 @@ Distingue "iniciado" de "listo". Comprueba:
 1. `.env`: variables definidas (sin mostrar su valor), secreto JWT de 32 caracteres o más, contraseñas válidas para URL.
 2. `docker compose` disponible y `compose.yaml` coherente con `.env` (`docker compose config`).
 3. PostgreSQL: contenedor creado, healthcheck `healthy`, consulta como `nexo_migrator`, **conexión con contraseña como
-   `nexo_app`** (igual que PHP), historial legible y puerto `127.0.0.1:5432` abierto.
+   `nexo_app`** (igual que el backend Flask), historial legible y puerto `127.0.0.1:5432` abierto.
 4. PostgREST: contenedor en marcha, `/live` (proceso vivo), `/ready` (conectado a PostgreSQL con el esquema cargado) y `GET /materias`.
 
 | Código | Significado |

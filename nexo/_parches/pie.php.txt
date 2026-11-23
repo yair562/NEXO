@@ -1,6 +1,0 @@
-PARCHE 2 — includes/pie.php
-Pega estas líneas justo DESPUÉS de la línea que carga assets/nexo.js (antes de </body>):
-
-<?php foreach ($scriptsPagina ?? [] as $script): ?>
-<script src="<?= e(url($script)) ?>"></script>
-<?php endforeach; ?>

@@ -1,19 +1,22 @@
-NOTAS - CARPETA nexo/docs/
-==========================
+NOTAS - CARPETA docs/
+=====================
 
 Qué hay aquí
 ------------
-Documentación y diagramas de la base de datos y de la app.
+Documentación y diagramas de la base de datos.
+El 18/11/2026 esta carpeta se movió de nexo/docs/ a docs/ al retirar el
+prototipo PHP. Los diagramas muestran las 10 tablas de V001; faltan las
+tablas padron_estudiantes y activaciones de V005.
 
   diagrama_entidad_relacion.drawio   Diagrama ENTIDAD-RELACIÓN (Chen), editable.
   diagrama_entidad_relacion.svg      El mismo diagrama como imagen.
   modelo_relacional.drawio           MODELO RELACIONAL (PostgreSQL), editable.
   modelo_relacional.svg              El mismo diagrama como imagen.
-  arquitectura.md                    Arquitectura de la app y la base.
+  arquitectura.md                    Arquitectura del prototipo PHP (histórico)
+                                     y modelo de datos.
   auditoria_mysql_postgresql.md      Comparación MySQL -> PostgreSQL.
-  .htaccess                          Impide abrir la carpeta en el navegador.
 
-- Los .svg se ven directamente en GitHub (y en el README de la raíz).
+- Los .svg se ven directamente en GitHub (y en el README de BD/NEXO_BASE_DE_DATOS).
 - Los .drawio se editan en https://app.diagrams.net (Abrir un diagrama
   existente). Si se edita un .drawio, hay que volver a exportar su imagen:
   Archivo -> Exportar como -> SVG, con el mismo nombre.

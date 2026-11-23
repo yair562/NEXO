@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block titulo %}Inicio{% endblock %}
+{% block contenido %}
+    <section class="app-saludo" aria-labelledby="app-titulo">
+        <h1 id="app-titulo">Hola, {{ cuenta.nombre.split()[0] }}</h1>
+        <p>Matrícula {{ cuenta.matricula }} · {{ cuenta.correo }}</p>
+    </section>
+
+    <section aria-labelledby="app-secciones">
+        <h2 class="app-subtitulo" id="app-secciones">Tu comunidad</h2>
+        <ul class="app-tarjetas">
+            <li class="app-tarjeta app-tarjeta--activa">
+                <h3><a href="{{ url_for('profile_page') }}">Mi perfil</a></h3>
+                <p>Carrera, semestre, materias, habilidades e intereses.</p>
+                <span class="app-ir" aria-hidden="true">Abrir</span>
+            </li>
+            <li class="app-tarjeta" aria-disabled="true">
+                <h3>Publicaciones</h3>
+                <p>Dudas y contenidos de estudiantes del TESH.</p>
+                <span class="app-pronto">Próximamente</span>
+            </li>
+            <li class="app-tarjeta" aria-disabled="true">
+                <h3>Preguntas por materia</h3>
+                <p>Resuelve dudas con quienes cursan lo mismo que tú.</p>
+                <span class="app-pronto">Próximamente</span>
+            </li>
+            <li class="app-tarjeta" aria-disabled="true">
+                <h3>Buscar</h3>
+                <p>Encuentra estudiantes y respuestas que ya existen.</p>
+                <span class="app-pronto">Próximamente</span>
+            </li>
+            {% if cuenta.rol in ('moderador', 'administrador') %}
+            <li class="app-tarjeta" aria-disabled="true">
+                <h3>Moderación</h3>
+                <p>Revisa reportes y contenido de la comunidad.</p>
+                <span class="app-pronto">Próximamente</span>
+            </li>
+            {% endif %}
+        </ul>
+    </section>
+{% endblock %}

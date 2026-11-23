@@ -1,5 +1,9 @@
 # NEXO – Arquitectura y modelo de datos (Sprint 1)
 
+> **Documento histórico.** Describe el prototipo PHP de los Sprints 1 y 2, retirado el 18/11/2026 (sigue en el
+> historial de Git, commit `09433e7`). El modelo de datos de V001 y la seguridad de la base siguen vigentes; los roles
+> funcionales cambiaron en V006 (estudiante, moderador, administrador). La arquitectura actual de la aplicación es Flask + PostgreSQL (ver el README de `BD/NEXO_BASE_DE_DATOS`).
+
 Paquete de la EDT: **1.3.1 Diseñar la arquitectura y el modelo de datos**.
 
 ## Arquitectura
@@ -13,7 +17,7 @@ NEXO es una aplicación web de tres capas, con las herramientas definidas en el 
 | Datos | PostgreSQL 16 en Docker (o MySQL en XAMPP / InfinityFree) | `../migrations/`, `database/nexo.sql` (MySQL) |
 
 Entornos: **XAMPP + PostgreSQL en Docker** en local y **InfinityFree con MySQL** para las demostraciones.
-El código se guarda en **GitHub**. La base de datos, PostgREST y sus roles se describen en el [README raíz](../../README.md).
+El código se guarda en **GitHub**. La base de datos, PostgREST y sus roles se describen en el [README raíz](../README.md).
 
 ```
 Navegador ──HTTP──> Apache (XAMPP / InfinityFree)

@@ -168,6 +168,9 @@ def set_password(
         )
     matricula = normalize_matricula(matricula_value)
     normalized_code = code.strip() if isinstance(code, str) else ""
+    # El intento fallido debe confirmarse antes de responder: si el error se lanzara dentro
+    # de la transacción, el rollback borraría el contador y el límite de intentos no aplicaría.
+    rejected = False
     with get_connection(config) as connection:
         with connection.transaction():
             connection.row_factory = dict_row
@@ -195,29 +198,54 @@ def set_password(
                         activation["codigo_hash"], _token_hash(normalized_code)
                     )
                 ):
-                    if activation is not None and not activation["usado"]:
+                    if (
+                        activation is not None
+                        and not activation["usado"]
+                        and activation["intentos"] < MAX_ACTIVATION_ATTEMPTS
+                    ):
                         cursor.execute(
                             "UPDATE nexo.activaciones SET intentos = intentos + 1 WHERE id = %s",
                             (activation["id"],),
                         )
-                    raise AuthError("invalid_code", "El código no es válido.")
+                    rejected = True
+                else:
+                    cursor.execute(
+                        """
+                        UPDATE nexo.usuarios
+                        SET contrasena_hash = %s, estado = 'ACTIVE',
+                            activo = TRUE, correo_verificado_en = now(),
+                            activado_en = now()
+                        WHERE matricula = %s AND estado = 'PENDING'
+                        """,
+                        (generate_password_hash(password), matricula),
+                    )
+                    if cursor.rowcount != 1:
+                        raise AuthError("activation_unavailable", "La activación no está disponible.")
+                    cursor.execute(
+                        "UPDATE nexo.activaciones SET usado = TRUE, verificado_en = now() WHERE id = %s",
+                        (activation["id"],),
+                    )
 
-                cursor.execute(
-                    """
-                    UPDATE nexo.usuarios
-                    SET contrasena_hash = %s, estado = 'ACTIVE',
-                        activo = TRUE, correo_verificado_en = now(),
-                        activado_en = now()
-                    WHERE matricula = %s AND estado = 'PENDING'
-                    """,
-                    (generate_password_hash(password), matricula),
-                )
-                if cursor.rowcount != 1:
-                    raise AuthError("activation_unavailable", "La activación no está disponible.")
-                cursor.execute(
-                    "UPDATE nexo.activaciones SET usado = TRUE, verificado_en = now() WHERE id = %s",
-                    (activation["id"],),
-                )
+    if rejected:
+        raise AuthError("invalid_code", "El código no es válido.")
+
+
+def get_active_account(user_id: object, config: Settings = settings) -> dict[str, object] | None:
+    """Datos públicos de la cuenta en sesión, o None si ya no existe o dejó de estar activa."""
+    if not isinstance(user_id, int):
+        return None
+    with get_connection(config) as connection:
+        connection.row_factory = dict_row
+        with connection.cursor() as cursor:
+            cursor.execute(
+                """
+                SELECT id, matricula, nombre, correo, rol
+                FROM nexo.usuarios
+                WHERE id = %s AND estado = 'ACTIVE' AND activo = TRUE
+                """,
+                (user_id,),
+            )
+            return cursor.fetchone()
 
 
 def authenticate(

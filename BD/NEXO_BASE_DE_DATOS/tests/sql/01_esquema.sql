@@ -1,24 +1,24 @@
--- Verifica que el esquema creado por las migraciones corresponde al MySQL de origen.
+-- Verifica que el esquema creado por las migraciones V000 a V006 es el esperado.
 -- Se ejecuta como superusuario en la base de prueba. Solo lee: no deja cambios.
 DO $$
 DECLARE
     faltantes text;
     n integer;
 BEGIN
-    -- 10 tablas de nexo/database/nexo.sql
+    -- 10 tablas de V001 (traducidas del esquema MySQL original) y 2 de V005 (identidad)
     SELECT string_agg(t, ', ') INTO faltantes
     FROM unnest(ARRAY['usuarios', 'recuperaciones', 'perfiles', 'materias', 'usuario_materias', 'publicaciones',
-                      'adjuntos', 'comentarios', 'votos', 'guardados']) AS t
+                      'adjuntos', 'comentarios', 'votos', 'guardados', 'padron_estudiantes', 'activaciones']) AS t
     WHERE to_regclass('nexo.' || t) IS NULL;
     IF faltantes IS NOT NULL THEN RAISE EXCEPTION 'Faltan tablas: %', faltantes; END IF;
 
     SELECT count(*) INTO n FROM information_schema.tables WHERE table_schema = 'nexo' AND table_type = 'BASE TABLE';
-    IF n <> 10 THEN RAISE EXCEPTION 'Se esperaban 10 tablas en nexo, hay %', n; END IF;
+    IF n <> 12 THEN RAISE EXCEPTION 'Se esperaban 12 tablas en nexo, hay %', n; END IF;
 
-    -- 13 llaves foráneas, igual que el MySQL de origen
+    -- 14 llaves foráneas: 13 del MySQL de origen y activaciones.usuario_id (V005)
     SELECT count(*) INTO n FROM pg_constraint c JOIN pg_namespace s ON s.oid = c.connamespace
     WHERE s.nspname = 'nexo' AND c.contype = 'f';
-    IF n <> 13 THEN RAISE EXCEPTION 'Se esperaban 13 llaves foráneas, hay %', n; END IF;
+    IF n <> 14 THEN RAISE EXCEPTION 'Se esperaban 14 llaves foráneas, hay %', n; END IF;
 
     -- Toda llave foránea tiene un índice que empieza por su columna (InnoDB los crea solo)
     SELECT string_agg(c.conrelid::regclass || '.' || a.attname, ', ') INTO faltantes
@@ -29,15 +29,34 @@ BEGIN
       AND NOT EXISTS (SELECT 1 FROM pg_index i WHERE i.indrelid = c.conrelid AND i.indkey[0] = c.conkey[1]);
     IF faltantes IS NOT NULL THEN RAISE EXCEPTION 'Llaves foráneas sin índice: %', faltantes; END IF;
 
-    -- Identidades en lugar de AUTO_INCREMENT
+    -- Identidades en lugar de AUTO_INCREMENT (6 de V001 y activaciones.id de V005)
     SELECT count(*) INTO n FROM information_schema.columns
     WHERE table_schema = 'nexo' AND column_name = 'id' AND is_identity = 'YES';
-    IF n <> 6 THEN RAISE EXCEPTION 'Se esperaban 6 columnas id de identidad, hay %', n; END IF;
+    IF n <> 7 THEN RAISE EXCEPTION 'Se esperaban 7 columnas id de identidad, hay %', n; END IF;
 
-    -- Columnas booleanas (antes TINYINT(1))
+    -- Columnas booleanas: 5 de V001 (antes TINYINT(1)) más padron_estudiantes.autorizado y activaciones.usado
     SELECT count(*) INTO n FROM information_schema.columns
     WHERE table_schema = 'nexo' AND data_type = 'boolean';
-    IF n <> 5 THEN RAISE EXCEPTION 'Se esperaban 5 columnas boolean, hay %', n; END IF;
+    IF n <> 7 THEN RAISE EXCEPTION 'Se esperaban 7 columnas boolean, hay %', n; END IF;
+
+    -- Columnas de identidad agregadas a usuarios (V005); la contraseña puede faltar hasta activar la cuenta
+    SELECT string_agg(col, ', ') INTO faltantes
+    FROM unnest(ARRAY['matricula', 'estado', 'correo_verificado_en', 'activado_en']) AS col
+    WHERE NOT EXISTS (SELECT 1 FROM information_schema.columns
+                      WHERE table_schema = 'nexo' AND table_name = 'usuarios' AND column_name = col);
+    IF faltantes IS NOT NULL THEN RAISE EXCEPTION 'Faltan columnas en usuarios: %', faltantes; END IF;
+    PERFORM 1 FROM information_schema.columns
+    WHERE table_schema = 'nexo' AND table_name = 'usuarios' AND column_name = 'contrasena_hash' AND is_nullable = 'YES';
+    IF NOT FOUND THEN RAISE EXCEPTION 'usuarios.contrasena_hash debería admitir NULL (V005)'; END IF;
+
+    -- Restricciones con nombre de V005 y V006
+    SELECT string_agg(r, ', ') INTO faltantes
+    FROM unnest(ARRAY['usuarios_rol_valido', 'usuarios_matricula_unica', 'usuarios_matricula_formato',
+                      'usuarios_estado_valido', 'padron_matricula_formato', 'padron_correo_formato',
+                      'activaciones_intentos_validos']) AS r
+    WHERE NOT EXISTS (SELECT 1 FROM pg_constraint c JOIN pg_namespace s ON s.oid = c.connamespace
+                      WHERE s.nspname = 'nexo' AND c.conname = r);
+    IF faltantes IS NOT NULL THEN RAISE EXCEPTION 'Faltan restricciones: %', faltantes; END IF;
 
     -- Índice de texto completo (antes FULLTEXT)
     IF to_regclass('nexo.publicaciones_busqueda_idx') IS NULL THEN
@@ -59,7 +78,7 @@ BEGIN
 
     -- Historial
     SELECT count(*) INTO n FROM nexo_meta.schema_migrations;
-    IF n <> 5 THEN RAISE EXCEPTION 'Se esperaban 5 migraciones registradas, hay %', n; END IF;
+    IF n <> 7 THEN RAISE EXCEPTION 'Se esperaban 7 migraciones registradas, hay %', n; END IF;
 
     RAISE NOTICE 'esquema: OK';
 END;

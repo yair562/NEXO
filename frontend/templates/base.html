@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>{% block titulo %}{% endblock %} | NEXO</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+</head>
+<body class="app">
+<header class="app-barra">
+    <a class="app-marca" href="{{ url_for('application_home') }}">
+        <img src="{{ url_for('static', filename='img/logo-nexo.png') }}" width="40" height="42" alt="">
+        <span>NEXO</span>
+    </a>
+    <nav class="app-menu" aria-label="Principal">
+        <a href="{{ url_for('application_home') }}" {% if request.endpoint == 'application_home' %}aria-current="page"{% endif %}>Inicio</a>
+        <a href="{{ url_for('profile_page') }}" {% if request.endpoint == 'profile_page' %}aria-current="page"{% endif %}>Mi perfil</a>
+    </nav>
+    <div class="app-usuario">
+        <span class="app-usuario-nombre">{{ cuenta.nombre }}</span>
+        <span class="app-rol">{{ cuenta.rol | capitalize }}</span>
+        <button class="app-salir" type="button" id="cerrar-sesion">Cerrar sesión</button>
+    </div>
+</header>
+
+<main class="app-contenido">
+    <p class="app-error" id="app-mensaje" role="alert" hidden></p>
+    {% block contenido %}{% endblock %}
+</main>
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

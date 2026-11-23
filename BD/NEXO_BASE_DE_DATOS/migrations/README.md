@@ -65,5 +65,5 @@ El checksum se calcula con saltos de línea normalizados a LF, así que es el mi
 
 ## `archive/`
 
-Esquemas históricos que ya no se aplican. El esquema MySQL de origen **sigue vigente** para hosting sin PostgreSQL
-(InfinityFree) y por eso permanece en [`nexo/database/nexo.sql`](../nexo/database/nexo.sql); ver [`archive/README.md`](archive/README.md).
+Esquemas históricos que ya no se aplican. El esquema MySQL de origen se retiró junto con el prototipo PHP el 18/11/2026;
+ver [`archive/README.md`](archive/README.md).

@@ -16,8 +16,12 @@ que se ejecutan para crear la base, en este orden:
                              cuando cambia un perfil o una publicación.
   V003__seed_data.sql        Datos iniciales: las 38 materias de ejemplo.
   V004__api_y_permisos.sql   Permisos de cada rol y vistas de la API.
+  V005__identidad_y_activacion.sql  Padrón de estudiantes, estados de cuenta y
+                             códigos de activación (Yair, 18/11/2026).
+  V006__roles_funcionales_v1.sql    Roles: estudiante, moderador y
+                             administrador (quita "docente").
   README.md                  Reglas para crear nuevas migraciones.
-  archive/                   Lugar para esquemas viejos (hoy vacío).
+  archive/                   Esquemas retirados (ver su README).
 
 Las 10 tablas (V001)
 --------------------
@@ -37,7 +41,8 @@ Las 10 tablas (V001)
 
 Qué se hizo
 -----------
-- Se tradujo la estructura MySQL original (nexo/database/nexo.sql) a
+- Se tradujo la estructura MySQL original (retirada el 18/11/2026; ver
+  archive/README.md) a
   PostgreSQL sin perder reglas:
     AUTO_INCREMENT -> identidad BIGINT    TINYINT(1) -> BOOLEAN
     ENUM -> TEXT con CHECK                DATETIME   -> TIMESTAMPTZ

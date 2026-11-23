@@ -13,10 +13,10 @@ DECLARE
     despues timestamptz;
 BEGIN
     INSERT INTO usuarios (nombre, correo, contrasena_hash) VALUES ('Prueba Uno', 'uno@prueba.test', 'x') RETURNING id INTO u1;
-    INSERT INTO usuarios (nombre, correo, contrasena_hash, rol) VALUES ('Prueba Dos', 'dos@prueba.test', 'x', 'docente') RETURNING id INTO u2;
+    INSERT INTO usuarios (nombre, correo, contrasena_hash, rol) VALUES ('Prueba Dos', 'dos@prueba.test', 'x', 'moderador') RETURNING id INTO u2;
 
-    -- Valores por defecto (rol estudiante, activo)
-    PERFORM 1 FROM usuarios WHERE id = u1 AND rol = 'estudiante' AND activo;
+    -- Valores por defecto (rol estudiante, activo, estado ACTIVE de V005)
+    PERFORM 1 FROM usuarios WHERE id = u1 AND rol = 'estudiante' AND activo AND estado = 'ACTIVE';
     IF NOT FOUND THEN RAISE EXCEPTION 'Valores por defecto de usuarios incorrectos'; END IF;
 
     -- Correo repetido
@@ -31,11 +31,72 @@ BEGIN
         RAISE EXCEPTION 'Aceptó un correo con mayúsculas';
     EXCEPTION WHEN check_violation THEN NULL;
     END;
-    -- Rol fuera del ENUM original
+    -- Roles funcionales de V006: estudiante, moderador y administrador
     BEGIN
         INSERT INTO usuarios (nombre, correo, contrasena_hash, rol) VALUES ('Otra', 'tres@prueba.test', 'x', 'admin');
         RAISE EXCEPTION 'Aceptó un rol inválido';
     EXCEPTION WHEN check_violation THEN NULL;
+    END;
+    BEGIN
+        INSERT INTO usuarios (nombre, correo, contrasena_hash, rol) VALUES ('Otra', 'tres@prueba.test', 'x', 'docente');
+        RAISE EXCEPTION 'Aceptó el rol docente, que V006 retiró';
+    EXCEPTION WHEN check_violation THEN NULL;
+    END;
+    INSERT INTO usuarios (nombre, correo, contrasena_hash, rol) VALUES ('Admin', 'admin@prueba.test', 'x', 'administrador');
+
+    -- Identidad y activación (V005)
+    -- Cuenta precargada: sin contraseña hasta activarse, con matrícula y estado PENDING
+    INSERT INTO usuarios (nombre, correo, matricula, estado) VALUES ('Pendiente', 'l20250001@prueba.test', '20250001', 'PENDING');
+    BEGIN
+        INSERT INTO usuarios (nombre, correo, matricula) VALUES ('Otra', 'l2@prueba.test', '20250001');
+        RAISE EXCEPTION 'Aceptó una matrícula repetida';
+    EXCEPTION WHEN unique_violation THEN NULL;
+    END;
+    BEGIN
+        INSERT INTO usuarios (nombre, correo, matricula) VALUES ('Otra', 'l3@prueba.test', 'A123');
+        RAISE EXCEPTION 'Aceptó una matrícula con letras';
+    EXCEPTION WHEN check_violation THEN NULL;
+    END;
+    BEGIN
+        INSERT INTO usuarios (nombre, correo, contrasena_hash, estado) VALUES ('Otra', 'l4@prueba.test', 'x', 'BLOQUEADO');
+        RAISE EXCEPTION 'Aceptó un estado de cuenta inválido';
+    EXCEPTION WHEN check_violation THEN NULL;
+    END;
+    -- Padrón: solo matrículas numéricas y correos institucionales en minúsculas
+    INSERT INTO padron_estudiantes (matricula, nombre, correo) VALUES ('20250001', 'Pendiente', 'l20250001@huixquilucan.tecnm.mx');
+    PERFORM 1 FROM padron_estudiantes WHERE matricula = '20250001' AND autorizado;
+    IF NOT FOUND THEN RAISE EXCEPTION 'El padrón no autoriza por defecto'; END IF;
+    BEGIN
+        INSERT INTO padron_estudiantes (matricula, correo) VALUES ('20250002', 'l20250002@gmail.com');
+        RAISE EXCEPTION 'Aceptó un correo no institucional en el padrón';
+    EXCEPTION WHEN check_violation THEN NULL;
+    END;
+    BEGIN
+        INSERT INTO padron_estudiantes (matricula, correo) VALUES ('20250003', 'L20250003@huixquilucan.tecnm.mx');
+        RAISE EXCEPTION 'Aceptó un correo con mayúsculas en el padrón';
+    EXCEPTION WHEN check_violation THEN NULL;
+    END;
+    BEGIN
+        INSERT INTO padron_estudiantes (matricula, correo) VALUES ('ABC', 'labc@huixquilucan.tecnm.mx');
+        RAISE EXCEPTION 'Aceptó una matrícula con letras en el padrón';
+    EXCEPTION WHEN check_violation THEN NULL;
+    END;
+    BEGIN
+        INSERT INTO padron_estudiantes (matricula, correo) VALUES ('20250004', 'l20250001@huixquilucan.tecnm.mx');
+        RAISE EXCEPTION 'Aceptó un correo repetido en el padrón';
+    EXCEPTION WHEN unique_violation THEN NULL;
+    END;
+    -- Activaciones: máximo 5 intentos y se borran con el usuario
+    INSERT INTO activaciones (usuario_id, codigo_hash, expira_en) VALUES (u2, repeat('a', 64), now() + interval '15 minutes');
+    BEGIN
+        UPDATE activaciones SET intentos = 6 WHERE usuario_id = u2;
+        RAISE EXCEPTION 'Aceptó más de 5 intentos de activación';
+    EXCEPTION WHEN check_violation THEN NULL;
+    END;
+    BEGIN
+        INSERT INTO activaciones (usuario_id, codigo_hash, expira_en) VALUES (u2, repeat('a', 64), now());
+        RAISE EXCEPTION 'Aceptó un código de activación repetido';
+    EXCEPTION WHEN unique_violation THEN NULL;
     END;
     -- Semestre fuera de rango
     BEGIN
@@ -99,6 +160,9 @@ BEGIN
          + (SELECT count(*) FROM votos WHERE publicacion_id = p1) + (SELECT count(*) FROM adjuntos WHERE publicacion_id = p1)
          + (SELECT count(*) FROM perfiles WHERE usuario_id = u1) INTO n;
     IF n <> 0 THEN RAISE EXCEPTION 'ON DELETE CASCADE dejó % filas', n; END IF;
+    DELETE FROM usuarios WHERE id = u2;
+    SELECT count(*) INTO n FROM activaciones WHERE usuario_id = u2;
+    IF n <> 0 THEN RAISE EXCEPTION 'ON DELETE CASCADE dejó % activaciones', n; END IF;
 
     RAISE NOTICE 'restricciones: OK';
 END;

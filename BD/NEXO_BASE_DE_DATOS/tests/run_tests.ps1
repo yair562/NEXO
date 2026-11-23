@@ -77,17 +77,19 @@ Write-Ok "Base temporal $basePrueba creada"
 try {
     # --- Migraciones ---------------------------------------------------------------------------
     Write-Paso 'Migraciones desde una base vacía'
-    Probar 'aplica V000..V004 en orden' {
+    # Versiones esperadas: las de los archivos de migrations/ (V000, V001, ...), en orden
+    $esperadas = @(Get-ChildItem -LiteralPath (Join-Path $script:RaizRepo 'migrations') -Filter 'V*.sql' | Sort-Object Name | ForEach-Object { $_.Name.Substring(0, 4) })
+    Probar "aplica las $($esperadas.Count) migraciones en orden" {
         $r = Aplicar $basePrueba
         Afirmar ($r.ExitCode -eq 0) "exit $($r.ExitCode): $($r.Salida)$($r.Error)"
         $versiones = Valor 'SELECT string_agg(version, '','' ORDER BY aplicada_en, version) FROM nexo_meta.schema_migrations;' $basePrueba
-        Afirmar ($versiones -eq 'V000,V001,V002,V003,V004') "orden registrado: $versiones"
+        Afirmar ($versiones -eq ($esperadas -join ',')) "orden registrado: $versiones"
         "($versiones)"
     }
     Probar 'una segunda ejecución no aplica nada' {
         $r = Aplicar $basePrueba
         Afirmar ($r.ExitCode -eq 0 -and $r.Salida -match '0 pendientes') "exit $($r.ExitCode): $($r.Salida)"
-        Afirmar ((Valor 'SELECT count(*) FROM nexo_meta.schema_migrations;' $basePrueba) -eq '5') 'el historial cambió'
+        Afirmar ((Valor 'SELECT count(*) FROM nexo_meta.schema_migrations;' $basePrueba) -eq [string]$esperadas.Count) 'el historial cambió'
     }
     Probar 'los datos semilla no se duplican al reejecutarse' {
         $semilla = [IO.File]::ReadAllText((Join-Path $script:RaizRepo 'migrations\V003__seed_data.sql'), $script:Utf8SinBom)

@@ -26,7 +26,7 @@ if (-not (Test-Path -LiteralPath $archivoEnv)) {
 }
 $entorno = Read-DotEnv $archivoEnv
 $requeridas = 'POSTGRES_DB', 'POSTGRES_SUPERUSER', 'POSTGRES_SUPERUSER_PASSWORD', 'NEXO_MIGRATOR_PASSWORD',
-    'NEXO_APP_PASSWORD', 'PGRST_AUTHENTICATOR_PASSWORD', 'PGRST_JWT_SECRET'
+    'NEXO_APP_PASSWORD', 'PGRST_AUTHENTICATOR_PASSWORD', 'PGRST_JWT_SECRET', 'NEXO_FLASK_SECRET_KEY'
 foreach ($nombre in $requeridas) {
     $valor = $entorno[$nombre]
     Registrar ([bool]$valor -and $valor -notmatch '^cambia_esto') "$nombre definida"
@@ -63,7 +63,7 @@ if ($estadoDb -ne '') {
     $r = Invoke-Psql -Sql 'SELECT 1;' -Usuario 'nexo_migrator' -Base $base -Tabular
     Registrar ($r.ExitCode -eq 0 -and $r.Salida.Trim() -eq '1') 'consulta como nexo_migrator'
 
-    # El rol de la app se prueba por TCP y con contraseña, como lo hace PHP.
+    # El rol de la app se prueba por TCP y con contraseña, como lo hace el backend Flask.
     $r = Invoke-Compose @('exec', '-T', '-e', "PGPASSWORD=$($entorno['NEXO_APP_PASSWORD'])", 'db',
         'psql', '-X', '-A', '-t', '-h', '127.0.0.1', '-U', 'nexo_app', '-d', $base, '-c', 'SELECT count(*) FROM nexo.materias')
     Registrar ($r.ExitCode -eq 0) "conexión con contraseña como nexo_app ($($r.Salida.Trim()) materias)"
@@ -74,9 +74,9 @@ if ($estadoDb -ne '') {
 $tcp = New-Object System.Net.Sockets.TcpClient
 try {
     $tcp.Connect('127.0.0.1', [int]$puertoDb)
-    Registrar $tcp.Connected "puerto 127.0.0.1:$puertoDb abierto para la app PHP"
+    Registrar $tcp.Connected "puerto 127.0.0.1:$puertoDb abierto en el equipo"
 } catch {
-    Registrar $false "puerto 127.0.0.1:$puertoDb abierto para la app PHP"
+    Registrar $false "puerto 127.0.0.1:$puertoDb abierto en el equipo"
 } finally {
     $tcp.Close()
 }
